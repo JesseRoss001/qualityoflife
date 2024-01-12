@@ -37,3 +37,28 @@ As a user, I want to find resources and guidance on legal and immigration proces
 # Personalized Alerts and Updates
 
 As a user, I want to receive personalized alerts and updates about changes in the rankings or significant changes in countries of my interest, so that I am always informed about relevant developments.
+
+# Welcome to the Country Comparison App
+
+This is a user-friendly application designed to help you make informed decisions about choosing a country to live in based on your preferences and needs. Whether you are looking for a place with a low cost of living, excellent healthcare, a safe environment, or specific climate conditions, our app has you covered.
+
+We've leveraged up-to-date CSV data from Kaggle to provide you with comprehensive insights and comparisons of countries worldwide. Our goal is to empower you with the information you need to make the best decision for your future.
+
+## Features
+
+- **Choosing Preferences:** Select the factors that matter most to you for your quality of life.
+- **Comparing Countries:** Compare multiple countries side by side based on your criteria.
+- **Viewing Detailed Country Profiles:** Explore in-depth profiles of each country, including key statistics and quality of life indices.
+- **Accessing Up-to-Date Information:** Ensure that your decision is based on current and accurate data.
+- **Saving Preferences and Results:** Save and revisit your preferences and recommended country lists.
+- **User Feedback and Ratings:** Gain insights from real experiences through feedback and ratings.
+- **Cost of Living Calculator:** Estimate your expenses in different countries to financially plan your move.
+- **Language and Cultural Information:** Learn about the language and culture of potential countries.
+- **Legal and Immigration Assistance:** Find resources and guidance on legal and immigration processes.
+- **Personalized Alerts and Updates:** Stay informed about relevant developments and changes in country rankings.
+
+## Data Source
+
+We utilize CSV data from Kaggle, ensuring that our information is up-to-date and reliable. This data forms the foundation of our comprehensive country profiles and comparison tools.
+
+Thank you for choosing our Country Comparison App. We're here to help you make the right decision for your future home.
