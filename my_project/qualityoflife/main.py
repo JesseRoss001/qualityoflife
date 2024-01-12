@@ -1,10 +1,12 @@
-"""This module is for combining CSV data for the Quality of Life project."""
+# your_app_name/data_processing.py
+
 import pandas as pd
 from io import StringIO
+from .models import CountryData
 
-def combine_csv_data():
+def populate_database():
     """
-    Combine data from two CSV strings into a single DataFrame.
+    Combine data from two CSV strings into a single DataFrame and populate the database.
 
     Returns:
         A list of dictionaries representing the combined data.
@@ -359,11 +361,6 @@ def combine_csv_data():
     combined_df.sort_values(by='Final Rank', inplace=True)
     
     # Convert to a dictionary for JSON response
-    combined_data = combined_df.to_dict(orient='records')
-    return combined_data
-# Test the function
-try:
-    print(combine_csv_data())
-except KeyError as e:
-    print(f"Error: {e}")
-# Test the function
+    for record in combined_df.to_dict(orient='records'):
+        CountryData.objects.create(**record)
+    #  populate_database()
