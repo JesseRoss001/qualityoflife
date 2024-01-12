@@ -2,7 +2,16 @@ import './App.css';
 import React from 'react';
 import PreferencesForm from './components/PreferencesForm';
 import CountryComparison from './components/CountryComparison';
-// Additional imports for other components will go here
+/// In your React app
+import Axios from 'axios';
+
+Axios.get('/custom_endpoint/')
+  .then(response => {
+    console.log(response.data.data); // Process the combined CSV data
+  })
+  .catch(error => {
+    console.error(error);
+  });
 
 function App() {
   return (
