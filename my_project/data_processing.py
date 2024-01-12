@@ -364,3 +364,6 @@ def populate_database():
     for record in combined_df.to_dict(orient='records'):
         CountryData.objects.create(**record)
     #  populate_database()
+    if __name__ == "__main__":
+    data = populate_database()
+    print(data)

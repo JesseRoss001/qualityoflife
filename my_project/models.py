@@ -17,6 +17,5 @@ class CountryData(models.Model):
     local_purchasing_power_index = models.FloatField()
     composite_score = models.FloatField()
     final_rank = models.IntegerField()
-
-    def __str__(self):
-        return self.country_or_region
+    class Meta:
+        app_label = 'qualityoflife'  # Specify your app label here
