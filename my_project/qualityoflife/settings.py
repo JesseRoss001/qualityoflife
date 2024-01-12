@@ -29,11 +29,11 @@ ALLOWED_HOSTS = ['8000-jesseross00-qualityofli-8brb3y73zl5.ws-eu107.gitpod.io']
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'corsheaders',  # Ensure corsheaders is added to INSTALLED_APPS
+    'django.contrib.sessions',  # Ensure corsheaders is added to INSTALLED_APPS
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
@@ -49,8 +49,11 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ALLOW_ALL_ORIGINS = True  # Allow all origins
-CORS_ALLOW_CREDENTIALS = True  # If True, cookies will be allowed to be included in cross-site HTTP requests
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True # If True, cookies will be allowed to be included in cross-site HTTP requests
+CORS_ORIGIN_WHITELIST = [
+    'https://3000-jesseross00-qualityofli-8brb3y73zl5.ws-eu107.gitpod.io',
+]
 
 ROOT_URLCONF = 'qualityoflife.urls'
 
