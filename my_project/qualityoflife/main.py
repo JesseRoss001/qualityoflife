@@ -310,9 +310,14 @@ def combine_csv_data():
     138,Zambia,33.04,9.26,21.9,31.53,22.46,40.33
     139,Zimbabwe,45.68,8.75,28.37,39.88,38.13,19.07
     """
+       # Read CSV data into pandas DataFrames
     # Read CSV data into pandas DataFrames
     df1 = pd.read_csv(StringIO(csv_data_1))
     df2 = pd.read_csv(StringIO(csv_data_2))
+
+    # Strip leading/trailing spaces from column names
+    df1.columns = df1.columns.str.strip()
+    df2.columns = df2.columns.str.strip()
 
     # Rename to match the merging column
     df2.rename(columns={"Country": "Country or region"}, inplace=True)
@@ -320,15 +325,16 @@ def combine_csv_data():
     # Merge data based on 'Country or region'
     combined_df = pd.merge(df1, df2, on="Country or region", how="inner")
 
-    # Check if 'Overall rank' column exists, if not, find and rename a similar column
+    # Check and correct 'Overall rank' column
     if 'Overall rank' not in combined_df.columns:
         for col in combined_df.columns:
             if 'overall rank' in col.lower():
                 combined_df.rename(columns={col: 'Overall rank'}, inplace=True)
                 break
+        else:
+            # If 'Overall rank' column is still not found
+            raise KeyError("'Overall rank' column not found after processing.")
 
-    # Remove rows with missing data
-    combined_df.dropna(inplace=True)
 
     # Normalize data to a scale of 0 to 100 for the first dataset
     for col in df1.columns:
@@ -355,6 +361,9 @@ def combine_csv_data():
     # Convert to a dictionary for JSON response
     combined_data = combined_df.to_dict(orient='records')
     return combined_data
-
 # Test the function
-print(combine_csv_data())
+try:
+    print(combine_csv_data())
+except KeyError as e:
+    print(f"Error: {e}")
+# Test the function
