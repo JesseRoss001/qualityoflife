@@ -1,8 +1,11 @@
-# your_app_name/data_processing.py
-
+import os
+import django
 import pandas as pd
 from io import StringIO
-from .models import CountryData
+
+# Adjust this to the actual path of your Django project's settings
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'my_project.settings')
+django.setup()
 
 def populate_database():
     """
@@ -359,11 +362,27 @@ def populate_database():
     # Calculate final ranking
     combined_df['Final Rank'] = combined_df[['Overall rank', 'Composite Score']].mean(axis=1)
     combined_df.sort_values(by='Final Rank', inplace=True)
-    
-    # Convert to a dictionary for JSON response
-    for record in combined_df.to_dict(orient='records'):
-        CountryData.objects.create(**record)
-    #  populate_database()
-    if __name__ == "__main__":
-    data = populate_database()
-    print(data)
+ # Creating and saving CountryData instances
+    for _, row in combined_df.iterrows():
+            CountryData.objects.create(
+                overall_rank=row['Overall rank'],
+                country_or_region=row['Country or region'],
+                score=row['Score'],
+                gdp_per_capita=row['GDP per capita'],
+                social_support=row['Social support'],
+                healthy_life_expectancy=row['Healthy life expectancy'],
+                freedom_to_make_life_choices=row['Freedom to make life choices'],
+                generosity=row['Generosity'],
+                perceptions_of_corruption=row['Perceptions of corruption'],
+                cost_of_living_index=row['Cost of Living Index'],
+                rent_index=row['Rent Index'],
+                cost_of_living_plus_rent_index=row['Cost of Living Plus Rent Index'],
+                groceries_index=row['Groceries Index'],
+                restaurant_price_index=row['Restaurant Price Index'],
+                local_purchasing_power_index=row['Local Purchasing Power Index'],
+                composite_score=row['Composite Score'],
+                final_rank=row['Final Rank']
+            )
+
+# Call the function
+populate_database()

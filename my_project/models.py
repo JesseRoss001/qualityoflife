@@ -1,6 +1,7 @@
 from django.db import models
 
 class CountryData(models.Model):
+    overall_rank = models.IntegerField()
     country_or_region = models.CharField(max_length=100)
     score = models.FloatField()
     gdp_per_capita = models.FloatField()
@@ -16,6 +17,7 @@ class CountryData(models.Model):
     restaurant_price_index = models.FloatField()
     local_purchasing_power_index = models.FloatField()
     composite_score = models.FloatField()
-    final_rank = models.IntegerField()
-    class Meta:
-        app_label = 'qualityoflife'  # Specify your app label here
+    final_rank = models.FloatField()
+
+    def __str__(self):
+        return self.country_or_region

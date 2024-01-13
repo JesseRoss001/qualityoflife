@@ -1,10 +1,8 @@
-# your_project_name/urls.py
-
 from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('app/', include('qualityoflife.urls')),  # Replace 'your_app_name' with the actual name of your Django app
-    # You can add more paths here as needed
+    path('app/', include('my_project.urls')),  # Replace 'my_project' with your actual app name
+    # Add more paths for other apps as needed
 ]
