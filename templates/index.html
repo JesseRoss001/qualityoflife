@@ -41,6 +41,48 @@
                 /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
             }
         }
+            /* Existing styles... */
+            @keyframes buttonColorCycle {
+        0% { background-color: #ff9a9e; } /* Light pink */
+        25% { background-color: #ff7e67; } /* Sunset orange */
+        50% { background-color: #ff6584; } /* Sunset magenta */
+        75% { background-color: #ffbb7b; } /* Sunset yellow */
+        100% { background-color: #ff9a9e; } /* Light pink */
+    }
+
+    .btn-primary {
+        animation: buttonColorCycle 10s infinite;
+    }
+
+    .btn-info {
+        animation: buttonColorCycle 10s infinite;
+        animation-delay: 1s;
+    }
+
+    .btn-success {
+        animation: buttonColorCycle 10s infinite;
+        animation-delay: 2s;
+    }
+
+    .btn-warning {
+        animation: buttonColorCycle 10s infinite;
+        animation-delay: 3s;
+    }
+
+    .btn-secondary {
+        animation: buttonColorCycle 10s infinite;
+        animation-delay: 4s;
+    }
+
+    .btn-danger {
+        animation: buttonColorCycle 10s infinite;
+        animation-delay: 5s;
+    }
+
+    .btn-dark {
+        animation: buttonColorCycle 10s infinite;
+        animation-delay: 6s;
+    }
     </style>
 </head>
 
@@ -59,13 +101,17 @@
         <div class="row">
             <div class="col-md-12">
                 <h3>Country Data Categories</h3>
-                <!-- Buttons -->
+                <!-- Buttons --></div>
+                <div class="col-4 col-md-3 col-lg-2">
                 <button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#overallRankModal">
                     <i class="fas fa-trophy"></i> Overall Rank
-                </button>
-                <button type="button" class="btn btn-info m-2" data-toggle="modal" data-target="#gdpModal">
-                    <i class="fas fa-dollar-sign"></i> GDP per Capita
-                </button>
+                </button></div>
+                <div class="col-4 col-md-3 col-lg-2">
+                    <button type="button" class="btn btn-info m-2" data-toggle="modal" data-target="#gdpModal">
+                        <i class="fas fa-dollar-sign"></i> GDP per Capita
+                    </button>
+                </div>
+                
                 <!-- More buttons for other categories... -->
 
                 <!-- Overall Rank Modal -->
@@ -104,6 +150,7 @@
                     </div>
                 </div>
 
+<div class="col-4 col-md-3 col-lg-2">
                 <!-- Social Support Modal -->
                 <button type="button" class="btn btn-success m-2" data-toggle="modal" data-target="#socialSupportModal">
                     <i class="fas fa-hands-helping"></i> Social Support
@@ -126,6 +173,8 @@
                     </div>
 
                 </div>
+                </div>
+                <div class="col-4 col-md-3 col-lg-2">
                 <!-- Healthy Life Expectancy Modal -->
                 <button type="button" class="btn btn-warning m-2" data-toggle="modal"
                     data-target="#healthyLifeExpectancyModal">
@@ -148,6 +197,8 @@
                         </div>
                     </div>
                 </div>
+                </div>
+                <div class="col-4 col-md-3 col-lg-2">
                 <!-- Freedom to Make Life Choices Modal -->
                 <button type="button" class="btn btn-secondary m-2" data-toggle="modal"
                     data-target="#freedomToMakeLifeChoicesModal">
@@ -170,6 +221,8 @@
                         </div>
                     </div>
                 </div>
+                </div>
+                <div class="col-4 col-md-3 col-lg-2">
                 <!-- Generosity Modal -->
                 <button type="button" class="btn btn-danger m-2" data-toggle="modal" data-target="#generosityModal">
                     <i class="fas fa-gift"></i> Generosity
@@ -190,6 +243,8 @@
                         </div>
                     </div>
                 </div>
+                </div>
+                <div class="col-4 col-md-3 col-lg-2">
                <!-- Perceptions of Corruption Modal -->
 <button type="button" class="btn btn-dark m-2" data-toggle="modal" data-target="#perceptionsOfCorruptionModal">
     <i class="fas fa-mask"></i> Perceptions of Corruption
@@ -210,6 +265,8 @@
         </div>
     </div>
 </div>
+</div>
+<div class="col-4 col-md-3 col-lg-2">
                 <!-- Cost of Living Index Modal -->
                 <button type="button" class="btn btn-primary m-2" data-toggle="modal"
                     data-target="#costOfLivingIndexModal">
@@ -231,6 +288,8 @@
                         </div>
                     </div>
                 </div>
+                </div>
+                <div class="col-4 col-md-3 col-lg-2">
                 <!-- Rent Index Modal -->
                 <button type="button" class="btn btn-secondary m-2" data-toggle="modal" data-target="#rentIndexModal">
                     <i class="fas fa-home"></i> Rent Index
@@ -251,6 +310,8 @@
                         </div>
                     </div>
                 </div>
+                </div>
+                <div class="col-4 col-md-3 col-lg-2">
                 <!-- Cost of Living Plus Rent Index Modal -->
 <button type="button" class="btn btn-info m-2" data-toggle="modal" data-target="#costOfLivingPlusRentIndexModal">
     <i class="fas fa-calculator"></i> Cost of Living Plus Rent Index
@@ -271,6 +332,8 @@
         </div>
     </div>
 </div>
+</div>
+<div class="col-4 col-md-3 col-lg-2">
 <!-- Groceries Index Modal -->
 <button type="button" class="btn btn-warning m-2" data-toggle="modal" data-target="#groceriesIndexModal">
     <i class="fas fa-shopping-cart"></i> Groceries Index
@@ -291,6 +354,8 @@
         </div>
     </div>
 </div>
+</div>
+<div class="col-4 col-md-3 col-lg-2">
 <!-- Restaurant Price Index Modal -->
 <button type="button" class="btn btn-success m-2" data-toggle="modal" data-target="#restaurantPriceIndexModal">
     <i class="fas fa-utensils"></i> Restaurant Price Index
@@ -313,6 +378,8 @@ Represents the price of dining out, indicating the affordability of leisure and 
 </div>
 
 </div>
+</div>
+<div class="col-4 col-md-3 col-lg-2">
 <!-- Local Purchasing Power Index Modal -->
 <button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#localPurchasingPowerIndexModal">
     <i class="fas fa-wallet"></i> Local Purchasing Power Index
@@ -333,9 +400,10 @@ Represents the price of dining out, indicating the affordability of leisure and 
         </div>
     </div>
 </div>
+</div>
             </div>
         </div>
-    </div>
+   
     <!-- Bootstrap and other necessary scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
