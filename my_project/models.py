@@ -1,7 +1,6 @@
 from django.db import models
 
 class CountryData(models.Model):
-    overall_rank = models.FloatField()
     country_or_region = models.CharField(max_length=100)
     score = models.FloatField()
     gdp_per_capita = models.FloatField()
@@ -16,7 +15,7 @@ class CountryData(models.Model):
     groceries_index = models.FloatField()
     restaurant_price_index = models.FloatField()
     local_purchasing_power_index = models.FloatField()
-    # Add any other fields you need
+
 
     def __str__(self):
         return self.country_or_region
