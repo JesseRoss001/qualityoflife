@@ -92,6 +92,32 @@
 
 <body>
     <div class="container mt-5">
+        <h1>Top 10 Countries by Category</h1>
+
+        {% for category, countries in top_countries.items %}
+            <h2>{{ category|capfirst|replace('_', ' ') }}</h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Country
+    </th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for country in countries %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ country.country_or_region }}</td>
+                        <td>{{ country[category] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endfor %}
+    </div>
+    <div class="container mt-5">
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Graph Title</h5>
