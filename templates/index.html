@@ -83,6 +83,10 @@
         animation: buttonColorCycle 10s infinite;
         animation-delay: 6s;
     }
+    #overallRankChart {
+    min-width: 200px;
+    min-height: 200px;
+}
     </style>
 </head>
 
@@ -127,6 +131,7 @@
                             </div>
                             <div class="modal-body">
                                 Description or data about Overall Rank.
+                                <canvas id="overallRankChart" style="width:200px;height:200px;"></canvas> <!-- Canvas for Chart -->
                             </div>
                         </div>
                     </div>
@@ -408,6 +413,33 @@ Represents the price of dining out, indicating the affordability of leisure and 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var ctx = document.getElementById('overallRankChart').getContext('2d');
+            var chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: [{% for country in top_countries %}"{{ country.country_or_region }}"{% if not forloop.last %},{% endif %}{% endfor %}],
+                    datasets: [{
+                        label: 'Overall Rank',
+                        data: [{% for country in top_countries %}{{ country.overall_rank }}{% if not forloop.last %},{% endif %}{% endfor %}],
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y:
+        {
+        beginAtZero: true
+        }
+        }
+        }
+        });
+        });
+        </script>
 </body>
 
 </html>
