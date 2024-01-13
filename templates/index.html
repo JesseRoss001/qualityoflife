@@ -3,11 +3,41 @@
 <html>
 <head>
     <title>Quality of Life Data</title>
-    <!-- Include necessary CSS and JS files -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<style>body {
+    margin: 0;
+    padding: 0;
+    animation: gradientBackground 30s ease infinite;
+    background-size: 400% 400%;
+}
+
+@keyframes gradientBackground {
+    0% {
+        background: #ff9a9e;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #ff9a9e, #ffddd6);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #ff9a9e, #ffddd6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+    50% {
+        background: #ffdde1;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #ffdde1, #ffb3ab);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #ffdde1, #ffb3ab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+    100% {
+        background: #ff9a9e;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #ff9a9e, #ffddd6);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #ff9a9e, #ffddd6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+} </style>
 </head>
 <body>
-    <div id="graph-container">
-        <!-- Container for 3D graph -->
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Graph Title</h5>
+                <p class="card-text">This is a card to display graphs.</p>
+                <!-- Your future graph goes here -->
+            </div>
+        </div>
     </div>
     <a href="{% url 'preferences' %}">Select your preferences</a>
     <!-- Additional content -->

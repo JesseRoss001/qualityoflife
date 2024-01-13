@@ -10,12 +10,13 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'your-secret-key'
+SECRET_KEY = 'your-secret-key'  # Replace with your actual secret key in production
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True  # Set to False in production
 
-ALLOWED_HOSTS = ['your-production-domain.com']
+# Update ALLOWED_HOSTS based on your environment
+ALLOWED_HOSTS = ['*'] if DEBUG else ['your-production-domain.com', '8000-jesseross00-qualityofli-8brb3y73zl5.ws-eu107.gitpod.io']
 
 # Application definition
 
@@ -26,7 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'qualityoflife',  # Add your Django apps here
+    'my_project',  # Replace 'my_project' with the actual name of your Django app
 ]
 
 MIDDLEWARE = [
@@ -42,9 +43,9 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'qualityoflife.urls'
 
 TEMPLATES = [
-    {
+{
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],  # Ensure this is correctly pointing to your templates directory
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

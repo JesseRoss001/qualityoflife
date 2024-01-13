@@ -19,5 +19,5 @@ class CountryData(models.Model):
     composite_score = models.FloatField()
     final_rank = models.FloatField()
 
-    def __str__(self):
-        return self.country_or_region
+    class Meta:
+        app_label = 'my_project'
