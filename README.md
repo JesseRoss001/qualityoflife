@@ -1,3 +1,56 @@
+# Country Comparison App
+
+## Welcome
+
+This is a user-friendly application designed to help you make informed decisions about choosing a country to live in based on your preferences and needs. Whether you are looking for a place with a low cost of living, excellent healthcare, a safe environment, or specific climate conditions, our app has you covered.
+
+## Features
+
+- **Choosing Preferences:** Select factors important for your quality of life.
+- **Comparing Countries:** Compare countries side by side based on your criteria.
+- **Viewing Detailed Country Profiles:** In-depth profiles with key statistics and quality of life indices.
+- **Accessing Up-to-Date Information:** Current data for informed decisions.
+- **Saving Preferences and Results:** Revisit and modify your saved preferences and recommendations.
+- **User Feedback and Ratings:** Insights from real experiences.
+- **Cost of Living Calculator:** Estimate expenses in different countries.
+- **Language and Cultural Information:** Learn about potential countries' cultures and languages.
+- **Legal and Immigration Assistance:** Resources for legal and immigration processes.
+- **Personalized Alerts and Updates:** Stay informed about relevant changes.
+
+## Data Source
+
+We utilize CSV data from Kaggle, ensuring that our information is up-to-date and reliable. This data forms the foundation of our comprehensive country profiles and comparison tools.
+
+---
+
+## Day 1 Progress Report
+
+### Achievements
+
+- Established a basic structure for the main webpage with a gradient background and a card for future graphs.
+- Developed a series of modals for different country data categories, like GDP per Capita, Social Support, and more, providing users with detailed insights.
+- Implemented interactive elements using Bootstrap for a responsive and engaging UI.
+- Set up a Django backend to handle data processing and database interactions.
+- Combined and normalized multiple datasets to create a comprehensive view of each country's data.
+
+### Challenges
+
+- Faced some issues with database migrations and model definitions in Django, which were subsequently resolved.
+- Had to ensure proper normalization and integration of different data sources to maintain consistency.
+
+### Next Steps
+
+- Enhance the user interface with more interactive elements.
+- Implement the cost of living calculator feature.
+- Add user authentication and profile management capabilities.
+- Start working on the comparison feature to allow side-by-side country comparisons based on user-selected criteria.
+
+Thank you for choosing our Country Comparison App. We're here to help you make the right decision for your future home.
+
+
+
+
+
 # Choosing Preferences
 
 As a user, I want to select various factors that are important to me for my quality of life (like cost of living, safety, healthcare quality, climate), so that the app can provide me with a personalized list of countries that match my preferences.
