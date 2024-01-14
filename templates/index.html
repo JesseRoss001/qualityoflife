@@ -460,48 +460,51 @@ ModalLabel">Restaurant Price Index</h5>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Replace 'chartDataString' with the JSON string you pass from Django.
-            var chartDataString = '{{ chart_data|safe }}';
+            // Parse the JSON string passed from Django safely.
+            var chartDataString = '{{ chart_data|safe }}'; // Make sure this line is not causing the issue.
             var chartData;
-            
+        
             try {
-                chartData =
-        JSON.parse(chartDataString);
-        } catch (e) {
-        console.error("Parsing error:", e);
-        }function createChart(chartId, chartDataKey) {
-    var ctx = document.getElementById(chartId).getContext('2d');
-    new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: chartData[chartDataKey].labels,
-            datasets: [{
-                label: chartDataKey.replace(/_/g, ' ').toUpperCase(),
-                data: chartData[chartDataKey].data,
-                backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                borderColor: 'rgba(255, 99, 132, 1)',
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
+                chartData = JSON.parse(chartDataString);
+            } catch (e) {
+                console.error("Parsing error:", e);
+                return; // Stop execution if there's a parsing error.
             }
-        }
-    });
-}
-
-// Attach event listeners to modal buttons to trigger chart creation
-$('#overallRankModal').on('shown.bs.modal', function () {
-    createChart('overallRankChart', 'score');
-});
-
-// Repeat for other modals and corresponding chart IDs
-// ...
-});
-</script>
+        
+            function createChart(chartId, chartDataKey) {
+                var ctx = document.getElementById(chartId).getContext('2d');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: chartData[chartDataKey].labels,
+                        datasets: [{
+                            label: chartDataKey.replace(/_/g, ' ').toUpperCase(),
+                            data: chartData[chartDataKey].data,
+                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            }
+        
+            // Attach event listeners to modal buttons to trigger chart creation
+            $('#overallRankModal').on('shown.bs.modal', function () {
+                createChart('overallRankChart', 'score'); // Ensure 'score' is a key in chartData
+            });
+        
+            // Repeat for other modals and corresponding chart IDs
+            // ...
+        
+        });
+        </script>
       
         </body>
 

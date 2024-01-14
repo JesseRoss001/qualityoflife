@@ -1,0 +1,1815 @@
+Country/Region: Finland
+Score: 7.769
+GDP per Capita: 1.34
+Social Support: 1.587
+Healthy Life Expectancy: 0.986
+Freedom to Make Life Choices: 0.596
+Generosity: 0.153
+Perceptions of Corruption: 0.393
+Cost of Living Index: 73.2
+Rent Index: 25.95
+Cost of Living Plus Rent Index: 51.05
+Groceries Index: 65.16
+Restaurant Price Index: 77.65
+Local Purchasing Power Index: 91.02
+
+Country/Region: Denmark
+Score: 7.6
+GDP per Capita: 1.383
+Social Support: 1.573
+Healthy Life Expectancy: 0.996
+Freedom to Make Life Choices: 0.592
+Generosity: 0.252
+Perceptions of Corruption: 0.41
+Cost of Living Index: 84.12
+Rent Index: 33.23
+Cost of Living Plus Rent Index: 60.26
+Groceries Index: 68.6
+Restaurant Price Index: 98.75
+Local Purchasing Power Index: 99.45
+
+Country/Region: Norway
+Score: 7.554
+GDP per Capita: 1.488
+Social Support: 1.582
+Healthy Life Expectancy: 1.028
+Freedom to Make Life Choices: 0.603
+Generosity: 0.271
+Perceptions of Corruption: 0.341
+Cost of Living Index: 100.9
+Rent Index: 34.68
+Cost of Living Plus Rent Index: 69.86
+Groceries Index: 97.31
+Restaurant Price Index: 105.49
+Local Purchasing Power Index: 83.11
+
+Country/Region: Iceland
+Score: 7.494
+GDP per Capita: 1.38
+Social Support: 1.624
+Healthy Life Expectancy: 1.026
+Freedom to Make Life Choices: 0.591
+Generosity: 0.354
+Perceptions of Corruption: 0.118
+Cost of Living Index: 94.86
+Rent Index: 41.93
+Cost of Living Plus Rent Index: 70.05
+Groceries Index: 90.22
+Restaurant Price Index: 99.42
+Local Purchasing Power Index: 77.06
+
+Country/Region: Netherlands
+Score: 7.488
+GDP per Capita: 1.396
+Social Support: 1.522
+Healthy Life Expectancy: 0.999
+Freedom to Make Life Choices: 0.557
+Generosity: 0.322
+Perceptions of Corruption: 0.298
+Cost of Living Index: 75.66
+Rent Index: 36.06
+Cost of Living Plus Rent Index: 57.1
+Groceries Index: 65.49
+Restaurant Price Index: 76.35
+Local Purchasing Power Index: 87.99
+
+Country/Region: Switzerland
+Score: 7.48
+GDP per Capita: 1.452
+Social Support: 1.526
+Healthy Life Expectancy: 1.052
+Freedom to Make Life Choices: 0.572
+Generosity: 0.263
+Perceptions of Corruption: 0.343
+Cost of Living Index: 123.35
+Rent Index: 53.54
+Cost of Living Plus Rent Index: 90.62
+Groceries Index: 128.13
+Restaurant Price Index: 122.09
+Local Purchasing Power Index: 118.44
+
+Country/Region: Sweden
+Score: 7.343
+GDP per Capita: 1.387
+Social Support: 1.487
+Healthy Life Expectancy: 1.009
+Freedom to Make Life Choices: 0.574
+Generosity: 0.267
+Perceptions of Corruption: 0.373
+Cost of Living Index: 71.74
+Rent Index: 25.86
+Cost of Living Plus Rent Index: 50.23
+Groceries Index: 65.78
+Restaurant Price Index: 72.61
+Local Purchasing Power Index: 98.14
+
+Country/Region: New Zealand
+Score: 7.307
+GDP per Capita: 1.303
+Social Support: 1.557
+Healthy Life Expectancy: 1.026
+Freedom to Make Life Choices: 0.585
+Generosity: 0.33
+Perceptions of Corruption: 0.38
+Cost of Living Index: 74.52
+Rent Index: 34.44
+Cost of Living Plus Rent Index: 55.73
+Groceries Index: 72.04
+Restaurant Price Index: 70.05
+Local Purchasing Power Index: 83.63
+
+Country/Region: Canada
+Score: 7.278
+GDP per Capita: 1.365
+Social Support: 1.505
+Healthy Life Expectancy: 1.039
+Freedom to Make Life Choices: 0.584
+Generosity: 0.285
+Perceptions of Corruption: 0.308
+Cost of Living Index: 70.22
+Rent Index: 34.33
+Cost of Living Plus Rent Index: 53.4
+Groceries Index: 70.01
+Restaurant Price Index: 67.86
+Local Purchasing Power Index: 87.98
+
+Country/Region: Austria
+Score: 7.246
+GDP per Capita: 1.376
+Social Support: 1.475
+Healthy Life Expectancy: 1.016
+Freedom to Make Life Choices: 0.532
+Generosity: 0.244
+Perceptions of Corruption: 0.226
+Cost of Living Index: 71.04
+Rent Index: 27.13
+Cost of Living Plus Rent Index: 50.46
+Groceries Index: 65.88
+Restaurant Price Index: 66.03
+Local Purchasing Power Index: 77.25
+
+Country/Region: Australia
+Score: 7.228
+GDP per Capita: 1.372
+Social Support: 1.548
+Healthy Life Expectancy: 1.036
+Freedom to Make Life Choices: 0.557
+Generosity: 0.332
+Perceptions of Corruption: 0.29
+Cost of Living Index: 77.75
+Rent Index: 36.84
+Cost of Living Plus Rent Index: 58.57
+Groceries Index: 77.44
+Restaurant Price Index: 72.95
+Local Purchasing Power Index: 104.63
+
+Country/Region: Costa Rica
+Score: 7.167
+GDP per Capita: 1.034
+Social Support: 1.441
+Healthy Life Expectancy: 0.963
+Freedom to Make Life Choices: 0.558
+Generosity: 0.144
+Perceptions of Corruption: 0.093
+Cost of Living Index: 47.01
+Rent Index: 14.7
+Cost of Living Plus Rent Index: 31.87
+Groceries Index: 45.54
+Restaurant Price Index: 41.69
+Local Purchasing Power Index: 39.88
+
+Country/Region: Israel
+Score: 7.139
+GDP per Capita: 1.276
+Social Support: 1.455
+Healthy Life Expectancy: 1.029
+Freedom to Make Life Choices: 0.371
+Generosity: 0.261
+Perceptions of Corruption: 0.082
+Cost of Living Index: 88.05
+Rent Index: 33.94
+Cost of Living Plus Rent Index: 62.69
+Groceries Index: 76.72
+Restaurant Price Index: 95.31
+Local Purchasing Power Index: 75.58
+
+Country/Region: Luxembourg
+Score: 7.09
+GDP per Capita: 1.609
+Social Support: 1.479
+Healthy Life Expectancy: 1.012
+Freedom to Make Life Choices: 0.526
+Generosity: 0.194
+Perceptions of Corruption: 0.316
+Cost of Living Index: 80.5
+Rent Index: 60.09
+Cost of Living Plus Rent Index: 70.93
+Groceries Index: 74.75
+Restaurant Price Index: 88.79
+Local Purchasing Power Index: 98.84
+
+Country/Region: United Kingdom
+Score: 7.054
+GDP per Capita: 1.333
+Social Support: 1.538
+Healthy Life Expectancy: 0.996
+Freedom to Make Life Choices: 0.45
+Generosity: 0.348
+Perceptions of Corruption: 0.278
+Cost of Living Index: 69.65
+Rent Index: 31.84
+Cost of Living Plus Rent Index: 51.93
+Groceries Index: 56.58
+Restaurant Price Index: 76.79
+Local Purchasing Power Index: 88.78
+
+Country/Region: Ireland
+Score: 7.021
+GDP per Capita: 1.499
+Social Support: 1.553
+Healthy Life Expectancy: 0.999
+Freedom to Make Life Choices: 0.516
+Generosity: 0.298
+Perceptions of Corruption: 0.31
+Cost of Living Index: 76.05
+Rent Index: 42.08
+Cost of Living Plus Rent Index: 60.13
+Groceries Index: 62.1
+Restaurant Price Index: 80.4
+Local Purchasing Power Index: 82.27
+
+Country/Region: Germany
+Score: 6.985
+GDP per Capita: 1.373
+Social Support: 1.454
+Healthy Life Expectancy: 0.987
+Freedom to Make Life Choices: 0.495
+Generosity: 0.261
+Perceptions of Corruption: 0.265
+Cost of Living Index: 65.58
+Rent Index: 27.62
+Cost of Living Plus Rent Index: 47.78
+Groceries Index: 52.31
+Restaurant Price Index: 60.91
+Local Purchasing Power Index: 103.08
+
+Country/Region: Belgium
+Score: 6.923
+GDP per Capita: 1.356
+Social Support: 1.504
+Healthy Life Expectancy: 0.986
+Freedom to Make Life Choices: 0.473
+Generosity: 0.16
+Perceptions of Corruption: 0.21
+Cost of Living Index: 72.61
+Rent Index: 25.79
+Cost of Living Plus Rent Index: 50.67
+Groceries Index: 63.32
+Restaurant Price Index: 78.63
+Local Purchasing Power Index: 79.72
+
+Country/Region: United States
+Score: 6.892
+GDP per Capita: 1.433
+Social Support: 1.457
+Healthy Life Expectancy: 0.874
+Freedom to Make Life Choices: 0.454
+Generosity: 0.28
+Perceptions of Corruption: 0.128
+Cost of Living Index: 70.13
+Rent Index: 42.07
+Cost of Living Plus Rent Index: 56.98
+Groceries Index: 70.37
+Restaurant Price Index: 70.07
+Local Purchasing Power Index: 106.34
+
+Country/Region: Czech Republic
+Score: 6.852
+GDP per Capita: 1.269
+Social Support: 1.487
+Healthy Life Expectancy: 0.92
+Freedom to Make Life Choices: 0.457
+Generosity: 0.046
+Perceptions of Corruption: 0.036
+Cost of Living Index: 48.24
+Rent Index: 18.4
+Cost of Living Plus Rent Index: 34.25
+Groceries Index: 42.76
+Restaurant Price Index: 36.72
+Local Purchasing Power Index: 66.47
+
+Country/Region: United Arab Emirates
+Score: 6.825
+GDP per Capita: 1.503
+Social Support: 1.31
+Healthy Life Expectancy: 0.825
+Freedom to Make Life Choices: 0.598
+Generosity: 0.262
+Perceptions of Corruption: 0.182
+Cost of Living Index: 58.33
+Rent Index: 43.28
+Cost of Living Plus Rent Index: 51.28
+Groceries Index: 46.67
+Restaurant Price Index: 61.53
+Local Purchasing Power Index: 92.17
+
+Country/Region: Malta
+Score: 6.726
+GDP per Capita: 1.3
+Social Support: 1.52
+Healthy Life Expectancy: 0.999
+Freedom to Make Life Choices: 0.564
+Generosity: 0.375
+Perceptions of Corruption: 0.151
+Cost of Living Index: 67.84
+Rent Index: 29.72
+Cost of Living Plus Rent Index: 49.97
+Groceries Index: 59.59
+Restaurant Price Index: 72.42
+Local Purchasing Power Index: 44.18
+
+Country/Region: Mexico
+Score: 6.595
+GDP per Capita: 1.07
+Social Support: 1.323
+Healthy Life Expectancy: 0.861
+Freedom to Make Life Choices: 0.433
+Generosity: 0.074
+Perceptions of Corruption: 0.073
+Cost of Living Index: 35.35
+Rent Index: 12.55
+Cost of Living Plus Rent Index: 24.66
+Groceries Index: 34.82
+Restaurant Price Index: 32.67
+Local Purchasing Power Index: 38.62
+
+Country/Region: France
+Score: 6.592
+GDP per Capita: 1.324
+Social Support: 1.472
+Healthy Life Expectancy: 1.045
+Freedom to Make Life Choices: 0.436
+Generosity: 0.111
+Perceptions of Corruption: 0.183
+Cost of Living Index: 74.13
+Rent Index: 25.33
+Cost of Living Plus Rent Index: 51.26
+Groceries Index: 73.64
+Restaurant Price Index: 71.84
+Local Purchasing Power Index: 85.41
+
+Country/Region: Taiwan
+Score: 6.446
+GDP per Capita: 1.368
+Social Support: 1.43
+Healthy Life Expectancy: 0.914
+Freedom to Make Life Choices: 0.351
+Generosity: 0.242
+Perceptions of Corruption: 0.097
+Cost of Living Index: 62.35
+Rent Index: 17.69
+Cost of Living Plus Rent Index: 41.42
+Groceries Index: 76.19
+Restaurant Price Index: 29.42
+Local Purchasing Power Index: 58.35
+
+Country/Region: Chile
+Score: 6.444
+GDP per Capita: 1.159
+Social Support: 1.369
+Healthy Life Expectancy: 0.92
+Freedom to Make Life Choices: 0.357
+Generosity: 0.187
+Perceptions of Corruption: 0.056
+Cost of Living Index: 43.9
+Rent Index: 13.51
+Cost of Living Plus Rent Index: 29.66
+Groceries Index: 38.87
+Restaurant Price Index: 43.26
+Local Purchasing Power Index: 33.27
+
+Country/Region: Guatemala
+Score: 6.436
+GDP per Capita: 0.8
+Social Support: 1.269
+Healthy Life Expectancy: 0.746
+Freedom to Make Life Choices: 0.535
+Generosity: 0.175
+Perceptions of Corruption: 0.078
+Cost of Living Index: 43.49
+Rent Index: 15.6
+Cost of Living Plus Rent Index: 30.42
+Groceries Index: 41.92
+Restaurant Price Index: 32.59
+Local Purchasing Power Index: 26.35
+
+Country/Region: Saudi Arabia
+Score: 6.375
+GDP per Capita: 1.403
+Social Support: 1.357
+Healthy Life Expectancy: 0.795
+Freedom to Make Life Choices: 0.439
+Generosity: 0.08
+Perceptions of Corruption: 0.132
+Cost of Living Index: 50.41
+Rent Index: 11.67
+Cost of Living Plus Rent Index: 32.25
+Groceries Index: 42.57
+Restaurant Price Index: 35.5
+Local Purchasing Power Index: 91.85
+
+Country/Region: Qatar
+Score: 6.374
+GDP per Capita: 1.684
+Social Support: 1.313
+Healthy Life Expectancy: 0.871
+Freedom to Make Life Choices: 0.555
+Generosity: 0.22
+Perceptions of Corruption: 0.167
+Cost of Living Index: 62.81
+Rent Index: 48.2
+Cost of Living Plus Rent Index: 55.96
+Groceries Index: 54.97
+Restaurant Price Index: 63.01
+Local Purchasing Power Index: 93.67
+
+Country/Region: Spain
+Score: 6.354
+GDP per Capita: 1.286
+Social Support: 1.484
+Healthy Life Expectancy: 1.062
+Freedom to Make Life Choices: 0.362
+Generosity: 0.153
+Perceptions of Corruption: 0.079
+Cost of Living Index: 53.88
+Rent Index: 21.25
+Cost of Living Plus Rent Index: 38.58
+Groceries Index: 45.69
+Restaurant Price Index: 53.96
+Local Purchasing Power Index: 70.04
+
+Country/Region: Panama
+Score: 6.321
+GDP per Capita: 1.149
+Social Support: 1.442
+Healthy Life Expectancy: 0.91
+Freedom to Make Life Choices: 0.516
+Generosity: 0.109
+Perceptions of Corruption: 0.054
+Cost of Living Index: 51.43
+Rent Index: 21.75
+Cost of Living Plus Rent Index: 37.51
+Groceries Index: 52.16
+Restaurant Price Index: 43.38
+Local Purchasing Power Index: 33.09
+
+Country/Region: Brazil
+Score: 6.3
+GDP per Capita: 1.004
+Social Support: 1.439
+Healthy Life Expectancy: 0.802
+Freedom to Make Life Choices: 0.39
+Generosity: 0.099
+Perceptions of Corruption: 0.086
+Cost of Living Index: 33.24
+Rent Index: 8.27
+Cost of Living Plus Rent Index: 21.54
+Groceries Index: 28.16
+Restaurant Price Index: 25.24
+Local Purchasing Power Index: 27.85
+
+Country/Region: Uruguay
+Score: 6.293
+GDP per Capita: 1.124
+Social Support: 1.465
+Healthy Life Expectancy: 0.891
+Freedom to Make Life Choices: 0.523
+Generosity: 0.127
+Perceptions of Corruption: 0.15
+Cost of Living Index: 52.07
+Rent Index: 13.93
+Cost of Living Plus Rent Index: 34.19
+Groceries Index: 44.01
+Restaurant Price Index: 49.39
+Local Purchasing Power Index: 30.07
+
+Country/Region: Singapore
+Score: 6.262
+GDP per Capita: 1.572
+Social Support: 1.463
+Healthy Life Expectancy: 1.141
+Freedom to Make Life Choices: 0.556
+Generosity: 0.271
+Perceptions of Corruption: 0.453
+Cost of Living Index: 83.98
+Rent Index: 66.43
+Cost of Living Plus Rent Index: 75.75
+Groceries Index: 77.08
+Restaurant Price Index: 61.17
+Local Purchasing Power Index: 91.34
+
+Country/Region: El Salvador
+Score: 6.253
+GDP per Capita: 0.794
+Social Support: 1.242
+Healthy Life Expectancy: 0.789
+Freedom to Make Life Choices: 0.43
+Generosity: 0.093
+Perceptions of Corruption: 0.074
+Cost of Living Index: 44.37
+Rent Index: 13.19
+Cost of Living Plus Rent Index: 29.75
+Groceries Index: 44.32
+Restaurant Price Index: 35.47
+Local Purchasing Power Index: 21.17
+
+Country/Region: Italy
+Score: 6.223
+GDP per Capita: 1.294
+Social Support: 1.488
+Healthy Life Expectancy: 1.039
+Freedom to Make Life Choices: 0.231
+Generosity: 0.158
+Perceptions of Corruption: 0.03
+Cost of Living Index: 66.47
+Rent Index: 20.55
+Cost of Living Plus Rent Index: 44.95
+Groceries Index: 57.95
+Restaurant Price Index: 70.58
+Local Purchasing Power Index: 61.74
+
+Country/Region: Bahrain
+Score: 6.199
+GDP per Capita: 1.362
+Social Support: 1.368
+Healthy Life Expectancy: 0.871
+Freedom to Make Life Choices: 0.536
+Generosity: 0.255
+Perceptions of Corruption: 0.11
+Cost of Living Index: 54.77
+Rent Index: 29.22
+Cost of Living Plus Rent Index: 42.79
+Groceries Index: 44.59
+Restaurant Price Index: 48.94
+Local Purchasing Power Index: 61.41
+
+Country/Region: Slovakia
+Score: 6.198
+GDP per Capita: 1.246
+Social Support: 1.504
+Healthy Life Expectancy: 0.881
+Freedom to Make Life Choices: 0.334
+Generosity: 0.121
+Perceptions of Corruption: 0.014
+Cost of Living Index: 44.68
+Rent Index: 16.11
+Cost of Living Plus Rent Index: 31.29
+Groceries Index: 39.74
+Restaurant Price Index: 36.08
+Local Purchasing Power Index: 54.7
+
+Country/Region: Poland
+Score: 6.182
+GDP per Capita: 1.206
+Social Support: 1.438
+Healthy Life Expectancy: 0.884
+Freedom to Make Life Choices: 0.483
+Generosity: 0.117
+Perceptions of Corruption: 0.05
+Cost of Living Index: 38.95
+Rent Index: 14.45
+Cost of Living Plus Rent Index: 27.46
+Groceries Index: 32.42
+Restaurant Price Index: 33.52
+Local Purchasing Power Index: 59.95
+
+Country/Region: Uzbekistan
+Score: 6.174
+GDP per Capita: 0.745
+Social Support: 1.529
+Healthy Life Expectancy: 0.756
+Freedom to Make Life Choices: 0.631
+Generosity: 0.322
+Perceptions of Corruption: 0.24
+Cost of Living Index: 27.31
+Rent Index: 9.29
+Cost of Living Plus Rent Index: 18.86
+Groceries Index: 26.83
+Restaurant Price Index: 24.22
+Local Purchasing Power Index: 22.37
+
+Country/Region: Lithuania
+Score: 6.149
+GDP per Capita: 1.238
+Social Support: 1.515
+Healthy Life Expectancy: 0.818
+Freedom to Make Life Choices: 0.291
+Generosity: 0.043
+Perceptions of Corruption: 0.042
+Cost of Living Index: 45.65
+Rent Index: 15.01
+Cost of Living Plus Rent Index: 31.29
+Groceries Index: 36.18
+Restaurant Price Index: 46.64
+Local Purchasing Power Index: 58.74
+
+Country/Region: Colombia
+Score: 6.125
+GDP per Capita: 0.985
+Social Support: 1.41
+Healthy Life Expectancy: 0.841
+Freedom to Make Life Choices: 0.47
+Generosity: 0.099
+Perceptions of Corruption: 0.034
+Cost of Living Index: 26.72
+Rent Index: 8.18
+Cost of Living Plus Rent Index: 18.03
+Groceries Index: 23.47
+Restaurant Price Index: 19.44
+Local Purchasing Power Index: 28.85
+
+Country/Region: Slovenia
+Score: 6.118
+GDP per Capita: 1.258
+Social Support: 1.523
+Healthy Life Expectancy: 0.953
+Freedom to Make Life Choices: 0.564
+Generosity: 0.144
+Perceptions of Corruption: 0.057
+Cost of Living Index: 53.88
+Rent Index: 17.9
+Cost of Living Plus Rent Index: 37.01
+Groceries Index: 47.71
+Restaurant Price Index: 46.74
+Local Purchasing Power Index: 59.48
+
+Country/Region: Nicaragua
+Score: 6.105
+GDP per Capita: 0.694
+Social Support: 1.325
+Healthy Life Expectancy: 0.835
+Freedom to Make Life Choices: 0.435
+Generosity: 0.2
+Perceptions of Corruption: 0.127
+Cost of Living Index: 39.64
+Rent Index: 8.68
+Cost of Living Plus Rent Index: 25.13
+Groceries Index: 38.13
+Restaurant Price Index: 27.51
+Local Purchasing Power Index: 17.63
+
+Country/Region: Argentina
+Score: 6.086
+GDP per Capita: 1.092
+Social Support: 1.432
+Healthy Life Expectancy: 0.881
+Freedom to Make Life Choices: 0.471
+Generosity: 0.066
+Perceptions of Corruption: 0.05
+Cost of Living Index: 34.69
+Rent Index: 7.71
+Cost of Living Plus Rent Index: 22.04
+Groceries Index: 28.17
+Restaurant Price Index: 33.32
+Local Purchasing Power Index: 30.72
+
+Country/Region: Romania
+Score: 6.07
+GDP per Capita: 1.162
+Social Support: 1.232
+Healthy Life Expectancy: 0.825
+Freedom to Make Life Choices: 0.462
+Generosity: 0.083
+Perceptions of Corruption: 0.005
+Cost of Living Index: 35.24
+Rent Index: 10.17
+Cost of Living Plus Rent Index: 23.49
+Groceries Index: 31.38
+Restaurant Price Index: 30.02
+Local Purchasing Power Index: 48.12
+
+Country/Region: Cyprus
+Score: 6.046
+GDP per Capita: 1.263
+Social Support: 1.223
+Healthy Life Expectancy: 1.042
+Freedom to Make Life Choices: 0.406
+Generosity: 0.19
+Perceptions of Corruption: 0.041
+Cost of Living Index: 59.03
+Rent Index: 22.36
+Cost of Living Plus Rent Index: 41.84
+Groceries Index: 49.2
+Restaurant Price Index: 61.15
+Local Purchasing Power Index: 57.31
+
+Country/Region: Ecuador
+Score: 6.028
+GDP per Capita: 0.912
+Social Support: 1.312
+Healthy Life Expectancy: 0.868
+Freedom to Make Life Choices: 0.498
+Generosity: 0.126
+Perceptions of Corruption: 0.087
+Cost of Living Index: 37.34
+Rent Index: 11.28
+Cost of Living Plus Rent Index: 25.12
+Groceries Index: 34.49
+Restaurant Price Index: 28.55
+Local Purchasing Power Index: 31.76
+
+Country/Region: Kuwait
+Score: 6.021
+GDP per Capita: 1.5
+Social Support: 1.319
+Healthy Life Expectancy: 0.808
+Freedom to Make Life Choices: 0.493
+Generosity: 0.142
+Perceptions of Corruption: 0.097
+Cost of Living Index: 48.68
+Rent Index: 31.31
+Cost of Living Plus Rent Index: 40.54
+Groceries Index: 35.63
+Restaurant Price Index: 47.48
+Local Purchasing Power Index: 78.57
+
+Country/Region: Thailand
+Score: 6.008
+GDP per Capita: 1.05
+Social Support: 1.409
+Healthy Life Expectancy: 0.828
+Freedom to Make Life Choices: 0.557
+Generosity: 0.359
+Perceptions of Corruption: 0.028
+Cost of Living Index: 43.21
+Rent Index: 14.69
+Cost of Living Plus Rent Index: 29.84
+Groceries Index: 45.15
+Restaurant Price Index: 22.59
+Local Purchasing Power Index: 31.56
+
+Country/Region: Latvia
+Score: 5.94
+GDP per Capita: 1.187
+Social Support: 1.465
+Healthy Life Expectancy: 0.812
+Freedom to Make Life Choices: 0.264
+Generosity: 0.075
+Perceptions of Corruption: 0.064
+Cost of Living Index: 48.45
+Rent Index: 11.77
+Cost of Living Plus Rent Index: 31.26
+Groceries Index: 38.37
+Restaurant Price Index: 42.1
+Local Purchasing Power Index: 51.65
+
+Country/Region: South Korea
+Score: 5.895
+GDP per Capita: 1.301
+Social Support: 1.219
+Healthy Life Expectancy: 1.036
+Freedom to Make Life Choices: 0.159
+Generosity: 0.175
+Perceptions of Corruption: 0.056
+Cost of Living Index: 73.22
+Rent Index: 20.02
+Cost of Living Plus Rent Index: 48.28
+Groceries Index: 91.95
+Restaurant Price Index: 42.1
+Local Purchasing Power Index: 76.85
+
+Country/Region: Estonia
+Score: 5.893
+GDP per Capita: 1.237
+Social Support: 1.528
+Healthy Life Expectancy: 0.874
+Freedom to Make Life Choices: 0.495
+Generosity: 0.103
+Perceptions of Corruption: 0.161
+Cost of Living Index: 53.68
+Rent Index: 16.37
+Cost of Living Plus Rent Index: 36.19
+Groceries Index: 42.29
+Restaurant Price Index: 56.43
+Local Purchasing Power Index: 63.46
+
+Country/Region: Jamaica
+Score: 5.89
+GDP per Capita: 0.831
+Social Support: 1.478
+Healthy Life Expectancy: 0.831
+Freedom to Make Life Choices: 0.49
+Generosity: 0.107
+Perceptions of Corruption: 0.028
+Cost of Living Index: 49.67
+Rent Index: 15.1
+Cost of Living Plus Rent Index: 33.46
+Groceries Index: 53.41
+Restaurant Price Index: 35.04
+Local Purchasing Power Index: 30.25
+
+Country/Region: Mauritius
+Score: 5.888
+GDP per Capita: 1.12
+Social Support: 1.402
+Healthy Life Expectancy: 0.798
+Freedom to Make Life Choices: 0.498
+Generosity: 0.215
+Perceptions of Corruption: 0.06
+Cost of Living Index: 44.08
+Rent Index: 10.95
+Cost of Living Plus Rent Index: 28.55
+Groceries Index: 45.61
+Restaurant Price Index: 33.44
+Local Purchasing Power Index: 29.62
+
+Country/Region: Japan
+Score: 5.886
+GDP per Capita: 1.327
+Social Support: 1.419
+Healthy Life Expectancy: 1.088
+Freedom to Make Life Choices: 0.445
+Generosity: 0.069
+Perceptions of Corruption: 0.14
+Cost of Living Index: 77.03
+Rent Index: 25.86
+Cost of Living Plus Rent Index: 53.04
+Groceries Index: 81.31
+Restaurant Price Index: 45.4
+Local Purchasing Power Index: 87.11
+
+Country/Region: Honduras
+Score: 5.86
+GDP per Capita: 0.642
+Social Support: 1.236
+Healthy Life Expectancy: 0.828
+Freedom to Make Life Choices: 0.507
+Generosity: 0.246
+Perceptions of Corruption: 0.078
+Cost of Living Index: 40.46
+Rent Index: 10.28
+Cost of Living Plus Rent Index: 26.31
+Groceries Index: 34.73
+Restaurant Price Index: 28.67
+Local Purchasing Power Index: 32.09
+
+Country/Region: Kazakhstan
+Score: 5.809
+GDP per Capita: 1.173
+Social Support: 1.508
+Healthy Life Expectancy: 0.729
+Freedom to Make Life Choices: 0.41
+Generosity: 0.146
+Perceptions of Corruption: 0.096
+Cost of Living Index: 28.68
+Rent Index: 9.44
+Cost of Living Plus Rent Index: 19.66
+Groceries Index: 25.35
+Restaurant Price Index: 27.24
+Local Purchasing Power Index: 32.23
+
+Country/Region: Bolivia
+Score: 5.779
+GDP per Capita: 0.776
+Social Support: 1.209
+Healthy Life Expectancy: 0.706
+Freedom to Make Life Choices: 0.511
+Generosity: 0.137
+Perceptions of Corruption: 0.064
+Cost of Living Index: 34.77
+Rent Index: 10.18
+Cost of Living Plus Rent Index: 23.24
+Groceries Index: 31.26
+Restaurant Price Index: 24.97
+Local Purchasing Power Index: 36.04
+
+Country/Region: Hungary
+Score: 5.758
+GDP per Capita: 1.201
+Social Support: 1.41
+Healthy Life Expectancy: 0.828
+Freedom to Make Life Choices: 0.199
+Generosity: 0.081
+Perceptions of Corruption: 0.02
+Cost of Living Index: 40.66
+Rent Index: 11.91
+Cost of Living Plus Rent Index: 27.18
+Groceries Index: 35.19
+Restaurant Price Index: 32.82
+Local Purchasing Power Index: 51.98
+
+Country/Region: Paraguay
+Score: 5.743
+GDP per Capita: 0.855
+Social Support: 1.475
+Healthy Life Expectancy: 0.777
+Freedom to Make Life Choices: 0.514
+Generosity: 0.184
+Perceptions of Corruption: 0.08
+Cost of Living Index: 30.2
+Rent Index: 10.04
+Cost of Living Plus Rent Index: 20.75
+Groceries Index: 25.45
+Restaurant Price Index: 24.19
+Local Purchasing Power Index: 26.08
+
+Country/Region: Peru
+Score: 5.697
+GDP per Capita: 0.96
+Social Support: 1.274
+Healthy Life Expectancy: 0.854
+Freedom to Make Life Choices: 0.455
+Generosity: 0.083
+Perceptions of Corruption: 0.027
+Cost of Living Index: 32.53
+Rent Index: 11.22
+Cost of Living Plus Rent Index: 22.54
+Groceries Index: 30.71
+Restaurant Price Index: 21.53
+Local Purchasing Power Index: 28.17
+
+Country/Region: Portugal
+Score: 5.693
+GDP per Capita: 1.221
+Social Support: 1.431
+Healthy Life Expectancy: 0.999
+Freedom to Make Life Choices: 0.508
+Generosity: 0.047
+Perceptions of Corruption: 0.025
+Cost of Living Index: 47.94
+Rent Index: 20.73
+Cost of Living Plus Rent Index: 35.19
+Groceries Index: 39.01
+Restaurant Price Index: 40.26
+Local Purchasing Power Index: 46.8
+
+Country/Region: Pakistan
+Score: 5.653
+GDP per Capita: 0.677
+Social Support: 0.886
+Healthy Life Expectancy: 0.535
+Freedom to Make Life Choices: 0.313
+Generosity: 0.22
+Perceptions of Corruption: 0.098
+Cost of Living Index: 19.92
+Rent Index: 3.91
+Cost of Living Plus Rent Index: 12.42
+Groceries Index: 17.81
+Restaurant Price Index: 15.54
+Local Purchasing Power Index: 26.63
+
+Country/Region: Russia
+Score: 5.648
+GDP per Capita: 1.183
+Social Support: 1.452
+Healthy Life Expectancy: 0.726
+Freedom to Make Life Choices: 0.334
+Generosity: 0.082
+Perceptions of Corruption: 0.031
+Cost of Living Index: 35.26
+Rent Index: 13.09
+Cost of Living Plus Rent Index: 24.87
+Groceries Index: 29.86
+Restaurant Price Index: 34.56
+Local Purchasing Power Index: 37.41
+
+Country/Region: Philippines
+Score: 5.631
+GDP per Capita: 0.807
+Social Support: 1.293
+Healthy Life Expectancy: 0.657
+Freedom to Make Life Choices: 0.558
+Generosity: 0.117
+Perceptions of Corruption: 0.107
+Cost of Living Index: 37.06
+Rent Index: 9.59
+Cost of Living Plus Rent Index: 24.18
+Groceries Index: 37.84
+Restaurant Price Index: 20.61
+Local Purchasing Power Index: 21.47
+
+Country/Region: Serbia
+Score: 5.603
+GDP per Capita: 1.004
+Social Support: 1.383
+Healthy Life Expectancy: 0.854
+Freedom to Make Life Choices: 0.282
+Generosity: 0.137
+Perceptions of Corruption: 0.039
+Cost of Living Index: 36.21
+Rent Index: 8.73
+Cost of Living Plus Rent Index: 23.33
+Groceries Index: 28.18
+Restaurant Price Index: 29.24
+Local Purchasing Power Index: 37.83
+
+Country/Region: Moldova
+Score: 5.529
+GDP per Capita: 0.685
+Social Support: 1.328
+Healthy Life Expectancy: 0.739
+Freedom to Make Life Choices: 0.245
+Generosity: 0.181
+Perceptions of Corruption: 0.0
+Cost of Living Index: 30.35
+Rent Index: 8.7
+Cost of Living Plus Rent Index: 20.2
+Groceries Index: 24.96
+Restaurant Price Index: 27.1
+Local Purchasing Power Index: 33.43
+
+Country/Region: Libya
+Score: 5.525
+GDP per Capita: 1.044
+Social Support: 1.303
+Healthy Life Expectancy: 0.673
+Freedom to Make Life Choices: 0.416
+Generosity: 0.133
+Perceptions of Corruption: 0.152
+Cost of Living Index: 48.35
+Rent Index: 12.89
+Cost of Living Plus Rent Index: 31.73
+Groceries Index: 54.03
+Restaurant Price Index: 34.1
+Local Purchasing Power Index: 33.25
+
+Country/Region: Montenegro
+Score: 5.523
+GDP per Capita: 1.051
+Social Support: 1.361
+Healthy Life Expectancy: 0.871
+Freedom to Make Life Choices: 0.197
+Generosity: 0.142
+Perceptions of Corruption: 0.08
+Cost of Living Index: 38.95
+Rent Index: 12.87
+Cost of Living Plus Rent Index: 26.72
+Groceries Index: 31.76
+Restaurant Price Index: 33.22
+Local Purchasing Power Index: 34.19
+
+Country/Region: Croatia
+Score: 5.432
+GDP per Capita: 1.155
+Social Support: 1.266
+Healthy Life Expectancy: 0.914
+Freedom to Make Life Choices: 0.296
+Generosity: 0.119
+Perceptions of Corruption: 0.022
+Cost of Living Index: 48.94
+Rent Index: 13.38
+Cost of Living Plus Rent Index: 32.27
+Groceries Index: 41.98
+Restaurant Price Index: 41.29
+Local Purchasing Power Index: 47.55
+
+Country/Region: Hong Kong
+Score: 5.43
+GDP per Capita: 1.438
+Social Support: 1.277
+Healthy Life Expectancy: 1.122
+Freedom to Make Life Choices: 0.44
+Generosity: 0.258
+Perceptions of Corruption: 0.287
+Cost of Living Index: 80.71
+Rent Index: 74.57
+Cost of Living Plus Rent Index: 77.83
+Groceries Index: 84.72
+Restaurant Price Index: 58.58
+Local Purchasing Power Index: 65.74
+
+Country/Region: Dominican Republic
+Score: 5.425
+GDP per Capita: 1.015
+Social Support: 1.401
+Healthy Life Expectancy: 0.779
+Freedom to Make Life Choices: 0.497
+Generosity: 0.113
+Perceptions of Corruption: 0.101
+Cost of Living Index: 41.77
+Rent Index: 9.59
+Cost of Living Plus Rent Index: 26.68
+Groceries Index: 38.45
+Restaurant Price Index: 34.3
+Local Purchasing Power Index: 21.07
+
+Country/Region: Turkey
+Score: 5.373
+GDP per Capita: 1.183
+Social Support: 1.36
+Healthy Life Expectancy: 0.808
+Freedom to Make Life Choices: 0.195
+Generosity: 0.083
+Perceptions of Corruption: 0.106
+Cost of Living Index: 28.31
+Rent Index: 6.63
+Cost of Living Plus Rent Index: 18.15
+Groceries Index: 22.64
+Restaurant Price Index: 18.4
+Local Purchasing Power Index: 32.88
+
+Country/Region: Malaysia
+Score: 5.339
+GDP per Capita: 1.221
+Social Support: 1.171
+Healthy Life Expectancy: 0.828
+Freedom to Make Life Choices: 0.508
+Generosity: 0.26
+Perceptions of Corruption: 0.024
+Cost of Living Index: 37.02
+Rent Index: 9.87
+Cost of Living Plus Rent Index: 24.29
+Groceries Index: 39.45
+Restaurant Price Index: 20.84
+Local Purchasing Power Index: 55.3
+
+Country/Region: Belarus
+Score: 5.323
+GDP per Capita: 1.067
+Social Support: 1.465
+Healthy Life Expectancy: 0.789
+Freedom to Make Life Choices: 0.235
+Generosity: 0.094
+Perceptions of Corruption: 0.142
+Cost of Living Index: 30.89
+Rent Index: 9.81
+Cost of Living Plus Rent Index: 21.01
+Groceries Index: 27.24
+Restaurant Price Index: 31.64
+Local Purchasing Power Index: 31.78
+
+Country/Region: Greece
+Score: 5.287
+GDP per Capita: 1.181
+Social Support: 1.156
+Healthy Life Expectancy: 0.999
+Freedom to Make Life Choices: 0.067
+Generosity: 0.0
+Perceptions of Corruption: 0.034
+Cost of Living Index: 56.22
+Rent Index: 12.68
+Cost of Living Plus Rent Index: 35.81
+Groceries Index: 44.73
+Restaurant Price Index: 52.19
+Local Purchasing Power Index: 39.73
+
+Country/Region: Mongolia
+Score: 5.285
+GDP per Capita: 0.948
+Social Support: 1.531
+Healthy Life Expectancy: 0.667
+Freedom to Make Life Choices: 0.317
+Generosity: 0.235
+Perceptions of Corruption: 0.038
+Cost of Living Index: 34.74
+Rent Index: 11.22
+Cost of Living Plus Rent Index: 23.72
+Groceries Index: 36.14
+Restaurant Price Index: 22.8
+Local Purchasing Power Index: 24.34
+
+Country/Region: North Macedonia
+Score: 5.274
+GDP per Capita: 0.983
+Social Support: 1.294
+Healthy Life Expectancy: 0.838
+Freedom to Make Life Choices: 0.345
+Generosity: 0.185
+Perceptions of Corruption: 0.034
+Cost of Living Index: 31.38
+Rent Index: 6.06
+Cost of Living Plus Rent Index: 19.51
+Groceries Index: 26.95
+Restaurant Price Index: 21.02
+Local Purchasing Power Index: 35.44
+
+Country/Region: Nigeria
+Score: 5.265
+GDP per Capita: 0.696
+Social Support: 1.111
+Healthy Life Expectancy: 0.245
+Freedom to Make Life Choices: 0.426
+Generosity: 0.215
+Perceptions of Corruption: 0.041
+Cost of Living Index: 30.49
+Rent Index: 35.99
+Cost of Living Plus Rent Index: 33.07
+Groceries Index: 33.65
+Restaurant Price Index: 20.92
+Local Purchasing Power Index: 9.34
+
+Country/Region: Algeria
+Score: 5.211
+GDP per Capita: 1.002
+Social Support: 1.16
+Healthy Life Expectancy: 0.785
+Freedom to Make Life Choices: 0.086
+Generosity: 0.073
+Perceptions of Corruption: 0.114
+Cost of Living Index: 26.87
+Rent Index: 4.59
+Cost of Living Plus Rent Index: 16.43
+Groceries Index: 28.82
+Restaurant Price Index: 14.48
+Local Purchasing Power Index: 24.63
+
+Country/Region: Morocco
+Score: 5.208
+GDP per Capita: 0.801
+Social Support: 0.782
+Healthy Life Expectancy: 0.782
+Freedom to Make Life Choices: 0.418
+Generosity: 0.036
+Perceptions of Corruption: 0.076
+Cost of Living Index: 33.83
+Rent Index: 8.98
+Cost of Living Plus Rent Index: 22.18
+Groceries Index: 30.63
+Restaurant Price Index: 24.52
+Local Purchasing Power Index: 34.36
+
+Country/Region: Azerbaijan
+Score: 5.208
+GDP per Capita: 1.043
+Social Support: 1.147
+Healthy Life Expectancy: 0.769
+Freedom to Make Life Choices: 0.351
+Generosity: 0.035
+Perceptions of Corruption: 0.182
+Cost of Living Index: 29.73
+Rent Index: 7.86
+Cost of Living Plus Rent Index: 19.48
+Groceries Index: 26.57
+Restaurant Price Index: 26.73
+Local Purchasing Power Index: 27.26
+
+Country/Region: Lebanon
+Score: 5.197
+GDP per Capita: 0.987
+Social Support: 1.224
+Healthy Life Expectancy: 0.815
+Freedom to Make Life Choices: 0.216
+Generosity: 0.166
+Perceptions of Corruption: 0.027
+Cost of Living Index: 69.62
+Rent Index: 24.81
+Cost of Living Plus Rent Index: 48.61
+Groceries Index: 66.83
+Restaurant Price Index: 54.25
+Local Purchasing Power Index: 35.12
+
+Country/Region: Indonesia
+Score: 5.192
+GDP per Capita: 0.931
+Social Support: 1.203
+Healthy Life Expectancy: 0.66
+Freedom to Make Life Choices: 0.491
+Generosity: 0.498
+Perceptions of Corruption: 0.028
+Cost of Living Index: 35.85
+Rent Index: 9.82
+Cost of Living Plus Rent Index: 23.65
+Groceries Index: 38.29
+Restaurant Price Index: 17.74
+Local Purchasing Power Index: 21.07
+
+Country/Region: China
+Score: 5.191
+GDP per Capita: 1.029
+Social Support: 1.125
+Healthy Life Expectancy: 0.893
+Freedom to Make Life Choices: 0.521
+Generosity: 0.058
+Perceptions of Corruption: 0.1
+Cost of Living Index: 41.77
+Rent Index: 16.53
+Cost of Living Plus Rent Index: 29.93
+Groceries Index: 46.01
+Restaurant Price Index: 28.37
+Local Purchasing Power Index: 59.99
+
+Country/Region: Vietnam
+Score: 5.175
+GDP per Capita: 0.741
+Social Support: 1.346
+Healthy Life Expectancy: 0.851
+Freedom to Make Life Choices: 0.543
+Generosity: 0.147
+Perceptions of Corruption: 0.073
+Cost of Living Index: 37.48
+Rent Index: 13.22
+Cost of Living Plus Rent Index: 26.11
+Groceries Index: 38.7
+Restaurant Price Index: 19.98
+Local Purchasing Power Index: 29.38
+
+Country/Region: Cameroon
+Score: 5.044
+GDP per Capita: 0.549
+Social Support: 0.91
+Healthy Life Expectancy: 0.331
+Freedom to Make Life Choices: 0.381
+Generosity: 0.187
+Perceptions of Corruption: 0.037
+Cost of Living Index: 39.48
+Rent Index: 6.91
+Cost of Living Plus Rent Index: 24.22
+Groceries Index: 40.41
+Restaurant Price Index: 26.33
+Local Purchasing Power Index: 15.37
+
+Country/Region: Bulgaria
+Score: 5.011
+GDP per Capita: 1.092
+Social Support: 1.513
+Healthy Life Expectancy: 0.815
+Freedom to Make Life Choices: 0.311
+Generosity: 0.081
+Perceptions of Corruption: 0.004
+Cost of Living Index: 38.38
+Rent Index: 9.07
+Cost of Living Plus Rent Index: 24.64
+Groceries Index: 34.02
+Restaurant Price Index: 32.44
+Local Purchasing Power Index: 45.96
+
+Country/Region: Ghana
+Score: 4.996
+GDP per Capita: 0.611
+Social Support: 0.868
+Healthy Life Expectancy: 0.486
+Freedom to Make Life Choices: 0.381
+Generosity: 0.245
+Perceptions of Corruption: 0.04
+Cost of Living Index: 36.2
+Rent Index: 19.31
+Cost of Living Plus Rent Index: 28.28
+Groceries Index: 37.53
+Restaurant Price Index: 30.06
+Local Purchasing Power Index: 16.82
+
+Country/Region: Ivory Coast
+Score: 4.944
+GDP per Capita: 0.569
+Social Support: 0.808
+Healthy Life Expectancy: 0.232
+Freedom to Make Life Choices: 0.352
+Generosity: 0.154
+Perceptions of Corruption: 0.09
+Cost of Living Index: 47.03
+Rent Index: 17.68
+Cost of Living Plus Rent Index: 33.27
+Groceries Index: 40.22
+Restaurant Price Index: 31.99
+Local Purchasing Power Index: 6.92
+
+Country/Region: Nepal
+Score: 4.913
+GDP per Capita: 0.446
+Social Support: 1.226
+Healthy Life Expectancy: 0.677
+Freedom to Make Life Choices: 0.439
+Generosity: 0.285
+Perceptions of Corruption: 0.089
+Cost of Living Index: 28.29
+Rent Index: 3.96
+Cost of Living Plus Rent Index: 16.89
+Groceries Index: 26.45
+Restaurant Price Index: 20.41
+Local Purchasing Power Index: 22.96
+
+Country/Region: Jordan
+Score: 4.906
+GDP per Capita: 0.837
+Social Support: 1.225
+Healthy Life Expectancy: 0.815
+Freedom to Make Life Choices: 0.383
+Generosity: 0.11
+Perceptions of Corruption: 0.13
+Cost of Living Index: 49.19
+Rent Index: 9.23
+Cost of Living Plus Rent Index: 30.46
+Groceries Index: 40.81
+Restaurant Price Index: 41.16
+Local Purchasing Power Index: 31.34
+
+Country/Region: South Africa
+Score: 4.722
+GDP per Capita: 0.96
+Social Support: 1.351
+Healthy Life Expectancy: 0.469
+Freedom to Make Life Choices: 0.389
+Generosity: 0.13
+Perceptions of Corruption: 0.055
+Cost of Living Index: 42.09
+Rent Index: 16.6
+Cost of Living Plus Rent Index: 30.14
+Groceries Index: 34.78
+Restaurant Price Index: 41.33
+Local Purchasing Power Index: 78.36
+
+Country/Region: Albania
+Score: 4.719
+GDP per Capita: 0.947
+Social Support: 0.848
+Healthy Life Expectancy: 0.874
+Freedom to Make Life Choices: 0.383
+Generosity: 0.178
+Perceptions of Corruption: 0.027
+Cost of Living Index: 35.5
+Rent Index: 8.47
+Cost of Living Plus Rent Index: 22.83
+Groceries Index: 29.32
+Restaurant Price Index: 25.82
+Local Purchasing Power Index: 30.19
+
+Country/Region: Venezuela
+Score: 4.707
+GDP per Capita: 0.96
+Social Support: 1.427
+Healthy Life Expectancy: 0.805
+Freedom to Make Life Choices: 0.154
+Generosity: 0.064
+Perceptions of Corruption: 0.047
+Cost of Living Index: 43.2
+Rent Index: 9.99
+Cost of Living Plus Rent Index: 27.63
+Groceries Index: 37.34
+Restaurant Price Index: 46.23
+Local Purchasing Power Index: 15.41
+
+Country/Region: Cambodia
+Score: 4.7
+GDP per Capita: 0.574
+Social Support: 1.122
+Healthy Life Expectancy: 0.637
+Freedom to Make Life Choices: 0.609
+Generosity: 0.232
+Perceptions of Corruption: 0.062
+Cost of Living Index: 49.11
+Rent Index: 15.68
+Cost of Living Plus Rent Index: 33.44
+Groceries Index: 50.61
+Restaurant Price Index: 22.9
+Local Purchasing Power Index: 13.32
+
+Country/Region: Senegal
+Score: 4.681
+GDP per Capita: 0.45
+Social Support: 1.134
+Healthy Life Expectancy: 0.571
+Freedom to Make Life Choices: 0.292
+Generosity: 0.153
+Perceptions of Corruption: 0.072
+Cost of Living Index: 50.25
+Rent Index: 22.97
+Cost of Living Plus Rent Index: 37.46
+Groceries Index: 42.17
+Restaurant Price Index: 46.22
+Local Purchasing Power Index: 23.45
+
+Country/Region: Somalia
+Score: 4.668
+GDP per Capita: 0.0
+Social Support: 0.698
+Healthy Life Expectancy: 0.268
+Freedom to Make Life Choices: 0.559
+Generosity: 0.243
+Perceptions of Corruption: 0.27
+Cost of Living Index: 34.58
+Rent Index: 5.16
+Cost of Living Plus Rent Index: 20.79
+Groceries Index: 39.39
+Restaurant Price Index: 26.65
+Local Purchasing Power Index: 29.4
+
+Country/Region: Armenia
+Score: 4.559
+GDP per Capita: 0.85
+Social Support: 1.055
+Healthy Life Expectancy: 0.815
+Freedom to Make Life Choices: 0.283
+Generosity: 0.095
+Perceptions of Corruption: 0.064
+Cost of Living Index: 33.89
+Rent Index: 11.61
+Cost of Living Plus Rent Index: 23.45
+Groceries Index: 27.59
+Restaurant Price Index: 30.55
+Local Purchasing Power Index: 28.86
+
+Country/Region: Iran
+Score: 4.548
+GDP per Capita: 1.1
+Social Support: 0.842
+Healthy Life Expectancy: 0.785
+Freedom to Make Life Choices: 0.305
+Generosity: 0.27
+Perceptions of Corruption: 0.125
+Cost of Living Index: 37.39
+Rent Index: 17.05
+Cost of Living Plus Rent Index: 27.85
+Groceries Index: 29.46
+Restaurant Price Index: 25.18
+Local Purchasing Power Index: 17.98
+
+Country/Region: Georgia
+Score: 4.519
+GDP per Capita: 0.886
+Social Support: 0.666
+Healthy Life Expectancy: 0.752
+Freedom to Make Life Choices: 0.346
+Generosity: 0.043
+Perceptions of Corruption: 0.164
+Cost of Living Index: 30.18
+Rent Index: 9.26
+Cost of Living Plus Rent Index: 20.37
+Groceries Index: 26.44
+Restaurant Price Index: 27.88
+Local Purchasing Power Index: 31.15
+
+Country/Region: Kenya
+Score: 4.509
+GDP per Capita: 0.512
+Social Support: 0.983
+Healthy Life Expectancy: 0.581
+Freedom to Make Life Choices: 0.431
+Generosity: 0.372
+Perceptions of Corruption: 0.053
+Cost of Living Index: 33.92
+Rent Index: 8.73
+Cost of Living Plus Rent Index: 22.11
+Groceries Index: 31.27
+Restaurant Price Index: 28.82
+Local Purchasing Power Index: 32.18
+
+Country/Region: Tunisia
+Score: 4.461
+GDP per Capita: 0.921
+Social Support: 1.0
+Healthy Life Expectancy: 0.815
+Freedom to Make Life Choices: 0.167
+Generosity: 0.059
+Perceptions of Corruption: 0.055
+Cost of Living Index: 27.87
+Rent Index: 5.32
+Cost of Living Plus Rent Index: 17.3
+Groceries Index: 27.36
+Restaurant Price Index: 15.96
+Local Purchasing Power Index: 27.83
+
+Country/Region: Bangladesh
+Score: 4.456
+GDP per Capita: 0.562
+Social Support: 0.928
+Healthy Life Expectancy: 0.723
+Freedom to Make Life Choices: 0.527
+Generosity: 0.166
+Perceptions of Corruption: 0.143
+Cost of Living Index: 33.13
+Rent Index: 4.42
+Cost of Living Plus Rent Index: 19.67
+Groceries Index: 30.41
+Restaurant Price Index: 21.7
+Local Purchasing Power Index: 25.3
+
+Country/Region: Iraq
+Score: 4.437
+GDP per Capita: 1.043
+Social Support: 0.98
+Healthy Life Expectancy: 0.574
+Freedom to Make Life Choices: 0.241
+Generosity: 0.148
+Perceptions of Corruption: 0.089
+Cost of Living Index: 34.47
+Rent Index: 10.63
+Cost of Living Plus Rent Index: 23.29
+Groceries Index: 30.46
+Restaurant Price Index: 28.31
+Local Purchasing Power Index: 40.92
+
+Country/Region: Sri Lanka
+Score: 4.366
+GDP per Capita: 0.949
+Social Support: 1.265
+Healthy Life Expectancy: 0.831
+Freedom to Make Life Choices: 0.47
+Generosity: 0.244
+Perceptions of Corruption: 0.047
+Cost of Living Index: 31.29
+Rent Index: 8.23
+Cost of Living Plus Rent Index: 20.48
+Groceries Index: 37.67
+Restaurant Price Index: 17.27
+Local Purchasing Power Index: 19.27
+
+Country/Region: Myanmar
+Score: 4.36
+GDP per Capita: 0.71
+Social Support: 1.181
+Healthy Life Expectancy: 0.555
+Freedom to Make Life Choices: 0.525
+Generosity: 0.566
+Perceptions of Corruption: 0.172
+Cost of Living Index: 35.67
+Rent Index: 21.18
+Cost of Living Plus Rent Index: 28.87
+Groceries Index: 37.63
+Restaurant Price Index: 20.0
+Local Purchasing Power Index: 13.84
+
+Country/Region: Ukraine
+Score: 4.332
+GDP per Capita: 0.82
+Social Support: 1.39
+Healthy Life Expectancy: 0.739
+Freedom to Make Life Choices: 0.178
+Generosity: 0.187
+Perceptions of Corruption: 0.01
+Cost of Living Index: 30.71
+Rent Index: 10.57
+Cost of Living Plus Rent Index: 21.27
+Groceries Index: 26.3
+Restaurant Price Index: 25.75
+Local Purchasing Power Index: 37.22
+
+Country/Region: Ethiopia
+Score: 4.286
+GDP per Capita: 0.336
+Social Support: 1.033
+Healthy Life Expectancy: 0.532
+Freedom to Make Life Choices: 0.344
+Generosity: 0.209
+Perceptions of Corruption: 0.1
+Cost of Living Index: 47.49
+Rent Index: 16.88
+Cost of Living Plus Rent Index: 33.14
+Groceries Index: 36.68
+Restaurant Price Index: 18.03
+Local Purchasing Power Index: 10.15
+
+Country/Region: Uganda
+Score: 4.189
+GDP per Capita: 0.332
+Social Support: 1.069
+Healthy Life Expectancy: 0.443
+Freedom to Make Life Choices: 0.356
+Generosity: 0.252
+Perceptions of Corruption: 0.06
+Cost of Living Index: 33.5
+Rent Index: 9.19
+Cost of Living Plus Rent Index: 22.1
+Groceries Index: 31.0
+Restaurant Price Index: 24.85
+Local Purchasing Power Index: 11.41
+
+Country/Region: Egypt
+Score: 4.166
+GDP per Capita: 0.913
+Social Support: 1.039
+Healthy Life Expectancy: 0.644
+Freedom to Make Life Choices: 0.241
+Generosity: 0.076
+Perceptions of Corruption: 0.067
+Cost of Living Index: 29.52
+Rent Index: 5.82
+Cost of Living Plus Rent Index: 18.41
+Groceries Index: 27.42
+Restaurant Price Index: 23.42
+Local Purchasing Power Index: 21.54
+
+Country/Region: Zambia
+Score: 4.107
+GDP per Capita: 0.578
+Social Support: 1.058
+Healthy Life Expectancy: 0.426
+Freedom to Make Life Choices: 0.431
+Generosity: 0.247
+Perceptions of Corruption: 0.087
+Cost of Living Index: 33.04
+Rent Index: 9.26
+Cost of Living Plus Rent Index: 21.9
+Groceries Index: 31.53
+Restaurant Price Index: 22.46
+Local Purchasing Power Index: 40.33
+
+Country/Region: India
+Score: 4.015
+GDP per Capita: 0.755
+Social Support: 0.765
+Healthy Life Expectancy: 0.588
+Freedom to Make Life Choices: 0.498
+Generosity: 0.2
+Perceptions of Corruption: 0.085
+Cost of Living Index: 24.43
+Rent Index: 5.3
+Cost of Living Plus Rent Index: 15.47
+Groceries Index: 26.43
+Restaurant Price Index: 17.56
+Local Purchasing Power Index: 49.72
+
+Country/Region: Zimbabwe
+Score: 3.663
+GDP per Capita: 0.366
+Social Support: 1.114
+Healthy Life Expectancy: 0.433
+Freedom to Make Life Choices: 0.361
+Generosity: 0.151
+Perceptions of Corruption: 0.089
+Cost of Living Index: 45.68
+Rent Index: 8.75
+Cost of Living Plus Rent Index: 28.37
+Groceries Index: 39.88
+Restaurant Price Index: 38.13
+Local Purchasing Power Index: 19.07
+
+Country/Region: Botswana
+Score: 3.488
+GDP per Capita: 1.041
+Social Support: 1.145
+Healthy Life Expectancy: 0.538
+Freedom to Make Life Choices: 0.455
+Generosity: 0.025
+Perceptions of Corruption: 0.1
+Cost of Living Index: 40.17
+Rent Index: 10.21
+Cost of Living Plus Rent Index: 26.12
+Groceries Index: 35.16
+Restaurant Price Index: 42.5
+Local Purchasing Power Index: 62.63
+
+Country/Region: Syria
+Score: 3.462
+GDP per Capita: 0.619
+Social Support: 0.378
+Healthy Life Expectancy: 0.44
+Freedom to Make Life Choices: 0.013
+Generosity: 0.331
+Perceptions of Corruption: 0.141
+Cost of Living Index: 28.75
+Rent Index: 5.17
+Cost of Living Plus Rent Index: 17.7
+Groceries Index: 29.34
+Restaurant Price Index: 22.81
+Local Purchasing Power Index: 6.59
+
+Country/Region: Yemen
+Score: 3.38
+GDP per Capita: 0.287
+Social Support: 1.163
+Healthy Life Expectancy: 0.463
+Freedom to Make Life Choices: 0.143
+Generosity: 0.108
+Perceptions of Corruption: 0.077
+Cost of Living Index: 53.14
+Rent Index: 6.71
+Cost of Living Plus Rent Index: 31.38
+Groceries Index: 67.12
+Restaurant Price Index: 24.74
+Local Purchasing Power Index: 14.41
+
+Country/Region: Rwanda
+Score: 3.334
+GDP per Capita: 0.359
+Social Support: 0.711
+Healthy Life Expectancy: 0.614
+Freedom to Make Life Choices: 0.555
+Generosity: 0.217
+Perceptions of Corruption: 0.411
+Cost of Living Index: 31.62
+Rent Index: 15.9
+Cost of Living Plus Rent Index: 24.25
+Groceries Index: 27.71
+Restaurant Price Index: 27.99
+Local Purchasing Power Index: 26.82
+
+Country/Region: Tanzania
+Score: 3.231
+GDP per Capita: 0.476
+Social Support: 0.885
+Healthy Life Expectancy: 0.499
+Freedom to Make Life Choices: 0.417
+Generosity: 0.276
+Perceptions of Corruption: 0.147
+Cost of Living Index: 32.81
+Rent Index: 12.36
+Cost of Living Plus Rent Index: 23.23
+Groceries Index: 30.04
+Restaurant Price Index: 24.86
+Local Purchasing Power Index: 15.97
+
+Country/Region: Afghanistan
+Score: 3.203
+GDP per Capita: 0.35
+Social Support: 0.517
+Healthy Life Expectancy: 0.361
+Freedom to Make Life Choices: 0.0
+Generosity: 0.158
+Perceptions of Corruption: 0.025
+Cost of Living Index: 20.37
+Rent Index: 2.72
+Cost of Living Plus Rent Index: 12.09
+Groceries Index: 14.92
+Restaurant Price Index: 12.41
+Local Purchasing Power Index: 23.04
+
