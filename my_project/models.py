@@ -17,5 +17,5 @@ class CountryData(models.Model):
     local_purchasing_power_index = models.FloatField()
 
 
-    def __str__(self):
-        return self.country_or_region
+def __str__(self):
+    return str(self.country_or_region)

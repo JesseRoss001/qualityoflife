@@ -41,112 +41,138 @@
                 /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
             }
         }
-            /* Existing styles... */
-            @keyframes buttonColorCycle {
-        0% { background-color: #ff9a9e; } /* Light pink */
-        25% { background-color: #ff7e67; } /* Sunset orange */
-        50% { background-color: #ff6584; } /* Sunset magenta */
-        75% { background-color: #ffbb7b; } /* Sunset yellow */
-        100% { background-color: #ff9a9e; } /* Light pink */
-    }
 
-    .btn-primary {
-        animation: buttonColorCycle 10s infinite;
-    }
+        /* Existing styles... */
+        @keyframes buttonColorCycle {
+            0% {
+                background-color: #ff9a9e;
+            }
 
-    .btn-info {
-        animation: buttonColorCycle 10s infinite;
-        animation-delay: 1s;
-    }
+            /* Light pink */
+            25% {
+                background-color: #ff7e67;
+            }
 
-    .btn-success {
-        animation: buttonColorCycle 10s infinite;
-        animation-delay: 2s;
-    }
+            /* Sunset orange */
+            50% {
+                background-color: #ff6584;
+            }
 
-    .btn-warning {
-        animation: buttonColorCycle 10s infinite;
-        animation-delay: 3s;
-    }
+            /* Sunset magenta */
+            75% {
+                background-color: #ffbb7b;
+            }
 
-    .btn-secondary {
-        animation: buttonColorCycle 10s infinite;
-        animation-delay: 4s;
-    }
+            /* Sunset yellow */
+            100% {
+                background-color: #ff9a9e;
+            }
 
-    .btn-danger {
-        animation: buttonColorCycle 10s infinite;
-        animation-delay: 5s;
-    }
+            /* Light pink */
+        }
 
-    .btn-dark {
-        animation: buttonColorCycle 10s infinite;
-        animation-delay: 6s;
-    }
-    #overallRankChart {
-    min-width: 200px;
-    min-height: 200px;
-}
+        .btn-primary {
+            animation: buttonColorCycle 10s infinite;
+        }
+
+        .btn-info {
+            animation: buttonColorCycle 10s infinite;
+            animation-delay: 1s;
+        }
+
+        .btn-success {
+            animation: buttonColorCycle 10s infinite;
+            animation-delay: 2s;
+        }
+
+        .btn-warning {
+            animation: buttonColorCycle 10s infinite;
+            animation-delay: 3s;
+        }
+
+        .btn-secondary {
+            animation: buttonColorCycle 10s infinite;
+            animation-delay: 4s;
+        }
+
+        .btn-danger {
+            animation: buttonColorCycle 10s infinite;
+            animation-delay: 5s;
+        }
+
+        .btn-dark {
+            animation: buttonColorCycle 10s infinite;
+            animation-delay: 6s;
+        }
+
+        #overallRankChart {
+            min-width: 200px;
+            min-height: 200px;
+        }
     </style>
 </head>
 
 <body>
 
 
-  
+
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-12">
                 <h3>Country Data Categories</h3>
-                <!-- Buttons --></div>
-                <div class="col-4 col-md-3 col-lg-2">
+                <!-- Buttons -->
+            </div>
+            <div class="col-4 col-md-3 col-lg-2">
                 <button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#overallRankModal">
                     <i class="fas fa-trophy"></i> Overall Rank
-                </button></div>
-                <div class="col-4 col-md-3 col-lg-2">
-                    <button type="button" class="btn btn-info m-2" data-toggle="modal" data-target="#gdpModal">
-                        <i class="fas fa-dollar-sign"></i> GDP per Capita
-                    </button>
-                </div>
-                
-                <!-- More buttons for other categories... -->
+                </button>
+            </div>
+            <div class="col-4 col-md-3 col-lg-2">
+                <button type="button" class="btn btn-info m-2" data-toggle="modal" data-target="#gdpModal">
+                    <i class="fas fa-dollar-sign"></i> GDP per Capita
+                </button>
+            </div>
 
-                <!-- Overall Rank Modal -->
-                <div class="modal fade" id="overallRankModal" tabindex="-1" role="dialog" aria-labelledby="overallRankModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="overallRankModalLabel">Overall Rank</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <canvas id="overallRankChart"></canvas>
-                            </div>
+            <!-- More buttons for other categories... -->
+
+            <!-- Overall Rank Modal -->
+            <div class="modal fade" id="overallRankModal" tabindex="-1" role="dialog"
+                aria-labelledby="overallRankModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="overallRankModalLabel">Overall Rank</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <canvas id="overallRankChart"></canvas>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- GDP per Capita Modal -->
-                <div class="modal fade" id="gdpModal" tabindex="-1" role="dialog" aria-labelledby="gdpModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="gdpModalLabel">GDP per Capita</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                Represents the average economic output per person. Higher GDP per capita often correlates with higher living standards, better health care, and improved access to education.
-                            </div>
+            <!-- GDP per Capita Modal -->
+            <div class="modal fade" id="gdpModal" tabindex="-1" role="dialog" aria-labelledby="gdpModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="gdpModalLabel">GDP per Capita</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Represents the average economic output per person. Higher GDP per capita often correlates
+                            with higher living standards, better health care, and improved access to education.
                         </div>
                     </div>
                 </div>
+            </div>
 
-<div class="col-4 col-md-3 col-lg-2">
+            <div class="col-4 col-md-3 col-lg-2">
                 <!-- Social Support Modal -->
                 <button type="button" class="btn btn-success m-2" data-toggle="modal" data-target="#socialSupportModal">
                     <i class="fas fa-hands-helping"></i> Social Support
@@ -163,14 +189,16 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                Indicates the extent of social safety nets and community support available to individuals. Strong social support systems contribute to mental well-being and resilience in times of crisis.
+                                Indicates the extent of social safety nets and community support available to
+                                individuals. Strong social support systems contribute to mental well-being and
+                                resilience in times of crisis.
                             </div>
                         </div>
                     </div>
 
                 </div>
-                </div>
-                <div class="col-4 col-md-3 col-lg-2">
+            </div>
+            <div class="col-4 col-md-3 col-lg-2">
                 <!-- Healthy Life Expectancy Modal -->
                 <button type="button" class="btn btn-warning m-2" data-toggle="modal"
                     data-target="#healthyLifeExpectancyModal">
@@ -188,13 +216,14 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                Measures the average number of years a person can expect to live in good health. It’s a crucial indicator of the overall health and quality of life in a country.
+                                Measures the average number of years a person can expect to live in good health. It’s a
+                                crucial indicator of the overall health and quality of life in a country.
                             </div>
                         </div>
                     </div>
                 </div>
-                </div>
-                <div class="col-4 col-md-3 col-lg-2">
+            </div>
+            <div class="col-4 col-md-3 col-lg-2">
                 <!-- Freedom to Make Life Choices Modal -->
                 <button type="button" class="btn btn-secondary m-2" data-toggle="modal"
                     data-target="#freedomToMakeLifeChoicesModal">
@@ -212,13 +241,14 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                Reflects individuals' freedom to make life decisions without undue constraints. This freedom is fundamental to personal autonomy and well-being.
+                                Reflects individuals' freedom to make life decisions without undue constraints. This
+                                freedom is fundamental to personal autonomy and well-being.
                             </div>
                         </div>
                     </div>
                 </div>
-                </div>
-                <div class="col-4 col-md-3 col-lg-2">
+            </div>
+            <div class="col-4 col-md-3 col-lg-2">
                 <!-- Generosity Modal -->
                 <button type="button" class="btn btn-danger m-2" data-toggle="modal" data-target="#generosityModal">
                     <i class="fas fa-gift"></i> Generosity
@@ -234,35 +264,42 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                Indicates the average level of charitable giving and volunteerism in a society. Generosity is often seen as a reflection of the community spirit and empathy among the population.
+                                Indicates the average level of charitable giving and volunteerism in a society.
+                                Generosity is often seen as a reflection of the community spirit and empathy among the
+                                population.
                             </div>
                         </div>
                     </div>
                 </div>
-                </div>
-                <div class="col-4 col-md-3 col-lg-2">
-               <!-- Perceptions of Corruption Modal -->
-<button type="button" class="btn btn-dark m-2" data-toggle="modal" data-target="#perceptionsOfCorruptionModal">
-    <i class="fas fa-mask"></i> Perceptions of Corruption
-</button>
-
-<div class="modal fade" id="perceptionsOfCorruptionModal" tabindex="-1" role="dialog" aria-labelledby="perceptionsOfCorruptionModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="perceptionsOfCorruptionModalLabel">Perceptions of Corruption</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
+            </div>
+            <div class="col-4 col-md-3 col-lg-2">
+                <!-- Perceptions of Corruption Modal -->
+                <button type="button" class="btn btn-dark m-2" data-toggle="modal"
+                    data-target="#perceptionsOfCorruptionModal">
+                    <i class="fas fa-mask"></i> Perceptions of Corruption
                 </button>
+
+                <div class="modal fade" id="perceptionsOfCorruptionModal" tabindex="-1" role="dialog"
+                    aria-labelledby="perceptionsOfCorruptionModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="perceptionsOfCorruptionModalLabel">Perceptions of Corruption
+                                </h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Perceptions of corruption reflect the degree to which corruption is believed to exist in
+                                public and private sectors. It affects trust in institutions and can significantly
+                                impact the quality of life and governance.
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="modal-body">
-                Perceptions of corruption reflect the degree to which corruption is believed to exist in public and private sectors. It affects trust in institutions and can significantly impact the quality of life and governance.
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-<div class="col-4 col-md-3 col-lg-2">
+            <div class="col-4 col-md-3 col-lg-2">
                 <!-- Cost of Living Index Modal -->
                 <button type="button" class="btn btn-primary m-2" data-toggle="modal"
                     data-target="#costOfLivingIndexModal">
@@ -279,13 +316,14 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                Measures the relative price levels of consumer goods and services. A lower cost of living means affordability and potentially higher savings for individuals.
+                                Measures the relative price levels of consumer goods and services. A lower cost of
+                                living means affordability and potentially higher savings for individuals.
                             </div>
                         </div>
                     </div>
                 </div>
-                </div>
-                <div class="col-4 col-md-3 col-lg-2">
+            </div>
+            <div class="col-4 col-md-3 col-lg-2">
                 <!-- Rent Index Modal -->
                 <button type="button" class="btn btn-secondary m-2" data-toggle="modal" data-target="#rentIndexModal">
                     <i class="fas fa-home"></i> Rent Index
@@ -301,105 +339,120 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                Compares typical rental prices in an area to a global baseline. A lower rent index suggests more affordable housing relative to other locations.
+                                Compares typical rental prices in an area to a global baseline. A lower rent index
+                                suggests more affordable housing relative to other locations.
                             </div>
                         </div>
                     </div>
                 </div>
-                </div>
-                <div class="col-4 col-md-3 col-lg-2">
+            </div>
+            <div class="col-4 col-md-3 col-lg-2">
                 <!-- Cost of Living Plus Rent Index Modal -->
-<button type="button" class="btn btn-info m-2" data-toggle="modal" data-target="#costOfLivingPlusRentIndexModal">
-    <i class="fas fa-calculator"></i> Cost of Living Plus Rent Index
-</button>
-
-<div class="modal fade" id="costOfLivingPlusRentIndexModal" tabindex="-1" role="dialog" aria-labelledby="costOfLivingPlusRentIndexModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="costOfLivingPlusRentIndexModalLabel">Cost of Living Plus Rent Index</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
+                <button type="button" class="btn btn-info m-2" data-toggle="modal"
+                    data-target="#costOfLivingPlusRentIndexModal">
+                    <i class="fas fa-calculator"></i> Cost of Living Plus Rent Index
                 </button>
-            </div>
-            <div class="modal-body">
-                Combines the cost of living and rent indices to give a more comprehensive view of the overall cost of living in an area.
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-<div class="col-4 col-md-3 col-lg-2">
-<!-- Groceries Index Modal -->
-<button type="button" class="btn btn-warning m-2" data-toggle="modal" data-target="#groceriesIndexModal">
-    <i class="fas fa-shopping-cart"></i> Groceries Index
-</button>
 
-<div class="modal fade" id="groceriesIndexModal" tabindex="-1" role="dialog" aria-labelledby="groceriesIndexModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="groceriesIndexModalLabel">Groceries Index</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
+                <div class="modal fade" id="costOfLivingPlusRentIndexModal" tabindex="-1" role="dialog"
+                    aria-labelledby="costOfLivingPlusRentIndexModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="costOfLivingPlusRentIndexModalLabel">Cost of Living Plus
+                                    Rent Index</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Combines the cost of living and rent indices to give a more comprehensive view of the
+                                overall cost of living in an area.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 col-md-3 col-lg-2">
+                <!-- Groceries Index Modal -->
+                <button type="button" class="btn btn-warning m-2" data-toggle="modal"
+                    data-target="#groceriesIndexModal">
+                    <i class="fas fa-shopping-cart"></i> Groceries Index
                 </button>
-            </div>
-            <div class="modal-body">
-                Evaluates the cost of groceries, providing insight into food affordability and access in different regions.
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-<div class="col-4 col-md-3 col-lg-2">
-<!-- Restaurant Price Index Modal -->
-<button type="button" class="btn btn-success m-2" data-toggle="modal" data-target="#restaurantPriceIndexModal">
-    <i class="fas fa-utensils"></i> Restaurant Price Index
-</button>
 
-<div class="modal fade" id="restaurantPriceIndexModal" tabindex="-1" role="dialog" aria-labelledby="restaurantPriceIndexModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="restaurantPriceIndex
+                <div class="modal fade" id="groceriesIndexModal" tabindex="-1" role="dialog"
+                    aria-labelledby="groceriesIndexModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="groceriesIndexModalLabel">Groceries Index</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Evaluates the cost of groceries, providing insight into food affordability and access in
+                                different regions.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 col-md-3 col-lg-2">
+                <!-- Restaurant Price Index Modal -->
+                <button type="button" class="btn btn-success m-2" data-toggle="modal"
+                    data-target="#restaurantPriceIndexModal">
+                    <i class="fas fa-utensils"></i> Restaurant Price Index
+                </button>
+
+                <div class="modal fade" id="restaurantPriceIndexModal" tabindex="-1" role="dialog"
+                    aria-labelledby="restaurantPriceIndexModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="restaurantPriceIndex
 ModalLabel">Restaurant Price Index</h5>
-<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-<span aria-hidden="true">×</span>
-</button>
-</div>
-<div class="modal-body">
-Represents the price of dining out, indicating the affordability of leisure and social activities.
-</div>
-</div>
-</div>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Represents the price of dining out, indicating the affordability of leisure and social
+                                activities.
+                            </div>
+                        </div>
+                    </div>
 
-</div>
-</div>
-<div class="col-4 col-md-3 col-lg-2">
-<!-- Local Purchasing Power Index Modal -->
-<button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#localPurchasingPowerIndexModal">
-    <i class="fas fa-wallet"></i> Local Purchasing Power Index
-</button>
-
-<div class="modal fade" id="localPurchasingPowerIndexModal" tabindex="-1" role="dialog" aria-labelledby="localPurchasingPowerIndexModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="localPurchasingPowerIndexModalLabel">Local Purchasing Power Index</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
+                </div>
             </div>
-            <div class="modal-body">
-                Assesses the relative purchasing power of individuals in their local currency, reflecting the economic well-being and affordability within the country.
+            <div class="col-4 col-md-3 col-lg-2">
+                <!-- Local Purchasing Power Index Modal -->
+                <button type="button" class="btn btn-primary m-2" data-toggle="modal"
+                    data-target="#localPurchasingPowerIndexModal">
+                    <i class="fas fa-wallet"></i> Local Purchasing Power Index
+                </button>
+
+                <div class="modal fade" id="localPurchasingPowerIndexModal" tabindex="-1" role="dialog"
+                    aria-labelledby="localPurchasingPowerIndexModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="localPurchasingPowerIndexModalLabel">Local Purchasing Power
+                                    Index</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Assesses the relative purchasing power of individuals in their local currency,
+                                reflecting the economic well-being and affordability within the country.
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-</div>
-            </div>
-        </div>
-   
+
     <!-- Bootstrap and other necessary scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
@@ -407,43 +460,49 @@ Represents the price of dining out, indicating the affordability of leisure and 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            var chartData = {{ chart_data|safe }};
-    
-            function createChart(chartId, chartLabel, dataKey) {
-                var ctx = document.getElementById(chartId).getContext('2d');
-                new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: chartData[dataKey].labels,
-                        datasets: [{
-                            label: chartLabel,
-                            data: chartData[dataKey].data,
-                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                            borderColor: 'rgba(255, 99, 132, 1)',
-                            borderWidth: 1
-                        }]
-    arduino
-    Copy code
-                },
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
+            // Replace 'chartDataString' with the JSON string you pass from Django.
+            var chartDataString = '{{ chart_data|safe }}';
+            var chartData;
+            
+            try {
+                chartData =
+        JSON.parse(chartDataString);
+        } catch (e) {
+        console.error("Parsing error:", e);
+        }function createChart(chartId, chartDataKey) {
+    var ctx = document.getElementById(chartId).getContext('2d');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: chartData[chartDataKey].labels,
+            datasets: [{
+                label: chartDataKey.replace(/_/g, ' ').toUpperCase(),
+                data: chartData[chartDataKey].data,
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
                 }
-            });
+            }
         }
-    
-        // Create charts for each category
-        createChart('overallRankChart', 'Overall Rank', 'overall_rank');
-        createChart('gdpPerCapitaChart', 'GDP per Capita', 'gdp_per_capita');
-        // Add similar lines for other categories...
-    
     });
-    </script>
-    
+}
 
-</body>
+// Attach event listeners to modal buttons to trigger chart creation
+$('#overallRankModal').on('shown.bs.modal', function () {
+    createChart('overallRankChart', 'score');
+});
 
-</html>
+// Repeat for other modals and corresponding chart IDs
+// ...
+});
+</script>
+      
+        </body>
+
+</html >
