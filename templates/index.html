@@ -190,13 +190,45 @@
             border: none;
         }
 
-        .modal-header {
-            border-bottom: 1px solid #eee;
-            background-color: #ff9a9e;
-            color: white;
-            border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
-        }
+/* Customize modal header */
+.modal-header {
+    animation: buttonColorCycle 60s infinite;
+    animation-delay: 2s;
+    border: none;
+    border-radius: 15px 15px 0 0;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(-45deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+    border-radius: 15px 15px 0 0;
+    z-index: -1;
+}
+
+.modal-header h5 {
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.modal-header button.close {
+    color: #333;
+    opacity: 1;
+    font-size: 24px;
+}
+
+.modal-header button.close:focus {
+    outline: none;
+    box-shadow: none;
+}
 
         .modal-body {
             padding: 20px;
@@ -236,6 +268,14 @@
             left: 50%;
             transform: translate(-50%, -50%);
             background: linear-gradient(45deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+        }
+         /* Customize modal buttons */
+         .modal .btn {
+            background-color: #333;
+            color: #fff;
+            border-radius: 8px;
+            padding: 10px 20px;
+            height:50px;
         }
         
     </style>
