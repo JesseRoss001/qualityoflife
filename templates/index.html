@@ -109,6 +109,56 @@
             min-width: 200px;
             min-height: 200px;
         }
+
+            /* Universal styling for all lists */
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        text-align: left;
+    }
+
+    ul li {
+        background-color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    ul li:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Styling for the modal */
+    .modal-content {
+        background-color: rgba(255, 255, 255, 0.95);
+        border-radius: 15px;
+        border: none;
+    }
+
+    .modal-header {
+        border-bottom: 1px solid #eee;
+        background-color: #ff9a9e;
+        color: white;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+
+    .modal-body {
+        padding: 20px;
+    }
+
+    .modal-title {
+        font-weight: bold;
+    }
+
+    .close {
+        color: white;
+        opacity: 1;
+    }
     </style>
 </head>
 
@@ -136,78 +186,96 @@
             <!-- More buttons for other categories... -->
 
             <!-- Overall Rank Modal -->
-            <div class="modal fade" id="overallRankModal" tabindex="-1" role="dialog"
-                aria-labelledby="overallRankModalLabel" aria-hidden="true">
+            <div class="modal fade" id="overallRankModal" tabindex="-1" role="dialog" aria-labelledby="overallRankModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="overallRankModalLabel">Overall Rank</h5>
+                            <h5 class="modal-title" id="modalTitle">Top 10 Countries by Composite Score</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
-                            <div class="row mt-3">
-                                <div class="col-md-12">
-                                    <h4>Top Countries by Composite Score</h4>
-                                    <ul id="top-countries-composite-list">
-                                        {% for country in top_countries_by_composite_score %}
-                                            <li>{{ country.country_or_region }}: {{ country.composite_score|floatformat:2 }}</li>
-                                        {% endfor %}
-                                    </ul>
-                                </div>
-                            </div>
-                            <canvas id="overallRankChart"></canvas>
+                            <ul id="topList">
+                                {% for country in top_countries_by_composite_score %}
+                                    <li>{{ country.country_or_region }}: {{ country.composite_score|floatformat:2 }}</li>
+                                {% endfor %}
+                            </ul>
+                            <ul id="bottomList" style="display: none;">
+                                {% for country in bottom_countries_by_composite_score %}
+                                    <li>{{ country.country_or_region }}: {{ country.composite_score|floatformat:2 }}</li>
+                                {% endfor %}
+                            </ul>
+                            <button id="toggleButton" class="btn btn-primary" onclick="toggleList()">Show Bottom 10</button>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- GDP per Capita Modal -->
-            <div class="modal fade" id="gdpModal" tabindex="-1" role="dialog" aria-labelledby="gdpModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="gdpModalLabel">GDP per Capita</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            Represents the average economic output per person. Higher GDP per capita often correlates
-                            with higher living standards, better health care, and improved access to education.
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-4 col-md-3 col-lg-2">
-                <!-- Social Support Modal -->
-                <button type="button" class="btn btn-success m-2" data-toggle="modal" data-target="#socialSupportModal">
-                    <i class="fas fa-hands-helping"></i> Social Support
+<!-- GDP per Capita Modal -->
+<!-- GDP per Capita Modal -->
+<div class="modal fade" id="gdpModal" tabindex="-1" role="dialog" aria-labelledby="gdpModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="gdpModalTitle">Top 10 Countries by GDP per Capita</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
                 </button>
-
-                <div class="modal fade" id="socialSupportModal" tabindex="-1" role="dialog
-" aria-labelledby="socialSupportModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="socialSupportModalLabel">Social Support</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">×</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                Indicates the extent of social safety nets and community support available to
-                                individuals. Strong social support systems contribute to mental well-being and
-                                resilience in times of crisis.
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
             </div>
+            <div class="modal-body">
+                Represents the average economic output per person. Higher GDP per capita often correlates with higher living standards, better health care, and improved access to education.
+                <ul id="gdpTopList">
+                    {% for country in top_gdp %}
+                        <li>{{ country.country_or_region }}: {{ country.gdp_per_capita|floatformat:2 }}</li>
+                    {% endfor %}
+                </ul>
+                <ul id="gdpBottomList" style="display: none;">
+                    {% for country in bottom_gdp %}
+                        <li>{{ country.country_or_region }}: {{ country.gdp_per_capita|floatformat:2 }}</li>
+                    {% endfor %}
+                </ul>
+                <button id="gdpToggleButton" class="btn btn-primary" onclick="toggleGdpList()">Show Bottom 10</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-4 col-md-3 col-lg-2">
+    <!-- Social Support Modal Button -->
+    <button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#socialSupportModal">
+        <i class="fas fa-hands-helping"></i> Social Support
+    </button>
+</div>
+
+<!-- Social Support Modal -->
+<div class="modal fade" id="socialSupportModal" tabindex="-1"
+role="dialog" aria-labelledby="socialSupportModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="socialSupportModalTitle">Top 10 Countries by Social Support</h5>
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+Indicates the extent of social safety nets and community support available to individuals. Strong social support systems contribute to mental well-being and resilience in times of crisis.
+<ul id="socialSupportTopList">
+{% for country in top_social_support %}
+<li>{{ country.country_or_region }}: {{ country.social_support|floatformat:2 }}</li>
+{% endfor %}
+</ul>
+<ul id="socialSupportBottomList" style="display: none;">
+{% for country in bottom_social_support %}
+<li>{{ country.country_or_region }}: {{ country.social_support|floatformat:2 }}</li>
+{% endfor %}
+</ul>
+<button id="socialSupportToggleButton" class="btn btn-primary" onclick="toggleSocialSupportList()">Show Bottom 10</button>
+</div>
+</div>
+</div>
+
+</div>
+
             <div class="col-4 col-md-3 col-lg-2">
                 <!-- Healthy Life Expectancy Modal -->
                 <button type="button" class="btn btn-warning m-2" data-toggle="modal"
@@ -522,8 +590,66 @@ ModalLabel">Restaurant Price Index</h5>
     
         });
     </script>
+    <script>
+        function toggleList() {
+            var topList = document.getElementById("topList");
+            var bottomList = document.getElementById("bottomList");
+            var toggleButton = document.getElementById("toggleButton");
+            var modalTitle = document.getElementById("modalTitle");
     
-      
+            if (topList.style.display === "none") {
+                topList.style.display = "block";
+                bottomList.style.display = "none";
+                toggleButton.innerText = "Show Bottom 10";
+                modalTitle.innerText = "Top 10 Countries by Composite Score";
+            } else {
+                topList.style.display = "none";
+                bottomList.style.display = "block";
+                toggleButton.innerText = "Show Top 10";
+                modalTitle.innerText = "Bottom 10 Countries by Composite Score";
+            }
+        }
+    </script>
+    <script>
+        function toggleGdpList() {
+            var topList = document.getElementById("gdpTopList");
+            var bottomList = document.getElementById("gdpBottomList");
+            var toggleButton = document.getElementById("gdpToggleButton");
+            var modalTitle = document.getElementById("gdpModalTitle");
+    
+            if (topList.style.display === "none") {
+                topList.style.display = "block";
+                bottomList.style.display = "none";
+                toggleButton.innerText = "Show Bottom 10";
+                modalTitle.innerText = "Top 10 Countries by GDP per Capita";
+            } else {
+                topList.style.display = "none";
+                bottomList.style.display = "block";
+                toggleButton.innerText = "Show Top 10";
+                modalTitle.innerText = "Bottom 10 Countries by GDP per Capita";
+            }
+        }
+    </script>
+      <script>
+        function toggleSocialSupportList() {
+            var topList = document.getElementById("socialSupportTopList");
+            var bottomList = document.getElementById("socialSupportBottomList");
+            var toggleButton = document.getElementById("socialSupportToggleButton");
+            var modalTitle = document.getElementById("socialSupportModalTitle");
+    
+            if (topList.style.display === "none") {
+                topList.style.display = "block";
+                bottomList.style.display = "none";
+                toggleButton.innerText = "Show Bottom 10";
+                modalTitle.innerText = "Top 10 Countries by Social Support";
+            } else {
+                topList.style.display = "none";
+                bottomList.style.display = "block";
+                toggleButton.innerText = "Show Top 10";
+                modalTitle.innerText = "Bottom 10 Countries by Social Support";
+            }
+        }
+    </script>
         </body>
 
 </html >
