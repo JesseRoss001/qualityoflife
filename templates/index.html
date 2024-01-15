@@ -212,7 +212,6 @@
                 </div>
             </div>
 <!-- GDP per Capita Modal -->
-<!-- GDP per Capita Modal -->
 <div class="modal fade" id="gdpModal" tabindex="-1" role="dialog" aria-labelledby="gdpModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -223,16 +222,12 @@
                 </button>
             </div>
             <div class="modal-body">
-                Represents the average economic output per person. Higher GDP per capita often correlates with higher living standards, better health care, and improved access to education.
+                <p style="margin-bottom: 1em;">Represents the average economic output per person. Higher GDP per capita often correlates with higher living standards, better health care, and improved access to education.</p>
                 <ul id="gdpTopList">
-                    {% for country in top_gdp %}
-                        <li>{{ country.country_or_region }}: {{ country.gdp_per_capita|floatformat:2 }}</li>
-                    {% endfor %}
+                    <!-- Top GDP countries list should be rendered here -->
                 </ul>
                 <ul id="gdpBottomList" style="display: none;">
-                    {% for country in bottom_gdp %}
-                        <li>{{ country.country_or_region }}: {{ country.gdp_per_capita|floatformat:2 }}</li>
-                    {% endfor %}
+                    <!-- Bottom GDP countries list should be rendered here -->
                 </ul>
                 <button id="gdpToggleButton" class="btn btn-primary" onclick="toggleGdpList()">Show Bottom 10</button>
             </div>
@@ -610,25 +605,26 @@ ModalLabel">Restaurant Price Index</h5>
             }
         }
     </script>
-    <script>
-        function toggleGdpList() {
-            var topList = document.getElementById("gdpTopList");
-            var bottomList = document.getElementById("gdpBottomList");
-            var toggleButton = document.getElementById("gdpToggleButton");
-            var modalTitle = document.getElementById("gdpModalTitle");
+<script>
+    function toggleGdpList() {
+        var topList = document.getElementById("gdpTopList");
+        var bottomList = document.getElementById("gdpBottomList");
+        var toggleButton = document.getElementById("gdpToggleButton");
+        var modalTitle = document.getElementById("gdpModalTitle");
     
-            if (topList.style.display === "none") {
-                topList.style.display = "block";
-                bottomList.style.display = "none";
-                toggleButton.innerText = "Show Bottom 10";
-                modalTitle.innerText = "Top 10 Countries by GDP per Capita";
-            } else {
-                topList.style.display = "none";
-                bottomList.style.display = "block";
-                toggleButton.innerText = "Show Top 10";
-                modalTitle.innerText = "Bottom 10 Countries by GDP per Capita";
-            }
+        // Toggles the display of the top and bottom GDP lists
+        if (topList.style.display === "none" || !topList.style.display) {
+            topList.style.display = "block";
+            bottomList.style.display = "none";
+            toggleButton.innerText = "Show Bottom 10";
+            modalTitle.innerText = "Top 10 Countries by GDP per Capita";
+        } else {
+            topList.style.display = "none";
+            bottomList.style.display = "block";
+            toggleButton.innerText = "Show Top 10";
+            modalTitle.innerText = "Bottom 10 Countries by GDP per Capita";
         }
+    }
     </script>
       <script>
         function toggleSocialSupportList() {

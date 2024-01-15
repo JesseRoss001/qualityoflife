@@ -40,7 +40,7 @@ def index(request):
                   'groceries_index', 'restaurant_price_index', 'local_purchasing_power_index']:
         top_countries, bottom_countries = get_top_bottom_countries(field)
         top_bottom_data[field] = prepare_chart_data(top_countries, bottom_countries, field)
-
+    
     context = {
         'chart_data': top_bottom_data,
         'top_countries_by_composite_score': top_countries_by_composite_score,
