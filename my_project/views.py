@@ -48,3 +48,6 @@ def index(request):
     }
 
     return render(request, 'index.html', context)
+    
+def country_comparison(request):
+    return render(request, 'countrycomparison.html')
