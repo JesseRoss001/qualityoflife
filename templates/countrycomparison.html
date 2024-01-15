@@ -1,15 +1,178 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Country Comparison</title>
-    <!-- Include necessary CSS and JavaScript libraries here if needed -->
+    <title>Quality of Life Data Comparison</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, #ff5733, #c70039, #ee7752);
+            background-size: 600% 600%;
+            animation: gradient 50s linear infinite;
+            min-height: 100vh;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            /* ... (add more keyframes as needed) ... */
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .comparison-container {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 30px auto;
+            max-width: 80vw;
+        }
+
+        .comparison-container h4 {
+            font-weight: bold;
+            color: #333;
+            margin: 0;
+            margin-bottom: 20px;
+        }
+
+        .comparison-container .form-group {
+            margin-bottom: 20px;
+        }
+
+        .comparison-container label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .comparison-container select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .comparison-container button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .comparison-results {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 30px auto;
+            max-width: 80vw;
+        }
+
+        .comparison-results h4 {
+            font-weight: bold;
+            color: #333;
+            margin: 0;
+            margin-bottom: 20px;
+        }
+
+        .comparison-results p {
+            color: #333;
+        }
+
+        .glass-container {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 20px;
+            position: relative;
+            margin: 30px auto;
+            max-width: 80vw;
+        }
+
+        .glass-container::before,
+        .glass-container::after {
+            content: "";
+            position: absolute;
+            border-radius: 15px;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .glass-container::before {
+            background: linear-gradient(-45deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+        }
+
+        .glass-container::after {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+        }
+
+        /* Customize modal buttons */
+        .modal .btn {
+            background-color: #333;
+            color: #fff;
+            border-radius: 8px;
+            padding: 10px 20px;
+            height: 50px;
+        }
+    </style>
 </head>
+
 <body>
-    <div class="container">
-        <h1>Country Comparison Page</h1>
-        <!-- Add content for the country comparison page -->
+    <div class="container mt-5">
+        <div class="glass-container">
+            <div class="row ps-4 pe-4">
+                <div class="col-md-12">
+                    <h3 class="text-center mb-5 mt-3">Country Data Comparison</h3>
+                </div>
+                <!-- Comparison Form -->
+                <div class="col-12 col-lg-6">
+                    <div class="comparison-container">
+                        <h4>Compare Two Countries</h4>
+                        <form>
+                            <div class="form-group">
+                                <label for="country1">Select Country 1</label>
+                                <select class="form-control" id="country1" name="country1">
+                                    <!-- Options for Country 1 -->
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="country2">Select Country 2</label>
+                                <select class="form-control" id="country2" name="country2">
+                                    <!-- Options for Country 2 -->
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Compare</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- Comparison Results -->
+                <div class="col-10 col-lg-6">
+                    <div class="comparison-results">
+                        <h4>Comparison Results</h4>
+                        <p>Comparison details will be displayed here.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <!-- Add more modals here... -->
+
 </body>
+
 </html>
