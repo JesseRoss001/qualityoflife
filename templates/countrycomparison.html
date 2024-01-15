@@ -4,6 +4,8 @@
 <head>
     <title>Quality of Life Data Comparison</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
     <style>
         body {
@@ -19,6 +21,7 @@
             0% {
                 background-position: 0% 50%;
             }
+
             /* ... (add more keyframes as needed) ... */
             100% {
                 background-position: 100% 50%;
@@ -141,22 +144,26 @@
                 </div>
                 <!-- Comparison Form -->
                 <div class="col-12 col-lg-6">
+
+                    <!-- Country Comparison Form -->
                     <div class="comparison-container">
-                        <h4>Compare Two Countries</h4>
-                        <form>
+                        <form id="country-comparison-form">
+                            <!-- Country 1 Input Field -->
                             <div class="form-group">
                                 <label for="country1">Select Country 1</label>
-                                <select class="form-control" id="country1" name="country1">
-                                    <!-- Options for Country 1 -->
-                                </select>
+                                <input type="text" class="form-control" id="country1" name="country1" autocomplete="off">
+                                <div id="country1-list" class="autocomplete-list"></div>
                             </div>
+                        
+                            <!-- Country 2 Input Field -->
                             <div class="form-group">
                                 <label for="country2">Select Country 2</label>
-                                <select class="form-control" id="country2" name="country2">
-                                    <!-- Options for Country 2 -->
-                                </select>
+                                <input type="text" class="form-control" id="country2" name="country2" autocomplete="off">
+                                <div id="country2-list" class="autocomplete-list"></div>
                             </div>
-                            <button type="submit" class="btn btn-primary">Compare</button>
+                        
+                            <!-- Submit Button -->
+                            <button type="submit" class="btn btn-primary" >Compare</button>
                         </form>
                     </div>
                 </div>
@@ -170,8 +177,119 @@
             </div>
         </div>
     </div>
-
-    <!-- Add more modals here... -->
+    <script>
+        $(document).ready(function() {
+            var validCountries = [];
+    
+            // Disable the submit button initially
+            $('#country-comparison-form :submit').prop('disabled', true);
+    
+            // Function to load all valid countries from the server
+            function loadValidCountries() {
+                $.ajax({
+                    url: "{% url 'get_all_countries' %}", // URL to a view that returns all country names
+                    method: "GET",
+                    success: function(data) {
+                        validCountries = data; // Assuming 'data' is a list of country names
+                        checkFormSubmission(); // Enable button if countries are pre-filled and valid
+                    }
+                });
+            }
+    
+            // Call the function to load valid countries
+            loadValidCountries();
+    
+            // Function to handle country input suggestions and validation
+            function handleCountryInput(inputId, listId) {
+                $(inputId).on('input', function() {
+                    var value = $(this).val();
+                    if (validCountries.includes(value.trim())) {
+                        $(this).css('background-color', 'lightgreen');
+                    } else {
+                        $(this).css('background-color', 'white');
+                    }
+                    checkFormSubmission(); // Check form submission after each input change
+                });
+    
+                $(inputId).keyup(function(e) {
+                    if (e.keyCode == 13) {
+                        // Prevent form submission on enter key
+                        e.preventDefault();
+                        return false;
+                    }
+                    var query = $(this).val();
+                    if (query != '') {
+                        $.ajax({
+                            url: "{% url 'search_countries' %}",
+                            method: "GET",
+                            data: { 'q': query },
+                            success: function(data) {
+                                var countryList = $(listId);
+                                countryList.empty();
+                                data.forEach(function(country) {
+                                    // Append each suggestion as a separate div with padding for spacing
+                                    countryList.append('<div class="country-option">' + country + '</div>');
+                                });
+                                countryList.fadeIn();
+                            }
+                        });
+                    }
+                });
+    
+                $(document).on('click', listId + ' .country-option', function() {
+                    var input = $(inputId);
+                    var value = $(this).text();
+                    input.val(value);
+                    $(listId).fadeOut();
+                    console.log(value + ' is selected from the list.');
+                    checkFormSubmission(); // Check form submission after each input change
+                });
+            }
+    
+            // Initialize country inputs
+            handleCountryInput('#country1', '#country1-list');
+            handleCountryInput('#country2', '#country2-list');
+    
+            // Function to check form submission based on country validity
+            function checkFormSubmission() {
+                var country1Value = $('#country1').val();
+                var country2Value = $('#country2').val();
+                
+                var country1IsValid = validCountries.includes(country1Value.trim());
+                var country2IsValid = validCountries.includes(country2Value.trim());
+    
+                if (country1IsValid && country2IsValid) {
+                    // Both countries are valid, enable form submission button
+                    $('#country-comparison-form :submit').prop('disabled', false);
+                } else {
+                    // At least one country is not valid, disable form submission button
+                    $('#country-comparison-form :submit').prop('disabled', true);
+                }
+            }
+    
+            // Prevent form submission on the initial page load
+            $('#country-comparison-form').on('submit', function(e) {
+                var country1Value = $('#country1').val();
+                var country2Value = $('#country2').val();
+                
+                var country1IsValid = validCountries.includes(country1Value.trim());
+                var country2IsValid = validCountries.includes(country2Value.trim());
+    
+                if (!country1IsValid || !country2IsValid) {
+                    e.preventDefault();
+                    console.log('Form submission prevented due to invalid countries.');
+                }
+            });
+    
+            // Add an alert when the "Compare" button is clicked
+            $('#country-comparison-form :submit').click(function() {
+                var country1 = $('#country1').val();
+                var country2 = $('#country2').val();
+                alert('You chose ' + country1 + ' and ' + country2 + ' for comparison.');
+            });
+        });
+    </script>
+    
 
 </body>
 

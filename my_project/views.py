@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import JsonResponse
 from .models import CountryData
 def index(request):
     # Function to calculate composite score
@@ -51,3 +52,13 @@ def index(request):
     
 def country_comparison(request):
     return render(request, 'countrycomparison.html')
+def get_all_countries(request):
+    countries = CountryData.objects.values_list('country_or_region', flat=True)
+    return JsonResponse(list(countries), safe=False)
+def search_countries(request):
+    query = request.GET.get('q', '')
+    results = []
+    if query:
+        countries = CountryData.objects.filter(country_or_region__icontains=query)[:10]
+        results = [country.country_or_region for country in countries]
+    return JsonResponse(results, safe=False)
