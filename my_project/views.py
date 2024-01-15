@@ -1,5 +1,6 @@
 from django.shortcuts import render
 import json
+from django.forms.models import model_to_dict
 from django.http import JsonResponse
 from .models import CountryData
 from django.views.decorators.csrf import csrf_exempt
@@ -64,16 +65,27 @@ def search_countries(request):
         countries = CountryData.objects.filter(country_or_region__icontains=query)[:10]
         results = [country.country_or_region for country in countries]
     return JsonResponse(results, safe=False)
-@csrf_exempt  # Temporarily disable CSRF for demonstration purposes
+@csrf_exempt
 def post_country_data(request):
     if request.method == 'POST':
-        # Assuming you're sending data as JSON
         data = json.loads(request.body)
-        country1 = data.get('country1')
-        country2 = data.get('country2')
+        country1_name = data.get('country1')
+        country2_name = data.get('country2')
 
-        # Process the data (e.g., save to database, perform calculations, etc.)
+        country1_data = CountryData.objects.filter(country_or_region=country1_name).first()
+        country2_data = CountryData.objects.filter(country_or_region=country2_name).first()
 
-        return JsonResponse({'status': 'success', 'message': 'Data received successfully'})
+        if country1_data and country2_data:
+            response_data = {
+                'status': 'success',
+                'country1': model_to_dict(country1_data),
+                'country2': model_to_dict(country2_data),
+            }
+        else:
+            response_data = {
+                'status': 'error',
+                'message': 'One or both of the countries could not be found.',
+            }
+        return JsonResponse(response_data)
 
     return JsonResponse({'status': 'error', 'message': 'Invalid request'}, status=400)

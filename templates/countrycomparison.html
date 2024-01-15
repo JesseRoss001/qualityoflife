@@ -191,11 +191,11 @@
             // Function to load all valid countries from the server
             function loadValidCountries() {
                 $.ajax({
-                    url: "{% url 'get_all_countries' %}", // URL to a view that returns all country names
+                    url: "{% url 'get_all_countries' %}",
                     method: "GET",
                     success: function(data) {
-                        validCountries = data; // Assuming 'data' is a list of country names
-                        checkFormSubmission(); // Enable button if countries are pre-filled and valid
+                        validCountries = data;
+                        checkFormSubmission();
                     }
                 });
             }
@@ -212,12 +212,11 @@
                     } else {
                         $(this).css('background-color', 'white');
                     }
-                    checkFormSubmission(); // Check form submission after each input change
+                    checkFormSubmission();
                 });
     
                 $(inputId).keyup(function(e) {
                     if (e.keyCode == 13) {
-                        // Prevent form submission on enter key
                         e.preventDefault();
                         return false;
                     }
@@ -244,7 +243,7 @@
                     var value = $(this).text();
                     input.val(value);
                     $(listId).fadeOut();
-                    checkFormSubmission(); // Check form submission after each input change
+                    checkFormSubmission();
                 });
             }
     
@@ -267,35 +266,65 @@
                 }
             }
     
-            // AJAX form submission
             $('#country-comparison-form').on('submit', function(e) {
-                e.preventDefault();
-    
-                var country1 = $('#country1').val().trim();
-                var country2 = $('#country2').val().trim();
-    
-                if (validCountries.includes(country1) && validCountries.includes(country2)) {
-                    $.ajax({
-                        url: '/app/post-country-data/', // URL mapping to your Django view
-                        method: 'POST',
-                        contentType: 'application/json',
-                        data: JSON.stringify({ country1: country1, country2: country2 }),
-                        success: function(response) {
-                            alert(response.message); // Handle the response as needed
-                        },
-                        error: function() {
-                            alert('Error submitting data');
+            e.preventDefault();
+
+            var country1 = $('#country1').val().trim();
+            var country2 = $('#country2').val().trim();
+
+            console.log('Country 1:', country1); // Console log for debugging
+            console.log('Country 2:', country2); // Console log for debugging
+
+            if (validCountries.includes(country1) && validCountries.includes(country2)) {
+                $.ajax({
+                    url: "{% url 'post_country_data' %}",
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ country1: country1, country2: country2 }),
+                    success: function(response) {
+                        console.log('Response:', response); // Console log for debugging
+                        if (response.status === 'success') {
+                                                      // Generate the comparison table
+                             var tableHtml = '<table class="table table-bordered">';
+                            tableHtml += '<tr><th>Criteria</th><th>' + response.country1.country_or_region + '</th><th>' + response.country2.country_or_region + '</th></tr>';
+
+                            // Dynamically add rows for each criteria
+                            tableHtml += addTableRow('Score', response.country1.score, response.country2.score);
+                            tableHtml += addTableRow('GDP per Capita', response.country1.gdp_per_capita, response.country2.gdp_per_capita);
+                            tableHtml += addTableRow('Social Support', response.country1.social_support, response.country2.social_support);
+                            tableHtml += addTableRow('Healthy Life Expectancy', response.country1.healthy_life_expectancy, response.country2.healthy_life_expectancy);
+                            tableHtml += addTableRow('Freedom to Make Life Choices', response.country1.freedom_to_make_life_choices, response.country2.freedom_to_make_life_choices);
+                            tableHtml += addTableRow('Generosity', response.country1.generosity, response.country2.generosity);
+                            tableHtml += addTableRow('Perceptions of Corruption', response.country1.perceptions_of_corruption, response.country2.perceptions_of_corruption);
+                            tableHtml += addTableRow('Cost of Living Index', response.country1.cost_of_living_index, response.country2.cost_of_living_index);
+                            tableHtml += addTableRow('Rent Index', response.country1.rent_index, response.country2.rent_index);
+                            tableHtml += addTableRow('Cost of Living Plus Rent Index', response.country1.cost_of_living_plus_rent_index, response.country2.cost_of_living_plus_rent_index);
+                            tableHtml += addTableRow('Groceries Index', response.country1.groceries_index, response.country2.groceries_index);
+                            tableHtml += addTableRow('Restaurant Price Index', response.country1.restaurant_price_index, response.country2.restaurant_price_index);
+                            tableHtml += addTableRow('Local Purchasing Power Index', response.country1.local_purchasing_power_index, response.country2.local_purchasing_power_index);
+
+                            tableHtml += '</table>';
+
+                            // Update the comparison-results div with the new table
+                            $('.comparison-results').html('<h4>Comparison Results</h4>' + tableHtml);
+                        } else {
+                            alert(response.message);
                         }
+                    },
+                    error: function() {
+                        alert('Error submitting data');
+                    }
                     });
                 } else {
                     alert('Invalid countries. Please select valid countries for comparison.');
                 }
             });
-        });
+                // Function to add a row to the table
+                function addTableRow(criteria, country1Value, country2Value) {
+            return '<tr><td>' + criteria + '</td><td>' + country1Value + '</td><td>' + country2Value + '</td></tr>';
+        }
+    });
     </script>
-    
-    
-
 </body>
 
 </html>
