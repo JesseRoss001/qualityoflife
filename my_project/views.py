@@ -1,6 +1,8 @@
 from django.shortcuts import render
+import json
 from django.http import JsonResponse
 from .models import CountryData
+from django.views.decorators.csrf import csrf_exempt
 def index(request):
     # Function to calculate composite score
     def calculate_composite_score(country):
@@ -62,3 +64,16 @@ def search_countries(request):
         countries = CountryData.objects.filter(country_or_region__icontains=query)[:10]
         results = [country.country_or_region for country in countries]
     return JsonResponse(results, safe=False)
+@csrf_exempt  # Temporarily disable CSRF for demonstration purposes
+def post_country_data(request):
+    if request.method == 'POST':
+        # Assuming you're sending data as JSON
+        data = json.loads(request.body)
+        country1 = data.get('country1')
+        country2 = data.get('country2')
+
+        # Process the data (e.g., save to database, perform calculations, etc.)
+
+        return JsonResponse({'status': 'success', 'message': 'Data received successfully'})
+
+    return JsonResponse({'status': 'error', 'message': 'Invalid request'}, status=400)

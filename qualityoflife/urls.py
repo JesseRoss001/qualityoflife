@@ -6,4 +6,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='home'),  # Add this line for your homepage
     path('app/', include('my_project.urls')),  # Adjust this if necessary
+    
 ]
