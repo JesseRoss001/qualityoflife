@@ -110,55 +110,55 @@
             min-height: 200px;
         }
 
-            /* Universal styling for all lists */
-    ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-        text-align: left;
-    }
+        /* Universal styling for all lists */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+        }
 
-    ul li {
-        background-color: rgba(255, 255, 255, 0.8);
-        margin-bottom: 10px;
-        padding: 10px;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+        ul li {
+            background-color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-    ul li:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    }
+        ul li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
 
-    /* Styling for the modal */
-    .modal-content {
-        background-color: rgba(255, 255, 255, 0.95);
-        border-radius: 15px;
-        border: none;
-    }
+        /* Styling for the modal */
+        .modal-content {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            border: none;
+        }
 
-    .modal-header {
-        border-bottom: 1px solid #eee;
-        background-color: #ff9a9e;
-        color: white;
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
-    }
+        .modal-header {
+            border-bottom: 1px solid #eee;
+            background-color: #ff9a9e;
+            color: white;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
 
-    .modal-body {
-        padding: 20px;
-    }
+        .modal-body {
+            padding: 20px;
+        }
 
-    .modal-title {
-        font-weight: bold;
-    }
+        .modal-title {
+            font-weight: bold;
+        }
 
-    .close {
-        color: white;
-        opacity: 1;
-    }
+        .close {
+            color: white;
+            opacity: 1;
+        }
     </style>
 </head>
 
@@ -186,7 +186,8 @@
             <!-- More buttons for other categories... -->
 
             <!-- Overall Rank Modal -->
-            <div class="modal fade" id="overallRankModal" tabindex="-1" role="dialog" aria-labelledby="overallRankModalLabel" aria-hidden="true">
+            <div class="modal fade" id="overallRankModal" tabindex="-1" role="dialog"
+                aria-labelledby="overallRankModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -198,125 +199,124 @@
                         <div class="modal-body">
                             <ul id="topList">
                                 {% for country in top_countries_by_composite_score %}
-                                    <li>{{ country.country_or_region }}: {{ country.composite_score|floatformat:2 }}</li>
+                                <li>{{ country.country_or_region }}: {{ country.composite_score|floatformat:2 }}</li>
                                 {% endfor %}
                             </ul>
                             <ul id="bottomList" style="display: none;">
                                 {% for country in bottom_countries_by_composite_score %}
-                                    <li>{{ country.country_or_region }}: {{ country.composite_score|floatformat:2 }}</li>
+                                <li>{{ country.country_or_region }}: {{ country.composite_score|floatformat:2 }}</li>
                                 {% endfor %}
                             </ul>
-                            <button id="toggleButton" class="btn btn-primary" onclick="toggleList()">Show Bottom 10</button>
+                            <button id="toggleButton" class="btn btn-primary" onclick="toggleList()">Show Bottom
+                                10</button>
                         </div>
                     </div>
                 </div>
             </div>
-<!-- GDP per Capita Modal -->
-<div class="modal fade" id="gdpModal" tabindex="-1" role="dialog" aria-labelledby="gdpModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="gdpModalTitle">Top 10 Countries by GDP per Capita</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+            <!-- GDP per Capita Modal -->
+            <div class="modal fade" id="gdpModal" tabindex="-1" role="dialog" aria-labelledby="gdpModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="gdpModalTitle">Top 10 Countries by GDP per Capita</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p style="margin-bottom: 1em;">Represents the average economic output per person. Higher GDP
+                                per capita often correlates with higher living standards, better health care, and
+                                improved access to education.</p>
+                            <ul id="gdpTopList">
+                                {% for country in chart_data.gdp_per_capita.top_labels %}
+                                <li>{{ country }}</li>
+                                {% endfor %}
+                            </ul>
+                            <ul id="gdpBottomList" style="display: none;">
+                                {% for country in chart_data.gdp_per_capita.bottom_labels %}
+                                <li>{{ country }}</li>
+                                {% endfor %}
+                            </ul>
+                            <button id="gdpToggleButton" class="btn btn-primary" onclick="toggleGdpList()">Show Bottom
+                                10</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 col-md-3 col-lg-2">
+                <!-- Social Support Modal Button -->
+                <button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#socialSupportModal">
+                    <i class="fas fa-hands-helping"></i> Social Support
                 </button>
             </div>
-            <div class="modal-body">
-                <p style="margin-bottom: 1em;">Represents the average economic output per person. Higher GDP per capita often correlates with higher living standards, better health care, and improved access to education.</p>
-                <ul id="gdpTopList">
-                    <!-- Top GDP countries list should be rendered here -->
-                </ul>
-                <ul id="gdpBottomList" style="display: none;">
-                    <!-- Bottom GDP countries list should be rendered here -->
-                </ul>
-                <button id="gdpToggleButton" class="btn btn-primary" onclick="toggleGdpList()">Show Bottom 10</button>
+
+            <!-- Social Support Modal -->
+            <div class="modal fade" id="socialSupportModal" tabindex="-1" role="dialog"
+                aria-labelledby="socialSupportModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="socialSupportModalTitle">Top 10 Countries by Social Support</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Indicates the extent of social safety nets and community support available to individuals.
+                            Strong social support systems contribute to mental well-being and resilience in times of
+                            crisis.
+                            <ul id="socialSupportTopList">
+                                {% for country in chart_data.social_support.top_labels %}
+                                <li>{{ country }}</li>
+                                {% endfor %}
+                            </ul>
+                            <ul id="socialSupportBottomList" style="display: none;">
+                                {% for country in chart_data.social_support.bottom_labels %}
+                                <li>{{ country }}</li>
+                                {% endfor %}
+                            </ul>
+                            <button id="socialSupportToggleButton" class="btn btn-primary"
+                                onclick="toggleSocialSupportList()">Show Bottom 10</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</div>
-<div class="col-4 col-md-3 col-lg-2">
-    <!-- Social Support Modal Button -->
-    <button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#socialSupportModal">
-        <i class="fas fa-hands-helping"></i> Social Support
-    </button>
-</div>
-
-<!-- Social Support Modal -->
-<div class="modal fade" id="socialSupportModal" tabindex="-1"
-role="dialog" aria-labelledby="socialSupportModalLabel" aria-hidden="true">
-<div class="modal-dialog" role="document">
-<div class="modal-content">
-<div class="modal-header">
-<h5 class="modal-title" id="socialSupportModalTitle">Top 10 Countries by Social Support</h5>
-<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-<span aria-hidden="true">×</span>
-</button>
-</div>
-<div class="modal-body">
-Indicates the extent of social safety nets and community support available to individuals. Strong social support systems contribute to mental well-being and resilience in times of crisis.
-<ul id="socialSupportTopList">
-{% for country in top_social_support %}
-<li>{{ country.country_or_region }}: {{ country.social_support|floatformat:2 }}</li>
-{% endfor %}
-</ul>
-<ul id="socialSupportBottomList" style="display: none;">
-{% for country in bottom_social_support %}
-<li>{{ country.country_or_region }}: {{ country.social_support|floatformat:2 }}</li>
-{% endfor %}
-</ul>
-<button id="socialSupportToggleButton" class="btn btn-primary" onclick="toggleSocialSupportList()">Show Bottom 10</button>
-</div>
-</div>
-</div>
-
-</div>
-
             <div class="col-4 col-md-3 col-lg-2">
-                <!-- Healthy Life Expectancy Modal -->
+                <!-- Healthy Life Expectancy Modal Button -->
                 <button type="button" class="btn btn-warning m-2" data-toggle="modal"
                     data-target="#healthyLifeExpectancyModal">
                     <i class="fas fa-heartbeat"></i> Healthy Life Expectancy
                 </button>
-                <div class="modal fade" id="healthyLifeExpectancyModal" tabindex="-1" role="dialog"
-                    aria-labelledby="healthyLifeExpectancyModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="healthyLifeExpectancyModalLabel">Healthy Life Expectancy
-                                </h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                Measures the average number of years a person can expect to live in good health. It’s a
-                                crucial indicator of the overall health and quality of life in a country.
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
-            <div class="col-4 col-md-3 col-lg-2">
-                <!-- Freedom to Make Life Choices Modal -->
-                <button type="button" class="btn btn-secondary m-2" data-toggle="modal"
-                    data-target="#freedomToMakeLifeChoicesModal">
-                    <i class="fas fa-balance-scale"></i> Freedom to Make Life Choices
-                </button>
-                <div class="modal fade" id="freedomToMakeLifeChoicesModal" tabindex="-1" role="dialog"
-                    aria-labelledby="freedomToMakeLifeChoicesModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="freedomToMakeLifeChoicesModalLabel">Freedom to Make Life
-                                    Choices</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                Reflects individuals' freedom to make life decisions without undue constraints. This
-                                freedom is fundamental to personal autonomy and well-being.
-                            </div>
+
+            <!-- Healthy Life Expectancy Modal -->
+            <div class="modal fade" id="healthyLifeExpectancyModal" tabindex="-1" role="dialog"
+                aria-labelledby="healthyLifeExpectancyModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="healthyLifeExpectancyModalLabel">Healthy Life Expectancy</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Measures the average number of years a person can expect to live in good health. It’s a
+                            crucial indicator of the overall health and quality of life in a country.
+                            <ul id="healthyLifeExpectancyTopList">
+                                {% for country in chart_data.healthy_life_expectancy.top_labels %}
+                                <li>{{ country }}</li>
+                                {% endfor %}
+                            </ul>
+                            <ul id="healthyLifeExpectancyBottomList" style="display: none;">
+                                {% for country in chart_data.healthy_life_expectancy.bottom_labels %}
+                                <li>{{ country }}
+                                </li>
+                                {% endfor %}
+                            </ul>
+                            <button id="healthyLifeExpectancyToggleButton" class="btn btn-warning"
+                                onclick="toggleHealthyLifeExpectancyList()">Show Bottom 10</button>
                         </div>
                     </div>
                 </div>
@@ -338,8 +338,18 @@ Indicates the extent of social safety nets and community support available to in
                             </div>
                             <div class="modal-body">
                                 Indicates the average level of charitable giving and volunteerism in a society.
-                                Generosity is often seen as a reflection of the community spirit and empathy among the
-                                population.
+                                <ul id="generosityTopList">
+                                    {% for country in chart_data.generosity.top_labels %}
+                                    <li>{{ country }}</li>
+                                    {% endfor %}
+                                </ul>
+                                <ul id="generosityBottomList" style="display: none;">
+                                    {% for country in chart_data.generosity.bottom_labels %}
+                                    <li>{{ country }}</li>
+                                    {% endfor %}
+                                </ul>
+                                <button id="generosityToggleButton" class="btn btn-warning"
+                                    onclick="toggleGenerosityList()">Show Bottom 10</button>
                             </div>
                         </div>
                     </div>
@@ -357,295 +367,553 @@ Indicates the extent of social safety nets and community support available to in
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="perceptionsOfCorruptionModalLabel">Perceptions of Corruption
-                                </h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">×</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                Perceptions of corruption reflect the degree to which corruption is believed to exist in
-                                public and private sectors. It affects trust in institutions and can significantly
-                                impact the quality of life and governance.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4 col-md-3 col-lg-2">
-                <!-- Cost of Living Index Modal -->
-                <button type="button" class="btn btn-primary m-2" data-toggle="modal"
-                    data-target="#costOfLivingIndexModal">
-                    <i class="fas fa-wallet"></i> Cost of Living Index
-                </button>
-                <div class="modal fade" id="costOfLivingIndexModal" tabindex="-1" role="dialog"
-                    aria-labelledby="costOfLivingIndexModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="costOfLivingIndexModalLabel">Cost of Living Index</h5>
+                                <h5 class="modal-title" id="perceptionsOfCorruptionModalLabel">Perceptions of
+                                    Corruption</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
-                                Measures the relative price levels of consumer goods and services. A lower cost of
-                                living means affordability and potentially higher savings for individuals.
+                                Perceptions of corruption reflect the degree to which corruption is believed to
+                                exist in public and private sectors.
+                                <ul id="corruptionTopList">
+                                    {% for country in chart_data.perceptions_of_corruption.top_labels %}
+                                    <li>{{ country }}</li>
+                                    {% endfor %}
+                                </ul>
+                                <ul id="corruptionBottomList" style="display: none;">
+                                    {% for country in chart_data.perceptions_of_corruption.bottom_labels %}
+                                    <li>{{ country }}</li>
+                                    {% endfor %}
+                                </ul>
+                                <button id="corruptionToggleButton" class="btn btn-warning"
+                                    onclick="toggleCorruptionList()">Show Bottom 10</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-4 col-md-3 col-lg-2">
-                <!-- Rent Index Modal -->
-                <button type="button" class="btn btn-secondary m-2" data-toggle="modal" data-target="#rentIndexModal">
-                    <i class="fas fa-home"></i> Rent Index
-                </button>
-                <div class="modal fade" id="rentIndexModal" tabindex="-1" role="dialog"
-                    aria-labelledby="rentIndexModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="rentIndexModalLabel">Rent Index</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                Compares typical rental prices in an area to a global baseline. A lower rent index
-                                suggests more affordable housing relative to other locations.
+
+                <div class="col-4 col-md-3 col-lg-2">
+                    <!-- Cost of Living Index Modal -->
+                    <button type="button" class="btn btn-primary m-2" data-toggle="modal"
+                        data-target="#costOfLivingIndexModal">
+                        <i class="fas fa-wallet"></i> Cost of Living Index
+                    </button>
+                    <div class="modal fade" id="costOfLivingIndexModal" tabindex="-1" role="dialog"
+                        aria-labelledby="costOfLivingIndexModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="costOfLivingIndexModalLabel">Cost of Living Index
+                                    </h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Measures the relative price levels of consumer goods and services.
+                                    <ul id="costOfLivingIndexTopList">
+                                        {% for country in chart_data.cost_of_living_index.top_labels %}
+                                        <li>{{ country }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                    <ul id="costOfLivingIndexBottomList" style="display: none;">
+                                        {% for country in chart_data.cost_of_living_index.bottom_labels %}
+                                        <li>{{ country }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                    <button id="costOfLivingIndexToggleButton" class="btn btn-warning"
+                                        onclick="toggleCostOfLivingIndexList()">Show Bottom 10</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-4 col-md-3 col-lg-2">
-                <!-- Cost of Living Plus Rent Index Modal -->
-                <button type="button" class="btn btn-info m-2" data-toggle="modal"
-                    data-target="#costOfLivingPlusRentIndexModal">
-                    <i class="fas fa-calculator"></i> Cost of Living Plus Rent Index
-                </button>
 
-                <div class="modal fade" id="costOfLivingPlusRentIndexModal" tabindex="-1" role="dialog"
-                    aria-labelledby="costOfLivingPlusRentIndexModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="costOfLivingPlusRentIndexModalLabel">Cost of Living Plus
-                                    Rent Index</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">×</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                Combines the cost of living and rent indices to give a more comprehensive view of the
-                                overall cost of living in an area.
+                <div class="col-4 col-md-3 col-lg-2">
+                    <!-- Rent Index Modal -->
+                    <button type="button" class="btn btn-secondary m-2" data-toggle="modal"
+                        data-target="#rentIndexModal">
+                        <i class="fas fa-home"></i> Rent Index
+                    </button>
+                    <div class="modal fade" id="rentIndexModal" tabindex="-1" role="dialog"
+                        aria-labelledby="rentIndexModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="rentIndexModalLabel">Rent Index</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Compares typical rental prices in an area to a global baseline.
+                                    <ul id="rentIndexTopList">
+                                        {% for country in chart_data.rent_index.top_labels %}
+                                        <li>{{ country }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                    <ul id="rentIndexBottomList" style="display: none;">
+                                        {% for country in chart_data.rent_index.bottom_labels %}
+                                        <li>{{ country }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                    <button id="rentIndexToggleButton" class="btn btn-warning"
+                                        onclick="toggleRentIndexList()">Show Bottom 10</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-4 col-md-3 col-lg-2">
-                <!-- Groceries Index Modal -->
-                <button type="button" class="btn btn-warning m-2" data-toggle="modal"
-                    data-target="#groceriesIndexModal">
-                    <i class="fas fa-shopping-cart"></i> Groceries Index
-                </button>
 
-                <div class="modal fade" id="groceriesIndexModal" tabindex="-1" role="dialog"
-                    aria-labelledby="groceriesIndexModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="groceriesIndexModalLabel">Groceries Index</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">×</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                Evaluates the cost of groceries, providing insight into food affordability and access in
-                                different regions.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4 col-md-3 col-lg-2">
-                <!-- Restaurant Price Index Modal -->
-                <button type="button" class="btn btn-success m-2" data-toggle="modal"
-                    data-target="#restaurantPriceIndexModal">
-                    <i class="fas fa-utensils"></i> Restaurant Price Index
-                </button>
-
-                <div class="modal fade" id="restaurantPriceIndexModal" tabindex="-1" role="dialog"
-                    aria-labelledby="restaurantPriceIndexModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="restaurantPriceIndex
-ModalLabel">Restaurant Price Index</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">×</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                Represents the price of dining out, indicating the affordability of leisure and social
-                                activities.
+                <div class="col-4 col-md-3 col-lg-2">
+                    <!-- Cost of Living Plus Rent Index Modal -->
+                    <button type="button" class="btn btn-info m-2" data-toggle="modal"
+                        data-target="#costOfLivingPlusRentIndexModal">
+                        <i class="fas fa-calculator"></i> Cost of Living Plus Rent Index
+                    </button>
+                    <div class="modal fade" id="costOfLivingPlusRentIndexModal" tabindex="-1" role="dialog"
+                        aria-labelledby="costOfLivingPlusRentIndexModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="costOfLivingPlusRentIndexModalLabel">Cost of Living
+                                        Plus Rent Index</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Combines the cost of living and rent indices to give a more comprehensive view
+                                    of the overall cost of living in an area.
+                                    <ul id="costOfLivingPlusRentIndexTopList">
+                                        {% for country in chart_data.cost_of_living_plus_rent_index.top_labels %}
+                                        <li>{{ country }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                    <ul id="costOfLivingPlusRentIndexBottomList" style="display: none;">
+                                        {% for country in chart_data.cost_of_living_plus_rent_index.bottom_labels %}
+                                        <li>{{ country }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                    <button id="costOfLivingPlusRentIndexToggleButton" class="btn btn-warning"
+                                        onclick="toggleCostOfLivingPlusRentIndexList()">Show Bottom 10</button>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                 </div>
-            </div>
-            <div class="col-4 col-md-3 col-lg-2">
-                <!-- Local Purchasing Power Index Modal -->
-                <button type="button" class="btn btn-primary m-2" data-toggle="modal"
-                    data-target="#localPurchasingPowerIndexModal">
-                    <i class="fas fa-wallet"></i> Local Purchasing Power Index
-                </button>
-
-                <div class="modal fade" id="localPurchasingPowerIndexModal" tabindex="-1" role="dialog"
-                    aria-labelledby="localPurchasingPowerIndexModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="localPurchasingPowerIndexModalLabel">Local Purchasing Power
-                                    Index</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">×</span>
-                                </button>
+                <div class="col-4 col-md-3 col-lg-2">
+                    <!-- Groceries Index Modal -->
+                    <button type="button" class="btn btn-warning m-2" data-toggle="modal"
+                        data-target="#groceriesIndexModal">
+                        <i class="fas fa-shopping-cart"></i> Groceries Index
+                    </button>
+                    <div class="modal fade" id="groceriesIndexModal" tabindex="-1" role="dialog"
+                        aria-labelledby="groceriesIndexModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="groceriesIndexModalLabel">Groceries Index</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Evaluates the cost of groceries, providing insight into food affordability and
+                                    access in different regions.
+                                    <ul id="groceriesIndexTopList">
+                                        {% for country in chart_data.groceries_index.top_labels %}
+                                        <li>{{ country }}
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                    <ul id="groceriesIndexBottomList" style="display: none;">
+                                        {% for country in chart_data.groceries_index.bottom_labels %}
+                                        <li>{{ country }}
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                    <button id="groceriesIndexToggleButton" class="btn btn-warning"
+                                        onclick="toggleGroceriesIndexList()">Show Bottom 10</button>
+                                </div>
                             </div>
-                            <div class="modal-body">
-                                Assesses the relative purchasing power of individuals in their local currency,
-                                reflecting the economic well-being and affordability within the country.
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-4 col-md-3 col-lg-2">
+                    <!-- Restaurant Price Index Modal -->
+                    <button type="button" class="btn btn-success m-2" data-toggle="modal"
+                        data-target="#restaurantPriceIndexModal">
+                        <i class="fas fa-utensils"></i> Restaurant Price Index
+                    </button>
+                    <div class="modal fade" id="restaurantPriceIndexModal" tabindex="-1" role="dialog"
+                        aria-labelledby="restaurantPriceIndexModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="restaurantPriceIndexModalLabel">Restaurant Price
+                                        Index</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Represents the price of dining out, indicating the affordability of leisure and
+                                    social activities.
+                                    <ul id="restaurantPriceIndexTopList">
+                                        {% for country in chart_data.restaurant_price_index.top_labels %}
+                                        <li>{{ country }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                    <ul id="restaurantPriceIndexBottomList" style="display: none;">
+                                        {% for country in chart_data.restaurant_price_index.bottom_labels %}
+                                        <li>{{ country }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                    <button id="restaurantPriceIndexToggleButton" class="btn btn-warning"
+                                        onclick="toggleRestaurantPriceIndexList()">Show Bottom 10</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="col-4 col-md-3 col-lg-2">
+                    <!-- Local Purchasing Power Index Modal -->
+                    <button type="button" class="btn btn-primary m-2" data-toggle="modal"
+                        data-target="#localPurchasingPowerIndexModal">
+                        <i class="fas fa-wallet"></i> Local Purchasing Power Index
+                    </button>
+                    <div class="modal fade" id="localPurchasingPowerIndexModal" tabindex="-1" role="dialog"
+                        aria-labelledby="localPurchasingPowerIndexModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="localPurchasingPowerIndexModalLabel">Local
+                                        Purchasing Power Index</h5>
+                                    <button type="button" " class=" close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Assesses the relative purchasing power of individuals in their local currency,
+                                    reflecting the economic well-being and affordability within the country.
+                                    <ul id="localPurchasingPowerIndexTopList">
+                                        {% for country in chart_data.local_purchasing_power_index.top_labels %}
+                                        <li>{{ country }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                    <ul id="localPurchasingPowerIndexBottomList" style="display: none;">
+                                        {% for country in chart_data.local_purchasing_power_index.bottom_labels %}
+                                        <li>{{ country }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                    <button id="localPurchasingPowerIndexToggleButton" class="btn btn-warning"
+                                        onclick="toggleLocalPurchasingPowerIndexList()">Show Bottom 10</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-        </div>
-    </div>
 
-    <!-- Bootstrap and other necessary scripts -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <!-- Bootstrap and other necessary scripts -->
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Parse the JSON string passed from Django safely.
-            var chartDataString = '{{ chart_data|safe }}';
-            var chartData;
-    
-            try {
-                chartData = JSON.parse(chartDataString);
-                console.log("Parsed chart data:", chartData);
-            } catch (e) {
-                console.error("Parsing error:", e);
-                return; // Stop execution if there's a parsing error.
-            }
-    
-            function createChart(chartId, chartDataKey) {
-                var ctx = document.getElementById(chartId).getContext('2d');
-                console.log("Creating chart with data key:", chartDataKey);
-                
-                new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: chartData[chartDataKey].labels,
-                        datasets: [{
-                            label: chartDataKey.replace(/_/g, ' ').toUpperCase(),
-                            data: chartData[chartDataKey].data,
-                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                            borderColor: 'rgba(255, 99, 132, 1)',
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        scales: {
-                            y: {
-                                beginAtZero: true
-                            }
-                        }
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    // Parse the JSON string passed from Django safely.
+                    var chartDataString = '{{ chart_data|safe }}';
+                    var chartData;
+
+                    try {
+                        chartData = JSON.parse(chartDataString);
+                        console.log("Parsed chart data:", chartData);
+                    } catch (e) {
+                        console.error("Parsing error:", e);
+                        return; // Stop execution if there's a parsing error.
                     }
-                });
-            }
-    
-            // Attach event listeners to modal buttons to trigger chart creation
-            document.getElementById('overallRankModal').addEventListener('shown.bs.modal', function () {
-                createChart('overallRankChart', 'score'); // Ensure 'score' is a key in chartData
-            });
-    
-            // Repeat for other modals and corresponding chart IDs
-            // Example:
-            // document.getElementById('anotherModal').addEventListener('shown.bs.modal', function () {
-            //     createChart('anotherChart', 'another_data_key');
-            // });
-    
-        });
-    </script>
-    <script>
-        function toggleList() {
-            var topList = document.getElementById("topList");
-            var bottomList = document.getElementById("bottomList");
-            var toggleButton = document.getElementById("toggleButton");
-            var modalTitle = document.getElementById("modalTitle");
-    
-            if (topList.style.display === "none") {
-                topList.style.display = "block";
-                bottomList.style.display = "none";
-                toggleButton.innerText = "Show Bottom 10";
-                modalTitle.innerText = "Top 10 Countries by Composite Score";
-            } else {
-                topList.style.display = "none";
-                bottomList.style.display = "block";
-                toggleButton.innerText = "Show Top 10";
-                modalTitle.innerText = "Bottom 10 Countries by Composite Score";
-            }
-        }
-    </script>
-<script>
-    function toggleGdpList() {
-        var topList = document.getElementById("gdpTopList");
-        var bottomList = document.getElementById("gdpBottomList");
-        var toggleButton = document.getElementById("gdpToggleButton");
-        var modalTitle = document.getElementById("gdpModalTitle");
-    
-        // Toggles the display of the top and bottom GDP lists
-        if (topList.style.display === "none" || !topList.style.display) {
-            topList.style.display = "block";
-            bottomList.style.display = "none";
-            toggleButton.innerText = "Show Bottom 10";
-            modalTitle.innerText = "Top 10 Countries by GDP per Capita";
-        } else {
-            topList.style.display = "none";
-            bottomList.style.display = "block";
-            toggleButton.innerText = "Show Top 10";
-            modalTitle.innerText = "Bottom 10 Countries by GDP per Capita";
-        }
-    }
-    </script>
-      <script>
-        function toggleSocialSupportList() {
-            var topList = document.getElementById("socialSupportTopList");
-            var bottomList = document.getElementById("socialSupportBottomList");
-            var toggleButton = document.getElementById("socialSupportToggleButton");
-            var modalTitle = document.getElementById("socialSupportModalTitle");
-    
-            if (topList.style.display === "none") {
-                topList.style.display = "block";
-                bottomList.style.display = "none";
-                toggleButton.innerText = "Show Bottom 10";
-                modalTitle.innerText = "Top 10 Countries by Social Support";
-            } else {
-                topList.style.display = "none";
-                bottomList.style.display = "block";
-                toggleButton.innerText = "Show Top 10";
-                modalTitle.innerText = "Bottom 10 Countries by Social Support";
-            }
-        }
-    </script>
-        </body>
 
-</html >
+                    function createChart(chartId, chartDataKey) {
+                        var ctx = document.getElementById(chartId).getContext('2d');
+                        console.log("Creating chart with data key:", chartDataKey);
+
+                        new Chart(ctx, {
+                            type: 'bar',
+                            data: {
+                                labels: chartData[chartDataKey].labels,
+                                datasets: [{
+                                    label: chartDataKey.replace(/_/g, ' ').toUpperCase(),
+                                    data: chartData[chartDataKey].data,
+                                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                                    borderColor: 'rgba(255, 99, 132, 1)',
+                                    borderWidth: 1
+                                }]
+                            },
+                            options: {
+                                scales: {
+                                    y: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+                    }
+
+                    // Attach event listeners to modal buttons to trigger chart creation
+                    document.getElementById('overallRankModal').addEventListener('shown.bs.modal', function () {
+                        createChart('overallRankChart', 'score'); // Ensure 'score' is a key in chartData
+                    });
+
+                    // Repeat for other modals and corresponding chart IDs
+                    // Example:
+                    // document.getElementById('anotherModal').addEventListener('shown.bs.modal', function () {
+                    //     createChart('anotherChart', 'another_data_key');
+                    // });
+
+                });
+            </script>
+            <script>
+                function toggleList() {
+                    var topList = document.getElementById("topList");
+                    var bottomList = document.getElementById("bottomList");
+                    var toggleButton = document.getElementById("toggleButton");
+                    var modalTitle = document.getElementById("modalTitle");
+
+                    if (topList.style.display === "none") {
+                        topList.style.display = "block";
+                        bottomList.style.display = "none";
+                        toggleButton.innerText = "Show Bottom 10";
+                        modalTitle.innerText = "Top 10 Countries by Composite Score";
+                    } else {
+                        topList.style.display = "none";
+                        bottomList.style.display = "block";
+                        toggleButton.innerText = "Show Top 10";
+                        modalTitle.innerText = "Bottom 10 Countries by Composite Score";
+                    }
+                }
+            </script>
+            <script>
+                function toggleGdpList() {
+                    var topList = document.getElementById("gdpTopList");
+                    var bottomList = document.getElementById("gdpBottomList");
+                    var toggleButton = document.getElementById("gdpToggleButton");
+                    var modalTitle = document.getElementById("gdpModalTitle");
+
+                    // Toggles the display of the top and bottom GDP lists
+                    if (topList.style.display === "none" || !topList.style.display) {
+                        topList.style.display = "block";
+                        bottomList.style.display = "none";
+                        toggleButton.innerText = "Show Bottom 10";
+                        modalTitle.innerText = "Top 10 Countries by GDP per Capita";
+                    } else {
+                        topList.style.display = "none";
+                        bottomList.style.display = "block";
+                        toggleButton.innerText = "Show Top 10";
+                        modalTitle.innerText = "Bottom 10 Countries by GDP per Capita";
+                    }
+                }
+            </script>
+            <script>
+                function toggleSocialSupportList() {
+                    var topList = document.getElementById("socialSupportTopList");
+                    var bottomList = document.getElementById("socialSupportBottomList");
+                    var toggleButton = document.getElementById("socialSupportToggleButton");
+                    var modalTitle = document.getElementById("socialSupportModalTitle");
+
+                    if (topList.style.display === "none" || !topList.style.display) {
+                        topList.style.display = "block";
+                        bottomList.style.display = "none";
+                        toggleButton.innerText = "Show Bottom 10";
+                        modalTitle.innerText = "Top 10 Countries by Social Support";
+                    } else {
+                        topList.style.display = "none";
+                        bottomList.style.display = "block";
+                        toggleButton.innerText = "Show Top 10";
+                        modalTitle.innerText = "Bottom 10 Countries by Social Support";
+                    }
+                }
+            </script>
+            <script>
+                function toggleHealthyLifeExpectancyList() {
+                    var topList = document.getElementById("healthyLifeExpectancyTopList");
+                    var bottomList = document.getElementById("healthyLifeExpectancyBottomList");
+                    var toggleButton = document.getElementById("healthyLifeExpectancyToggleButton");
+                    var modalTitle = document.getElementById("healthyLifeExpectancyModalLabel");
+
+                    if (topList.style.display === "none" || !topList.style.display) {
+                        topList.style.display = "block";
+                        bottomList.style.display = "none";
+                        toggleButton.innerText = "Show Bottom 10";
+                        modalTitle.innerText = "Top 10 Countries by Healthy Life Expectancy";
+                    } else {
+                        topList.style.display = "none";
+                        bottomList.style.display = "block";
+                        toggleButton.innerText = "Show Top 10";
+                        modalTitle.innerText = "Bottom 10 Countries by Healthy Life Expectancy";
+                    }
+                }
+            </script>
+            <script>
+                function toggleGenerosityList() {
+                    var topList = document.getElementById("generosityTopList");
+                    var bottomList = document.getElementById("generosityBottomList");
+                    var toggleButton = document.getElementById("generosityToggleButton");
+                    var modalTitle = document.getElementById("generosityModalLabel");
+
+                    if (topList.style.display === "none" || !topList.style.display) {
+                        topList.style.display = "block";
+                        bottomList.style.display = "none";
+                        toggleButton.innerText = "Show Bottom 10";
+                        modalTitle.innerText = "Top 10 Countries by Generosity";
+                    } else {
+                        topList.style.display = "none";
+                        bottomList.style.display = "block";
+                        toggleButton.innerText = "Show Top 10";
+                        modalTitle.innerText = "Bottom 10 Countries by Generosity";
+                    }
+                }
+            </script>
+            <script>
+                function toggleCorruptionList() {
+                    var topList = document.getElementById("corruptionTopList");
+                    var bottomList = document.getElementById("corruptionBottomList");
+                    var toggleButton = document.getElementById("corruptionToggleButton");
+                    var modalTitle = document.getElementById("perceptionsOfCorruptionModalLabel");
+
+                    if (topList.style.display === "none" || !topList.style.display) {
+                        topList.style.display = "block";
+                        bottomList.style.display = "none";
+                        toggleButton.innerText = "Show Bottom 10";
+                        modalTitle.innerText = "Lowest levels by Perceptions of Corruption";
+                    } else {
+                        topList.style.display = "none";
+                        bottomList.style.display = "block";
+                        toggleButton.innerText = "Show Top 10";
+                        modalTitle.innerText = "Highest levels by Perceptions of Corruption";
+                    }
+                }
+                function toggleRestaurantPriceIndexList() {
+    var topList = document.getElementById("restaurantPriceIndexTopList");
+    var bottomList = document.getElementById("restaurantPriceIndexBottomList");
+    var toggleButton = document.getElementById("restaurantPriceIndexToggleButton");
+    var modalTitle = document.getElementById("restaurantPriceIndexModalLabel");
+
+    if (topList.style.display === "none" || !topList.style.display) {
+        topList.style.display = "block";
+        bottomList.style.display = "none";
+        toggleButton.innerText = "Show Bottom 10";
+        modalTitle.innerText = "Top 10 Countries by Restaurant Price Index";
+    } else {
+        topList.style.display = "none";
+        bottomList.style.display = "block";
+        toggleButton.innerText = "Show Top 10";
+        modalTitle.innerText = "Bottom 10 Countries by Restaurant Price Index";
+    }
+}
+function toggleLocalPurchasingPowerIndexList() {
+    var topList = document.getElementById("localPurchasingPowerIndexTopList");
+    var bottomList = document.getElementById("localPurchasingPowerIndexBottomList");
+    var toggleButton = document.getElementById("localPurchasingPowerIndexToggleButton");
+    var modalTitle = document.getElementById("localPurchasingPowerIndexModalLabel");
+
+    if (topList.style.display === "none" || !topList.style.display) {
+        topList.style.display = "block";
+        bottomList.style.display = "none";
+        toggleButton.innerText = "Show Bottom 10";
+        modalTitle.innerText = "Top 10 Countries by Local Purchasing Power Index";
+    } else {
+        topList.style.display = "none";
+        bottomList.style.display = "block";
+        toggleButton.innerText = "Show Top 10";
+        modalTitle.innerText = "Bottom 10 Countries by Local Purchasing Power Index";
+    }
+}
+function toggleCostOfLivingIndexList() {
+    var topList = document.getElementById("costOfLivingIndexTopList");
+    var bottomList = document.getElementById("costOfLivingIndexBottomList");
+    var toggleButton = document.getElementById("costOfLivingIndexToggleButton");
+    var modalTitle = document.getElementById("costOfLivingIndexModalLabel");
+
+    if (topList.style.display === "none" || !topList.style.display) {
+        topList.style.display = "block";
+bottomList.style.display = "none";
+toggleButton.innerText = "Show Bottom 10";
+modalTitle.innerText = "Top 10 Countries by Cost of Living Index";
+} else {
+topList.style.display = "none";
+bottomList.style.display = "block";
+toggleButton.innerText = "Show Top 10";
+modalTitle.innerText = "Bottom 10 Countries by Cost of Living Index";
+}
+}
+function toggleRentIndexList() {
+    var topList = document.getElementById("rentIndexTopList");
+    var bottomList = document.getElementById("rentIndexBottomList");
+    var toggleButton = document.getElementById("rentIndexToggleButton");
+    var modalTitle = document.getElementById("rentIndexModalLabel");
+
+    if (topList.style.display === "none" || !topList.style.display) {
+        topList.style.display = "block";
+        bottomList.style.display = "none";
+        toggleButton.innerText = "Show Bottom 10";
+        modalTitle.innerText = "Top 10 Countries by Rent Index";
+    } else {
+        topList.style.display = "none";
+        bottomList.style.display = "block";
+        toggleButton.innerText = "Show Top 10";
+        modalTitle.innerText = "Bottom 10 Countries by Rent Index";
+    }
+}
+function toggleCostOfLivingPlusRentIndexList() {
+    var topList = document.getElementById("costOfLivingPlusRentIndexTopList");
+    var bottomList = document.getElementById("costOfLivingPlusRentIndexBottomList");
+    var toggleButton = document.getElementById("costOfLivingPlusRentIndexToggleButton");
+    var modalTitle = document.getElementById("costOfLivingPlusRentIndexModalLabel");
+
+    if (topList.style.display === "none" || !topList.style.display) {
+        topList.style.display = "block";
+        bottomList.style.display = "none";
+        toggleButton.innerText = "Show Bottom 10";
+modalTitle.innerText = "Top 10 Countries by Cost of Living Plus Rent Index";
+} else {
+topList.style.display = "none";
+bottomList.style.display = "block";
+toggleButton.innerText = "Show Top 10";
+modalTitle.innerText = "Bottom 10 Countries by Cost of Living Plus Rent Index";
+}
+}
+function toggleGroceriesIndexList() {
+    var topList = document.getElementById("groceriesIndexTopList");
+    var bottomList = document.getElementById("groceriesIndexBottomList");
+    var toggleButton = document.getElementById("groceriesIndexToggleButton");
+    var modalTitle = document.getElementById("groceriesIndexModalLabel");
+
+    if (topList.style.display === "none" || !topList.style.display) {
+        topList.style.display = "block";
+        bottomList.style.display = "none";
+        toggleButton.innerText = "Show Bottom 10";
+        modalTitle.innerText = "Top 10 Countries by Groceries Index";
+    } else {
+       
+topList.style.display = "none";
+bottomList.style.display = "block";
+toggleButton.innerText = "Show Top 10";
+modalTitle.innerText = "Bottom 10 Countries by Groceries Index";
+}
+}
+
+  
+            </script>
+
+</body>
+
+</html>
