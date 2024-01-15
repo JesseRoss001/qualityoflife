@@ -147,6 +147,16 @@
                             </button>
                         </div>
                         <div class="modal-body">
+                            <div class="row mt-3">
+                                <div class="col-md-12">
+                                    <h4>Top Countries by Composite Score</h4>
+                                    <ul id="top-countries-composite-list">
+                                        {% for country in top_countries_by_composite_score %}
+                                            <li>{{ country.country_or_region }}: {{ country.composite_score|floatformat:2 }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
                             <canvas id="overallRankChart"></canvas>
                         </div>
                     </div>
@@ -454,25 +464,29 @@ ModalLabel">Restaurant Price Index</h5>
     </div>
 
     <!-- Bootstrap and other necessary scripts -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             // Parse the JSON string passed from Django safely.
-            var chartDataString = '{{ chart_data|safe }}'; // Make sure this line is not causing the issue.
+            var chartDataString = '{{ chart_data|safe }}';
             var chartData;
-        
+    
             try {
                 chartData = JSON.parse(chartDataString);
+                console.log("Parsed chart data:", chartData);
             } catch (e) {
                 console.error("Parsing error:", e);
                 return; // Stop execution if there's a parsing error.
             }
-        
+    
             function createChart(chartId, chartDataKey) {
                 var ctx = document.getElementById(chartId).getContext('2d');
+                console.log("Creating chart with data key:", chartDataKey);
+                
                 new Chart(ctx, {
                     type: 'bar',
                     data: {
@@ -494,17 +508,21 @@ ModalLabel">Restaurant Price Index</h5>
                     }
                 });
             }
-        
+    
             // Attach event listeners to modal buttons to trigger chart creation
-            $('#overallRankModal').on('shown.bs.modal', function () {
+            document.getElementById('overallRankModal').addEventListener('shown.bs.modal', function () {
                 createChart('overallRankChart', 'score'); // Ensure 'score' is a key in chartData
             });
-        
+    
             // Repeat for other modals and corresponding chart IDs
-            // ...
-        
+            // Example:
+            // document.getElementById('anotherModal').addEventListener('shown.bs.modal', function () {
+            //     createChart('anotherChart', 'another_data_key');
+            // });
+    
         });
-        </script>
+    </script>
+    
       
         </body>
 
