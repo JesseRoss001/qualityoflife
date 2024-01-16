@@ -94,19 +94,23 @@ def post_country_data(request):
 
 
 
-
 def higher_or_lower_game(request):
-    countries = CountryData.objects.all()
-    random_countries = random.sample(list(countries), min(len(countries), 70))
-
-    # Add a random category to each country for the game
-    categories = ['gdp_per_capita', 'social_support', 'healthy_life_expectancy', 
-                  'freedom_to_make_life_choices', 'generosity', 'perceptions_of_corruption', 
-                  'cost_of_living_index', 'rent_index', 'cost_of_living_plus_rent_index', 
-                  'groceries_index', 'restaurant_price_index', 'local_purchasing_power_index']
-    for country in random_countries:
-        country.category = random.choice(categories)
-
-    countries_json = serializers.serialize('json', random_countries)
-    context = {'countries': countries_json}
-    return render(request, 'higher_or_lower_game.html', context)
+    # Get all countries
+    countries = list(CountryData.objects.all())
+    # Select two random countries
+    random_countries = random.sample(countries, 2)
+    # Define the fields to include
+    fields = ['gdp_per_capita', 'social_support', 'healthy_life_expectancy', 
+              'freedom_to_make_life_choices', 'generosity', 'perceptions_of_corruption', 
+              'cost_of_living_index', 'rent_index', 'cost_of_living_plus_rent_index', 
+              'groceries_index', 'restaurant_price_index', 'local_purchasing_power_index']
+    # Serialize the country data
+    serialized_countries = json.dumps([{
+        'country_or_region': country.country_or_region,
+        'gdp_per_capita': country.gdp_per_capita,
+        'social_support': country.social_support,
+        # Add all other fields here in a similar manner
+        # ...
+    } for country in random_countries])
+    # Send data to the template
+    return render(request, 'higher_or_lower_game.html', {'countries': serialized_countries, 'fields': json.dumps(fields)})
