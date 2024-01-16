@@ -93,7 +93,62 @@
         .comparison-results p {
             color: #333;
         }
+        @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
+.table {border-radius: 10%;
+    font-family: 'Arial', sans-serif;
+    animation: fadeIn 1s ease-in-out;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden; /* This ensures the inner elements adhere to the border-radius */
+}
+
+.tooltip {
+    position: absolute;
+    padding: 8px;
+    background-color: black;
+    color: white;
+    border-radius: 4px;
+    font-size: 14px;
+    z-index: 1000;
+}
+.table th, .table td {
+    padding: 10px;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.table th {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, #ff5733, #c70039, #ee7752);
+    color: white;
+    font-size: 1.1em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+.data-row {
+    transition: background-color 0.3s ease;
+}
+.table tr:hover {
+    transform: scale(1.03);
+    background-color: rgba(100, 100, 100, 0.1);
+}
+
+.table tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+/* Responsive Design with Bootstrap */
+@media (max-width: 600px) {
+    .table-responsive {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
         .glass-container {
             background-color: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
@@ -319,10 +374,59 @@
                     alert('Invalid countries. Please select valid countries for comparison.');
                 }
             });
-                // Function to add a row to the table
-                function addTableRow(criteria, country1Value, country2Value) {
-            return '<tr><td>' + criteria + '</td><td>' + country1Value + '</td><td>' + country2Value + '</td></tr>';
-        }
+            function getColorAndIcon(value1, value2, isHigherGood) {
+    var color = isHigherGood ? (value1 > value2 ? 'green' : 'red') : (value1 < value2 ? 'green' : 'red');
+    var icon = color === 'green' ? '<i class="fa fa-thumbs-up"></i>' : '<i class="fa fa-thumbs-down"></i>';
+    return { color, icon };
+}
+
+function addTableRow(criteria, country1Value, country2Value) {
+    return `<tr class="data-row">
+              <td>${criteria}</td>
+              <td>${country1Value}</td>
+              <td>${country2Value}</td>
+            </tr>`;
+}
+function addHoverEffects() {
+    const rows = document.querySelectorAll('.data-row');
+
+    rows.forEach(row => {
+        row.addEventListener('mouseover', function() {
+            this.style.backgroundColor = '#f0f0f0'; // Change background color on hover
+            showTooltip(this, 'More Info'); // Show a tooltip (function to be defined)
+        });
+
+        row.addEventListener('mouseout', function() {
+            this.style.backgroundColor = ''; // Reset background color
+            hideTooltip(); // Hide the tooltip (function to be defined)
+        });
+    });
+}
+
+function showTooltip(element, text) {
+    // Create and display tooltip
+    const tooltip = document.createElement('div');
+    tooltip.className = 'tooltip';
+    tooltip.textContent = text;
+    document.body.appendChild(tooltip);
+
+    // Position the tooltip
+    const rect = element.getBoundingClientRect();
+    tooltip.style.left = `${rect.left + (rect.width / 2)}px`;
+    tooltip.style.top = `${rect.top - rect.height}px`;
+}
+
+function hideTooltip() {
+    // Remove tooltip
+    const tooltip = document.querySelector('.tooltip');
+    if (tooltip) {
+        tooltip.remove();
+    }
+}
+
+// Call this function when the table is loaded or updated
+addHoverEffects();
+
     });
     </script>
 </body>
