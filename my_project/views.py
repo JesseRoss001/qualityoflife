@@ -92,13 +92,11 @@ def post_country_data(request):
 
     return JsonResponse({'status': 'error', 'message': 'Invalid request'}, status=400)
 
-
-
 def higher_or_lower_game(request):
     # Get all countries
     countries = list(CountryData.objects.all())
-    # Select two random countries
-    random_countries = random.sample(countries, 2)
+    # Shuffle the countries to get a random order every time
+    random.shuffle(countries)
     # Define the fields to include
     fields = ['gdp_per_capita', 'social_support', 'healthy_life_expectancy', 
               'freedom_to_make_life_choices', 'generosity', 'perceptions_of_corruption', 
@@ -106,11 +104,11 @@ def higher_or_lower_game(request):
               'groceries_index', 'restaurant_price_index', 'local_purchasing_power_index']
     # Serialize the country data
     serialized_countries = json.dumps([{
-        'country_or_region': country.country_or_region,
-        'gdp_per_capita': country.gdp_per_capita,
-        'social_support': country.social_support,
-        # Add all other fields here in a similar manner
-        # ...
-    } for country in random_countries])
+        field: getattr(country, field) for field in fields
+    } for country in countries], ensure_ascii=False
+    ) # Serialize all countries and fields
     # Send data to the template
-    return render(request, 'higher_or_lower_game.html', {'countries': serialized_countries, 'fields': json.dumps(fields)})
+    return render(request, 'higher_or_lower_game.html', {
+        'countries': serialized_countries, 
+        'fields': json.dumps(fields)
+    })

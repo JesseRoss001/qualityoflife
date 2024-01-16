@@ -56,74 +56,105 @@
     </style>
 </head>
 
-<body>
-    <h2>Higher or Lower Game</h2>
-    <div id="game">
-        <div id="question"></div>
-        <button id="option1" class="option-button">Higher</button>
-        <button id="option2" class="option-button">Lower</button>
-        <p id="score">Score: 0</p>
-    </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            let countries = JSON.parse('{{ countries|safe }}'); // Ensure this data is provided by Django
-            let fields = JSON.parse('{{ fields|safe }}'); // Ensure this data is provided by Django
-            let score = 0;
-            let currentField;
-            let currentQuestionIndex = 0; // To track current question
 
+    <body>
+        <h2>Higher or Lower Game</h2>
+        <div id="game">
+            <div id="question"></div>
+            <button id="option1" class="option-button">Higher</button>
+            <button id="option2" class="option-button">Lower</button>
+            <div id="correct-answers"></div>
+            <p id="score">Score: 0</p>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+    let countries = JSON.parse('{{ countries|safe }}');
+    let fields = JSON.parse('{{ fields|safe }}');
+    let score = 0;
+    let correctAnswers = [];
+    let currentField;
+    let currentCountryPair = [];
+
+            function getRandomCountries() {
+                if (countries.length < 2) {
+                    alert('Not enough countries for a new question. Game over.');
+                    return false;
+                }
+                let index = Math.floor(Math.random() * (countries.length - 1));
+                currentCountryPair = [countries[index], countries[index + 1]];
+                console.log('New country pair:', currentCountryPair);
+                return true;
+            }
+    
             function getRandomField() {
                 return fields[Math.floor(Math.random() * fields.length)];
             }
-
+    
             function displayQuestion() {
+                if (!getRandomCountries()) {
+                    return; // Exit if no more countries
+                }
                 currentField = getRandomField();
                 let fieldDisplayName = currentField.replace(/_/g, ' ');
                 document.getElementById('question').innerHTML =
-                    `Does ${countries[currentQuestionIndex].country_or_region} have a higher ${fieldDisplayName} than ${countries[currentQuestionIndex + 1].country_or_region}?`;
-
-                // Change button text to "Higher" and "Lower"
-                document.getElementById('option1').innerText = 'Higher';
-                document.getElementById('option2').innerText = 'Lower';
+                    `Does ${currentCountryPair[0].country_or_region} have a higher ${fieldDisplayName} than ${currentCountryPair[1].country_or_region}?`;
+                console.log('Current question:', document.getElementById('question').textContent);
             }
-
+    
+            function updateCorrectAnswers(isCorrect) {
+                let question = document.getElementById('question').textContent;
+                let answerText = isCorrect ? 'Correct' : 'Incorrect';
+                let country1Value = currentCountryPair[0][currentField];
+                let country2Value = currentCountryPair[1][currentField];
+                correctAnswers.push({question, answerText, country1Value, country2Value});
+                updateCorrectAnswersDiv();
+            }
+    
+            function updateCorrectAnswersDiv() {
+                let correctAnswersDiv = document.getElementById('correct-answers');
+                correctAnswersDiv.innerHTML = correctAnswers.map(answer => {
+                    return `<div>Question: ${answer.question}, Answer: ${answer.answerText}, Values: ${answer.country1Value} vs ${answer.country2Value}</div>`;
+                }).join('');
+            }
+    
             function checkAnswer(isFirstOptionSelected) {
-                console.log(`Checking answer. Current Field: ${currentField}`);
                 let correctAnswer = isFirstOptionSelected ?
-                    countries[currentQuestionIndex][currentField] > countries[currentQuestionIndex + 1][currentField] :
-                    countries[currentQuestionIndex + 1][currentField] > countries[currentQuestionIndex][currentField];
-
-                console.log(`Correct Answer: ${correctAnswer}`);
+                    currentCountryPair[0][currentField] > currentCountryPair[1][currentField] :
+                    currentCountryPair[1][currentField] > currentCountryPair[0][currentField];
+    
+                updateCorrectAnswers(correctAnswer);
+    
                 if (correctAnswer) {
                     score++;
-                    alert('Correct!');
+                    console.log('Answer correct');
                 } else {
                     alert('Incorrect!');
+                    console.log('Answer incorrect');
+                    score = 0;
+                    correctAnswers = [];
+                    getRandomCountries(); // Get a new pair for the next round
+                    displayQuestion();
+                    return; // Exit the function to prevent further execution
                 }
                 updateScore();
-                // Load the next question or end the game if there are no more countries
-                currentQuestionIndex += 2;
-                if (currentQuestionIndex >= countries.length - 1) {
-                    alert('Game Over. Your final score: ' + score);
-                    score = 0; // Reset score for a new game
-                    currentQuestionIndex = 0; // Reset index for a new game
-                }
+                getRandomCountries(); // Get a new pair for the next round
                 displayQuestion();
             }
-
+    
             function updateScore() {
                 document.getElementById('score').innerHTML = 'Score: ' + score;
+                console.log('Score updated:', score);
             }
-
+    
             document.getElementById('option1').addEventListener('click', function () {
                 checkAnswer(true);
             });
-
+    
             document.getElementById('option2').addEventListener('click', function () {
                 checkAnswer(false);
             });
-
-            displayQuestion();
+    
+            displayQuestion(); // Display the first question
         });
     </script>
 </body>
