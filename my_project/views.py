@@ -3,6 +3,8 @@ import json
 from django.forms.models import model_to_dict
 from django.http import JsonResponse
 from .models import CountryData
+import random
+from django.core import serializers
 from django.views.decorators.csrf import csrf_exempt
 def index(request):
     # Function to calculate composite score
@@ -91,11 +93,20 @@ def post_country_data(request):
     return JsonResponse({'status': 'error', 'message': 'Invalid request'}, status=400)
 
 
-import random
+
 
 def higher_or_lower_game(request):
-    # Fetch a random set of countries
-    countries = list(CountryData.objects.all())
-    random.shuffle(countries)
-    context = {'countries': countries[:120]} # Limit to 10 countries for the game
+    countries = CountryData.objects.all()
+    random_countries = random.sample(list(countries), min(len(countries), 70))
+
+    # Add a random category to each country for the game
+    categories = ['gdp_per_capita', 'social_support', 'healthy_life_expectancy', 
+                  'freedom_to_make_life_choices', 'generosity', 'perceptions_of_corruption', 
+                  'cost_of_living_index', 'rent_index', 'cost_of_living_plus_rent_index', 
+                  'groceries_index', 'restaurant_price_index', 'local_purchasing_power_index']
+    for country in random_countries:
+        country.category = random.choice(categories)
+
+    countries_json = serializers.serialize('json', random_countries)
+    context = {'countries': countries_json}
     return render(request, 'higher_or_lower_game.html', context)
