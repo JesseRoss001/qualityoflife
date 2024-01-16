@@ -16,6 +16,49 @@
             animation: gradient 50s linear infinite;
             height: 100vh;
         }
+        @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.pulse {
+    animation: pulse 3s;
+}
+
+        @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.bounce {
+    animation: bounce 3s;
+}
+        @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.spin {
+    animation: spin 3s;
+}
+        @keyframes flip {
+    0% { transform: rotateX(0); }
+    100% { transform: rotateX(360deg); }
+}
+
+.flip {
+    animation: flip 3s;
+}
+        @keyframes swing {
+    0%, 100% { transform: rotateZ(0); }
+    50% { transform: rotateZ(20deg); }
+}
+
+.swing {
+    animation: swing 3s;
+}
+
         #game-over-message {
     position: absolute;
     top: 0;
@@ -130,6 +173,27 @@
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+        @keyframes floatDown {
+    0% {
+        opacity: 1;
+        transform: translateY(-100%);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(100vh);
+    }
+}
+
+.compliment {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: floatDown 3s ease-in forwards;
+    z-index: 999;
+    color: #FFF;
+    font-size: 1.5em;
+    text-align: center;
+}
 
         /* Styling for the question */
         #question {
@@ -277,6 +341,50 @@
     }, 5000); // 3 seconds
 // 15 seconds
 }
+const compliments = [
+    { text: "Great job!", icon: "fa-thumbs-up" },
+    { text: "Awesome!", icon: "fa-star" },
+    { text: "Excellent!", icon: "fa-heart" },
+    { text: "Amazing!", icon: "fa-grin-stars" },
+    { text: "Incredible!", icon: "fa-trophy" },
+    { text: "Superb!", icon: "fa-rocket" },
+    { text: "Fantastic!", icon: "fa-magic" },
+    { text: "Unbelievable!", icon: "fa-bolt" },
+    { text: "Marvelous!", icon: "fa-crown" },
+    { text: "Astounding!", icon: "fa-gem" },
+    { text: "Spectacular!", icon: "fa-fire" },
+    { text: "Mind-Blowing!", icon: "fa-brain" },
+    { text: "Stupendous!", icon: "fa-paw" },
+    { text: "Wondrous!", icon: "fa-feather-alt" },
+    { text: "Phenomenal!", icon: "fa-leaf" },
+    { text: "Extraordinary!", icon: "fa-anchor" },
+    { text: "Sensational!", icon: "fa-bicycle" },
+    { text: "Stellar!", icon: "fa-sun" },
+    { text: "Epic!", icon: "fa-mountain" },
+    { text: "Legendary!", icon: "fa-dragon" },
+    { text: "Out of this World!", icon: "fa-space-shuttle" },
+    { text: "Magnificent!", icon: "fa-ship" },
+    { text: "Prodigious!", icon: "fa-tree" },
+    { text: "Glorious!", icon: "fa-moon" },
+    { text: "Radiant!", icon: "fa-star-of-david" },
+    { text: "Dazzling!", icon: "fa-lightbulb" },
+    { text: "Spellbinding!", icon: "fa-hat-wizard" },
+    { text: "Revolutionary!", icon: "fa-fist-raised" },
+    { text: "Unparalleled!", icon: "fa-infinity" },
+    { text: "Supreme!", icon: "fa-crown" }
+];
+function showCompliment() {
+    let complimentIndex = Math.min(score - 1, compliments.length - 1);
+    let compliment = compliments[complimentIndex];
+    let complimentDiv = document.createElement('div');
+    complimentDiv.classList.add('compliment');
+    complimentDiv.innerHTML = `<i class="fas ${compliment.icon}"></i> ${compliment.text}`;
+    document.body.appendChild(complimentDiv);
+
+    setTimeout(() => {
+        complimentDiv.remove();
+    }, 3000); // Compliment will disappear after 3 seconds
+}
             function checkAnswer(isFirstOptionSelected) {
                 let correctAnswer = isFirstOptionSelected ?
                     currentCountryPair[0][currentField] > currentCountryPair[1][currentField] :
@@ -286,7 +394,8 @@
 
                 if (correctAnswer) {
                     score++;
-                    console.log('Answer correct');
+        console.log('Answer correct');
+        showCompliment();
                 }    else { gameOverAnimation();
         console.log('Answer incorrect');
                  }
@@ -296,11 +405,22 @@
                 displayQuestion();
             }
 
-            function updateScore() {
-                document.getElementById('score').
-                    innerHTML = 'Score: ' + score;
-                console.log('Score updated:', score);
-            }
+            let animationClasses = ['pulse', 'bounce', 'spin', 'flip', 'swing'];
+let currentAnimationIndex = 0;
+
+function updateScore() {
+    let scoreElement = document.getElementById('score');
+    scoreElement.innerHTML = 'Score: ' + score;
+
+    // Remove the previous animation class
+    scoreElement.classList.remove(animationClasses[currentAnimationIndex]);
+
+    // Update the index for the next animation
+    currentAnimationIndex = (currentAnimationIndex + 1) % animationClasses.length;
+
+    // Add the new animation class
+    scoreElement.classList.add(animationClasses[currentAnimationIndex]);
+}
             document.getElementById('option1').addEventListener('click', function () {
                 checkAnswer(true);
             });
