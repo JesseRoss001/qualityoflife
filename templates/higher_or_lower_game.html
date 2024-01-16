@@ -16,6 +16,20 @@
             animation: gradient 50s linear infinite;
             height: 100vh;
         }
+        #game-over-message {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 2em;
+    z-index: 1000;
+}
 
         @keyframes gradient {
             0% {
@@ -161,22 +175,22 @@
     </div>
     </div>
         <div class="row d-flex justify-content-center align-items-center">
-            <div class="d-none d-lg-block col-md-3 justify-content-center align-content-center">
+            <div class="d-none d-lg-block col-md-2 justify-content-center align-content-center">
                 <img src="{{ image_url_1 }}" class="img-fluid">
             </div>
             
-            <div class="col-12 col-md-10 col-lg-6">
+            <div class="col-12 col-md-10 col-lg-8">
                 <div class="container mt-5 pt-5">
                 <div id="game" class="shadow-lg p-3 mb-5 bg-white rounded">
-                    <div id="question" class="mb-3"></div>
-                    <button id="option1" class="option-button btn btn-success">Higher</button>
-                    <button id="option2" class="option-button btn btn-success">Lower</button>
-                    <p id="score" class="mt-3">Score: 0</p>
+                    <div id="question" class="mb-3 h4"></div>
+                    <button id="option1" class="option-button btn btn-success h3">Higher</button>
+                    <button id="option2" class="option-button btn btn-success h3">Lower</button>
+                    <p id="score" class="mt-3 h2">Score: 0</p>
                     <div id="correct-answers" class="mt-3"></div>
                 </div>
             </div>
             </div>
-            <div class="d-none d-lg-block col-md-3 justify-content-center align-content-center">
+            <div class="d-none d-lg-block col-md-2 justify-content-center align-content-center">
                 <img src="{{ image_url_2 }}" class="img-fluid">
             </div>
         </div>
@@ -227,12 +241,42 @@
             }
 
             function updateCorrectAnswersDiv() {
-                let correctAnswersDiv = document.getElementById('correct-answers');
-                correctAnswersDiv.innerHTML = correctAnswers.map(answer => {
-                    return `<div>Question: ${answer.question}, Answer: ${answer.answerText}, Values: ${answer.country1Value} vs ${answer.country2Value}</div>`;
-                }).join('');
-            }
+    let correctAnswersDiv = document.getElementById('correct-answers');
+    // Use the reverse method to display the newest answers at the top
+    correctAnswersDiv.innerHTML = correctAnswers.slice().reverse().map(answer => {
+        return `<div>Question: ${answer.question}, Answer: ${answer.answerText}, Values: ${answer.country1Value} vs ${answer.country2Value}</div>`;
+    }).join('');
+}
+            function gameOverAnimation() {
+    let gameContainer = document.getElementById('game');
+    let gameOverMessage = document.createElement('div');
+    gameOverMessage.innerHTML = 'Game Over';
+    gameOverMessage.style.position = 'relative';
+    gameOverMessage.style.width = '100%';
+    gameOverMessage.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+    gameOverMessage.style.color = 'white';
+    gameOverMessage.style.fontSize = '2em';
+    gameOverMessage.style.textAlign = 'center';
+    gameOverMessage.style.padding = '10px 0';
 
+    // Disable buttons
+    document.getElementById('option1').disabled = true;
+    document.getElementById('option2').disabled = true;
+
+    gameContainer.prepend(gameOverMessage); // Add the message at the top of the container
+
+    setTimeout(() => {
+        gameOverMessage.remove();
+        score = 0;
+        updateScore();
+        displayQuestion();
+
+        // Enable buttons
+        document.getElementById('option1').disabled = false;
+        document.getElementById('option2').disabled = false;
+    }, 5000); // 3 seconds
+// 15 seconds
+}
             function checkAnswer(isFirstOptionSelected) {
                 let correctAnswer = isFirstOptionSelected ?
                     currentCountryPair[0][currentField] > currentCountryPair[1][currentField] :
@@ -243,12 +287,10 @@
                 if (correctAnswer) {
                     score++;
                     console.log('Answer correct');
-                } else {
-                    alert('Incorrect!');
-                    console.log('Answer incorrect');
-                    score = 0;
-                    correctAnswers = [];
-                }
+                }    else { gameOverAnimation();
+        console.log('Answer incorrect');
+                 }
+                
                 updateScore();
                 getRandomCountries(); // Get a new pair for the next round
                 displayQuestion();
