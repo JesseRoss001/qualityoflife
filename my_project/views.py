@@ -89,3 +89,13 @@ def post_country_data(request):
         return JsonResponse(response_data)
 
     return JsonResponse({'status': 'error', 'message': 'Invalid request'}, status=400)
+
+
+import random
+
+def higher_or_lower_game(request):
+    # Fetch a random set of countries
+    countries = list(CountryData.objects.all())
+    random.shuffle(countries)
+    context = {'countries': countries[:120]} # Limit to 10 countries for the game
+    return render(request, 'higher_or_lower_game.html', context)
