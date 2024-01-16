@@ -93,21 +93,17 @@ def post_country_data(request):
     return JsonResponse({'status': 'error', 'message': 'Invalid request'}, status=400)
 
 def higher_or_lower_game(request):
-    # Get all countries
-    countries = list(CountryData.objects.all())
-    # Shuffle the countries to get a random order every time
+    # Ensure the 'country_or_region' field is included in the values() call
+    countries = list(CountryData.objects.values(
+        'country_or_region', 'gdp_per_capita', 'social_support', 
+        'healthy_life_expectancy', 'freedom_to_make_life_choices', 'generosity', 
+        'perceptions_of_corruption', 'cost_of_living_index', 'rent_index', 
+        'cost_of_living_plus_rent_index', 'groceries_index', 'restaurant_price_index', 
+        'local_purchasing_power_index'
+    ))
     random.shuffle(countries)
-    # Define the fields to include
-    fields = ['gdp_per_capita', 'social_support', 'healthy_life_expectancy', 
-              'freedom_to_make_life_choices', 'generosity', 'perceptions_of_corruption', 
-              'cost_of_living_index', 'rent_index', 'cost_of_living_plus_rent_index', 
-              'groceries_index', 'restaurant_price_index', 'local_purchasing_power_index']
-    # Serialize the country data
-    serialized_countries = json.dumps([{
-        field: getattr(country, field) for field in fields
-    } for country in countries], ensure_ascii=False
-    ) # Serialize all countries and fields
-    # Send data to the template
+    serialized_countries = json.dumps(countries)
+    fields = [field.name for field in CountryData._meta.get_fields() if field.name not in ['id', 'country_or_region']]
     return render(request, 'higher_or_lower_game.html', {
         'countries': serialized_countries, 
         'fields': json.dumps(fields)
