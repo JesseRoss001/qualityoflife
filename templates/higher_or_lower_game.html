@@ -8,29 +8,125 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, #ff5733, #c70039, #ee7752);
+            background-size: 600% 600%;
+            animation: gradient 50s linear infinite;
+            height: 100vh;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            5% {
+                background-position: 5% 50%;
+            }
+
+            10% {
+                background-position: 10% 50%;
+            }
+
+            15% {
+                background-position: 15% 50%;
+            }
+
+            20% {
+                background-position: 20% 50%;
+            }
+
+            25% {
+                background-position: 25% 50%;
+            }
+
+            30% {
+                background-position: 30% 50%;
+            }
+
+            35% {
+                background-position: 35% 50%;
+            }
+
+            40% {
+                background-position: 40% 50%;
+            }
+
+            45% {
+                background-position: 45% 50%;
+            }
+
+            50% {
+                background-position: 50% 50%;
+            }
+
+            55% {
+                background-position: 55% 50%;
+            }
+
+            60% {
+                background-position: 60% 50%;
+            }
+
+            65% {
+                background-position: 65% 50%;
+            }
+
+            70% {
+                background-position: 70% 50%;
+            }
+
+            75% {
+                background-position: 75% 50%;
+            }
+
+            80% {
+                background-position: 80% 50%;
+            }
+
+            85% {
+                background-position: 85% 50%;
+            }
+
+            90% {
+                background-position: 90% 50%;
+            }
+
+            95% {
+                background-position: 95% 50%;
+            }
+
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
         /* Base styling for the game container */
         #game {
-            background-color: #f0f8ff;
-            /* Light blue background */
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
             border-radius: 15px;
             padding: 20px;
-            max-width: 600px;
+            padding-top: 50px;
+            
             margin: 20px auto;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         /* Styling for the question */
         #question {
-            font-size: 1.5em;
+            
             color: #333333;
             margin-bottom: 20px;
         }
 
         /* Styling for the options buttons */
-        #option1,
-        #option2 {
+        .option-button {
             background-color: #4CAF50;
-            /* Green background */
             color: white;
             border: none;
             border-radius: 8px;
@@ -38,122 +134,142 @@
             cursor: pointer;
             font-size: 1.2em;
             margin: 5px;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
-        #option1:hover,
-        #option2:hover {
+        .option-button:hover {
             background-color: #45a049;
+            transform: scale(1.05);
         }
 
         /* Styling for the score display */
         #score {
-            font-size: 1.3em;
+            
             color: #ff4500;
-            /* Orange color for score */
             margin-top: 20px;
         }
+
+
     </style>
 </head>
 
-
-    <body>
-        <h2>Higher or Lower Game</h2>
-        <div id="game">
-            <div id="question"></div>
-            <button id="option1" class="option-button">Higher</button>
-            <button id="option2" class="option-button">Lower</button>
-            <div id="correct-answers"></div>
-            <p id="score">Score: 0</p>
+<body>
+    <div class="row justify-content-center align-items-center">
+        <div class="col-10 text-center">
+        <h2 class="text-center mt-4 pt-4">Higher or Lower Game</h2>
+    </div>
+    </div>
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="d-none d-lg-block col-md-3 justify-content-center align-content-center">
+                <img src="{{ image_url_1 }}" class="img-fluid">
+            </div>
+            
+            <div class="col-12 col-md-10 col-lg-6">
+                <div class="container mt-5 pt-5">
+                <div id="game" class="shadow-lg p-3 mb-5 bg-white rounded">
+                    <div id="question" class="mb-3"></div>
+                    <button id="option1" class="option-button btn btn-success">Higher</button>
+                    <button id="option2" class="option-button btn btn-success">Lower</button>
+                    <p id="score" class="mt-3">Score: 0</p>
+                    <div id="correct-answers" class="mt-3"></div>
+                </div>
+            </div>
+            </div>
+            <div class="d-none d-lg-block col-md-3 justify-content-center align-content-center">
+                <img src="{{ image_url_2 }}" class="img-fluid">
+            </div>
         </div>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                let countries = JSON.parse('{{ countries|safe }}');
-                let fields = JSON.parse('{{ fields|safe }}');
-                let score = 0;
-                let correctAnswers = [];
-                let currentField;
-                let currentCountryPair = [];
-        
-                function getRandomCountries() {
-                    if (countries.length < 2) {
-                        alert('Not enough countries for a new question. Game over.');
-                        return false;
-                    }
-                    let index = Math.floor(Math.random() * (countries.length - 1));
-                    currentCountryPair = [countries[index], countries[index + 1]];
-                    console.log('New country pair:', currentCountryPair);
-                    return true;
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let countries = JSON.parse('{{ countries|safe }}');
+            let fields = JSON.parse('{{ fields|safe }}');
+            let score = 0;
+            let correctAnswers = [];
+            let currentField;
+            let currentCountryPair = [];
+
+            function getRandomCountries() {
+                if (countries.length < 2) {
+                    alert('Not enough countries for a new question. Game over.');
+                    return false;
                 }
-        
-                function getRandomField() {
-                    return fields[Math.floor(Math.random() * fields.length)];
+                let index = Math.floor(Math.random() * (countries.length - 1));
+                currentCountryPair = [countries[index], countries[index + 1]];
+                console.log('New country pair:', currentCountryPair);
+                return true;
+            }
+
+            function getRandomField() {
+                return fields[Math.floor(Math.random() * fields.length)];
+            }
+
+            function displayQuestion() {
+                if (!getRandomCountries()) {
+                    return; // Exit if no more countries
                 }
-        
-                function displayQuestion() {
-                    if (!getRandomCountries()) {
-                        return; // Exit if no more countries
-                    }
-                    currentField = getRandomField();
-                    let fieldDisplayName = currentField.replace(/_/g, ' ');
-                    document.getElementById('question').innerHTML =
-                        `Does ${currentCountryPair[0].country_or_region} have a higher ${fieldDisplayName} than ${currentCountryPair[1].country_or_region}?`;
-                    console.log('Current question:', document.getElementById('question').textContent);
+                currentField = getRandomField();
+                let fieldDisplayName = currentField.replace(/_/g, ' ');
+                document.getElementById('question').innerHTML =
+                    `Does ${currentCountryPair[0].country_or_region} have a higher ${fieldDisplayName} than ${currentCountryPair[1].country_or_region}?`;
+                console.log('Current question:', document.getElementById('question').textContent);
+            }
+
+            function updateCorrectAnswers(isCorrect) {
+                let question = document.getElementById('question').textContent;
+                let answerText = isCorrect ? 'Correct' : 'Incorrect';
+                let country1Value = currentCountryPair[0][currentField];
+                let country2Value = currentCountryPair[1][currentField];
+                correctAnswers.push({ question, answerText, country1Value, country2Value });
+                updateCorrectAnswersDiv();
+            }
+
+            function updateCorrectAnswersDiv() {
+                let correctAnswersDiv = document.getElementById('correct-answers');
+                correctAnswersDiv.innerHTML = correctAnswers.map(answer => {
+                    return `<div>Question: ${answer.question}, Answer: ${answer.answerText}, Values: ${answer.country1Value} vs ${answer.country2Value}</div>`;
+                }).join('');
+            }
+
+            function checkAnswer(isFirstOptionSelected) {
+                let correctAnswer = isFirstOptionSelected ?
+                    currentCountryPair[0][currentField] > currentCountryPair[1][currentField] :
+                    currentCountryPair[1][currentField] > currentCountryPair[0][currentField];
+
+                updateCorrectAnswers(correctAnswer);
+
+                if (correctAnswer) {
+                    score++;
+                    console.log('Answer correct');
+                } else {
+                    alert('Incorrect!');
+                    console.log('Answer incorrect');
+                    score = 0;
+                    correctAnswers = [];
                 }
-        
-                function updateCorrectAnswers(isCorrect) {
-                    let question = document.getElementById('question').textContent;
-                    let answerText = isCorrect ? 'Correct' : 'Incorrect';
-                    let country1Value = currentCountryPair[0][currentField];
-                    let country2Value = currentCountryPair[1][currentField];
-                    correctAnswers.push({ question, answerText, country1Value, country2Value });
-                    updateCorrectAnswersDiv();
-                }
-        
-                function updateCorrectAnswersDiv() {
-                    let correctAnswersDiv = document.getElementById('correct-answers');
-                    correctAnswersDiv.innerHTML = correctAnswers.map(answer => {
-                        return `<div>Question: ${answer.question}, Answer: ${answer.answerText}, Values: ${answer.country1Value} vs ${answer.country2Value}</div>`;
-                    }).join('');
-                }
-        
-                function checkAnswer(isFirstOptionSelected) {
-                    let correctAnswer = isFirstOptionSelected ?
-                        currentCountryPair[0][currentField] > currentCountryPair[1][currentField] :
-                        currentCountryPair[1][currentField] > currentCountryPair[0][currentField];
-        
-                    updateCorrectAnswers(correctAnswer);
-        
-                    if (correctAnswer) {
-                        score++;
-                        console.log('Answer correct');
-                    } else {
-                        alert('Incorrect!');
-                        console.log('Answer incorrect');
-                        score = 0;
-                        correctAnswers = [];
-                    }
-                    updateScore();
-                    getRandomCountries(); // Get a new pair for the next round
-                    displayQuestion();
-                }
-        
-                function updateScore() {
-                    document.getElementById('score').
-        innerHTML = 'Score: ' + score;
-        console.log('Score updated:', score);
-        }
+                updateScore();
+                getRandomCountries(); // Get a new pair for the next round
+                displayQuestion();
+            }
+
+            function updateScore() {
+                document.getElementById('score').
+                    innerHTML = 'Score: ' + score;
+                console.log('Score updated:', score);
+            }
             document.getElementById('option1').addEventListener('click', function () {
                 checkAnswer(true);
             });
-        
+
             document.getElementById('option2').addEventListener('click', function () {
                 checkAnswer(false);
             });
-        
+
             displayQuestion(); // Display the first question
         });
-        </script>
+    </script>
 </body>
 
 </html>

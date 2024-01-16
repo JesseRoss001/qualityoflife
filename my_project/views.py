@@ -104,7 +104,14 @@ def higher_or_lower_game(request):
     random.shuffle(countries)
     serialized_countries = json.dumps(countries)
     fields = [field.name for field in CountryData._meta.get_fields() if field.name not in ['id', 'country_or_region']]
-    return render(request, 'higher_or_lower_game.html', {
-        'countries': serialized_countries, 
-        'fields': json.dumps(fields)
-    })
+
+    # Include the image URLs in the context
+    context = {
+        'countries': serialized_countries,
+        'fields': json.dumps(fields),
+        'image_url_1': 'https://res.cloudinary.com/dwz6t9jry/image/upload/v1705418640/casual-life-3d-arcade-joystick-green_iim0og.png',
+        'image_url_2': 'https://res.cloudinary.com/dwz6t9jry/image/upload/v1705418640/bouncy-planet-earth_hroygy.png',
+        # ... other context variables
+    }
+
+    return render(request, 'higher_or_lower_game.html', context)
