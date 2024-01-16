@@ -39,8 +39,8 @@
             background-color: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
             padding: 20px;
-            margin: 30px auto;
-            max-width: 80vw;
+            margin:  auto;
+            max-width: 95vw;
         }
 
         .comparison-container h4 {
@@ -93,6 +93,23 @@
         .comparison-results p {
             color: #333;
         }
+        /* Media query for screens less than 510px */
+@media (max-width: 510px) {
+    .comparison-results p {
+        font-size: 18px; /* Adjust this value as needed */
+    }
+
+    /* You might also want to adjust other elements for consistency */
+    .comparison-container h4, .comparison-results h4 {
+        font-size: 22px; /* Example: increase the font size of headings */
+    }
+
+    .comparison-container label, .comparison-container button, .comparison-container select {
+        font-size: 16px; /* Example: increase the font size of form elements */
+    }
+
+    /* Add any other font size adjustments for smaller screens here */
+}
         @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -155,7 +172,7 @@
             padding: 20px;
             position: relative;
             margin: 30px auto;
-            max-width: 80vw;
+            max-width: 90vw;
         }
 
         .glass-container::before,
@@ -191,9 +208,9 @@
 </head>
 
 <body>
-    <div class="container mt-5">
+    <div class="container me-0 pe-0 ms-0 ps-0  mt-5">
         <div class="glass-container">
-            <div class="row ps-4 pe-4">
+            <div class="row ps-md-4 pe-md-4">
                 <div class="col-md-12">
                     <h3 class="text-center mb-5 mt-3">Country Data Comparison</h3>
                 </div>
@@ -223,7 +240,7 @@
                     </div>
                 </div>
                 <!-- Comparison Results -->
-                <div class="col-10 col-lg-6">
+                <div class="col-12 col-md-10 col-lg-6">
                     <div class="comparison-results">
                         <h4>Comparison Results</h4>
                         <p>Comparison details will be displayed here.</p>
