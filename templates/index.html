@@ -277,29 +277,48 @@
             padding: 10px 20px;
             height:50px;
         }
+
+.nav-item {
+    text-align: center;
+}
+.custom-link {
+    color: #333; /* Custom text color */
+    font-size: 20px; /* Custom font size */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease-in-out; /* Smooth color transition on hover */
+}
+
+.custom-link:hover {
+    color: #ff5733; /* Custom color on hover */
+    text-decoration: none; /* Remove underline on hover */
+}
+.disabled-link {
+    pointer-events: none; /* Disable link interaction */
+    cursor: not-allowed; /* Change cursor to not-allowed */
+    opacity: 0.6; /* Reduce opacity for a disabled look */
+}
         
     </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/">Home</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'country_comparison' %}">Country Comparison</a>
-
-                </li>
-                <li class="nav-item">
-            <a class="nav-link" href="{% url 'higher_or_lower_game' %}">Higher or Lower Game</a>
-        </li>
-            </ul>
-        </div>
-    </nav>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+           
+                <div class="row w-100 justify-content-center align-items-center">
+                    <div class=" text-center">
+                        <a class="nav-link custom-link" href="{% url 'country_comparison' %}">Country Comparison</a>
+                    </div>
+                    <div class=" text-center disabled">
+                        <a class="nav-link custom-link active disabled-link" href="/">Home</a>
+                    </div>
+                    <div class=" text-center">
+                        <a class="nav-link custom-link" href="{% url 'higher_or_lower_game' %}">Higher or Lower Game</a>
+                    </div>
+                </div>
+           
+        </nav>
+    </header>
     
 
 

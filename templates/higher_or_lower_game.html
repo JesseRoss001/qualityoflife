@@ -227,12 +227,46 @@
             color: #ff4500;
             margin-top: 20px;
         }
+        .nav-item {
+    text-align: center;
+}
+.custom-link {
+    color: #333; /* Custom text color */
+    font-size: 20px; /* Custom font size */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease-in-out; /* Smooth color transition on hover */
+}
 
-
+.custom-link:hover {
+    color: #ff5733; /* Custom color on hover */
+    text-decoration: none; /* Remove underline on hover */
+}
+.disabled-link {
+    pointer-events: none; /* Disable link interaction */
+    cursor: not-allowed; /* Change cursor to not-allowed */
+    opacity: 0.6; /* Reduce opacity for a disabled look */
+}
     </style>
 </head>
 
 <body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+           
+                <div class="row w-100 justify-content-center align-items-center">
+                    <div class=" text-center">
+                        <a class=" nav-link custom-link" href="{% url 'country_comparison' %}">Country Comparison</a>
+                    </div>
+                    <div class=" text-center disabled">
+                        <a class="nav-link custom-link" href="/">Home</a>
+                    </div>
+                    <div class=" text-center">
+                        <a class=" nav-link custom-link active disabled-link" href="{% url 'higher_or_lower_game' %}">Higher or Lower Game</a>
+                    </div>
+                </div>
+           
+        </nav>
+    </header>
     <div class="row justify-content-center align-items-center">
         <div class="col-10 text-center">
         <h2 class="text-center mt-4 pt-4">Higher or Lower Game</h2>
