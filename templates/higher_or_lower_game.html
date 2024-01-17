@@ -14,7 +14,7 @@
             background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, #ff5733, #c70039, #ee7752);
             background-size: 600% 600%;
             animation: gradient 50s linear infinite;
-            height: 100vh;
+            
         }
         @keyframes pulse {
     0% { transform: scale(1); }
@@ -246,6 +246,9 @@
     cursor: not-allowed; /* Change cursor to not-allowed */
     opacity: 0.6; /* Reduce opacity for a disabled look */
 }
+#img-div-1 {padding-left:30px;
+padding-right: 0;}
+#img-div-2 {padding-right:30px; padding-left:0px;}
     </style>
 </head>
 
@@ -272,9 +275,9 @@
         <h2 class="text-center mt-4 pt-4">Higher or Lower Game</h2>
     </div>
     </div>
-        <div class="row d-flex justify-content-center align-items-center">
-            <div class="d-none d-lg-block col-md-2 justify-content-center align-content-center">
-                <img src="{{ image_url_1 }}" class="img-fluid">
+        <div class="row d-flex justify-content-space-around align-items-center">
+            <div class="d-none d-lg-block col-md-2 " id="img-div-1">
+                <img src="{{ image_url_1 }}" class="ps-1 img-fluid">
             </div>
             
             <div class="col-12 col-md-10 col-lg-8">
@@ -288,8 +291,8 @@
                 </div>
             </div>
             </div>
-            <div class="d-none d-lg-block col-md-2 justify-content-center align-content-center">
-                <img src="{{ image_url_2 }}" class="img-fluid">
+            <div class="d-none d-lg-block col-md-2 justify-content-center align-content-center " id="img-div-2">
+                <img src="{{ image_url_2 }}" class="img-fluid ms-1">
             </div>
         </div>
     </div>

@@ -14,7 +14,7 @@
             background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, #ff5733, #c70039, #ee7752);
             background-size: 600% 600%;
             animation: gradient 50s linear infinite;
-            min-height: 100vh;
+
         }
 
         @keyframes gradient {
@@ -28,100 +28,63 @@
             }
         }
 
-        .header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
+        :root {
+    --primary-color: #333;
+    --secondary-color: #ee7752;
+    --background-color: rgba(255, 255, 255, 0.95);
+    --border-radius: 15px;
+    --font-family: 'Arial', sans-serif;
+}
 
-        .comparison-container {
-            background-color: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            padding: 20px;
-            margin:  auto;
-            max-width: 95vw;
-        }
+.comparison-results h4 {
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 0;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
 
-        .comparison-container h4 {
-            font-weight: bold;
-            color: #333;
-            margin: 0;
-            margin-bottom: 20px;
-        }
+.comparison-results p {
+    color: var(--primary-color);
+}
 
-        .comparison-container .form-group {
-            margin-bottom: 20px;
-        }
-
-        .comparison-container label {
-            font-weight: bold;
-            color: #333;
-        }
-
-        .comparison-container select {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-        }
-
-        .comparison-container button {
-            background-color: #333;
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
-
-        .comparison-results {
-            background-color: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            padding: 20px;
-            margin: 30px auto;
-            max-width: 80vw;
-        }
-
-        .comparison-results h4 {
-            font-weight: bold;
-            color: #333;
-            margin: 0;
-            margin-bottom: 20px;
-        }
-
-        .comparison-results p {
-            color: #333;
-        }
-        /* Media query for screens less than 510px */
+/* Media query for screens less than 510px */
 @media (max-width: 510px) {
     .comparison-results p {
-        font-size: 18px; /* Adjust this value as needed */
+        font-size: 18px;
     }
 
-    /* You might also want to adjust other elements for consistency */
-    .comparison-container h4, .comparison-results h4 {
-        font-size: 22px; /* Example: increase the font size of headings */
+    .comparison-container h4,
+    .comparison-results h4 {
+        font-size: 22px;
     }
 
-    .comparison-container label, .comparison-container button, .comparison-container select {
-        font-size: 16px; /* Example: increase the font size of form elements */
+    .comparison-container label,
+    .comparison-container button,
+    .comparison-container select {
+        font-size: 16px;
     }
-
-    /* Add any other font size adjustments for smaller screens here */
-}
-        @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
 }
 
-.table {border-radius: 10%;
-    font-family: 'Arial', sans-serif;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.table {
+    border-radius: var(--border-radius);
+    font-family: var(--font-family);
     animation: fadeIn 1s ease-in-out;
     border-collapse: separate;
     border-spacing: 0;
-    border-radius: 10px;
-    overflow: hidden; /* This ensures the inner elements adhere to the border-radius */
+    overflow: hidden;
+    margin:auto;
 }
 
 .tooltip {
@@ -133,6 +96,7 @@
     font-size: 14px;
     z-index: 1000;
 }
+
 .table th, .table td {
     padding: 10px;
     text-align: left;
@@ -140,14 +104,16 @@
 }
 
 .table th {
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, #ff5733, #c70039, #ee7752);
+    background: linear-gradient(-45deg, var(--secondary-color), #e73c7e, #23a6d5, #23d5ab, #ff5733, #c70039, var(--secondary-color));
     color: white;
     font-size: 1.1em;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
+
 .data-row {
     transition: background-color 0.3s ease;
 }
+
 .table tr:hover {
     transform: scale(1.03);
     background-color: rgba(100, 100, 100, 0.1);
@@ -166,6 +132,27 @@
         -webkit-overflow-scrolling: touch;
     }
 }
+
+.comparison-container h4::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: var(--secondary-color);
+    margin-top: 5px;
+}
+
+.comparison-container button:hover, 
+.comparison-container select:focus {
+    background-color: var(--secondary-color);
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+.comparison-container, .comparison-results, .glass-container {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
         .glass-container {
             background-color: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
@@ -204,44 +191,57 @@
             padding: 10px 20px;
             height: 50px;
         }
-        .nav-item {
-    text-align: center;
-}
-.custom-link {
-    color: #333; /* Custom text color */
-    font-size: 20px; /* Custom font size */
-    text-decoration: none; /* Remove underline */
-    transition: color 0.3s ease-in-out; /* Smooth color transition on hover */
-}
 
-.custom-link:hover {
-    color: #ff5733; /* Custom color on hover */
-    text-decoration: none; /* Remove underline on hover */
-}
-.disabled-link {
-    pointer-events: none; /* Disable link interaction */
-    cursor: not-allowed; /* Change cursor to not-allowed */
-    opacity: 0.6; /* Reduce opacity for a disabled look */
-}
+        .nav-item {
+            text-align: center;
+        }
+
+        .custom-link {
+            color: #333;
+            /* Custom text color */
+            font-size: 20px;
+            /* Custom font size */
+            text-decoration: none;
+            /* Remove underline */
+            transition: color 0.3s ease-in-out;
+            /* Smooth color transition on hover */
+        }
+
+        .custom-link:hover {
+            color: #ff5733;
+            /* Custom color on hover */
+            text-decoration: none;
+            /* Remove underline on hover */
+        }
+
+        .disabled-link {
+            pointer-events: none;
+            /* Disable link interaction */
+            cursor: not-allowed;
+            /* Change cursor to not-allowed */
+            opacity: 0.6;
+            /* Reduce opacity for a disabled look */
+        }
     </style>
 </head>
 
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-           
-                <div class="row w-100 justify-content-center align-items-center">
-                    <div class=" text-center">
-                        <a class=" nav-link custom-link active disabled-link" href="{% url 'country_comparison' %}">Country Comparison</a>
-                    </div>
-                    <div class=" text-center disabled">
-                        <a class="nav-link custom-link" href="/">Home</a>
-                    </div>
-                    <div class=" text-center">
-                        <a class="nav-link custom-link" href="{% url 'higher_or_lower_game' %}">Higher or Lower Game</a>
-                    </div>
+
+            <div class="row w-100 justify-content-center align-items-center">
+                <div class=" text-center">
+                    <a class=" nav-link custom-link active disabled-link" href="{% url 'country_comparison' %}">Country
+                        Comparison</a>
                 </div>
-           
+                <div class=" text-center disabled">
+                    <a class="nav-link custom-link" href="/">Home</a>
+                </div>
+                <div class=" text-center">
+                    <a class="nav-link custom-link" href="{% url 'higher_or_lower_game' %}">Higher or Lower Game</a>
+                </div>
+            </div>
+
         </nav>
     </header>
     <div class="container me-0 pe-0 ms-0 ps-0  mt-5">
@@ -259,26 +259,34 @@
                             <!-- Country 1 Input Field -->
                             <div class="form-group">
                                 <label for="country1">Select Country 1</label>
-                                <input type="text" class="form-control" id="country1" name="country1" autocomplete="off">
+                                <input type="text" class="form-control" id="country1" name="country1"
+                                    autocomplete="off">
                                 <div id="country1-list" class="autocomplete-list"></div>
                             </div>
-                        
+
                             <!-- Country 2 Input Field -->
                             <div class="form-group">
                                 <label for="country2">Select Country 2</label>
-                                <input type="text" class="form-control" id="country2" name="country2" autocomplete="off">
+                                <input type="text" class="form-control" id="country2" name="country2"
+                                    autocomplete="off">
                                 <div id="country2-list" class="autocomplete-list"></div>
                             </div>
-                        
+
                             <!-- Submit Button -->
-                            <button type="submit" class="btn btn-primary" >Compare</button>
+                            <button type="submit" class="btn btn-primary">Compare</button>
                         </form>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="container me-0 pe-0 ms-0 ps-0  mt-5">
+        <div class="glass-container">
+            <div class="row ps-md-4 pe-md-4 d-flex justify-content-center align-items-center">
                 <!-- Comparison Results -->
-                <div class="col-12 col-md-10 col-lg-6">
-                    <div class="comparison-results">
-                        <h4>Comparison Results</h4>
+                <div class="col-12 col-md-10 col-lg-8">
+                    <div class="comparison-results mt-3 mb-3">
+                        <h4 class="text-center">Comparison Results</h4>
                         <p>Comparison details will be displayed here.</p>
                     </div>
                 </div>
@@ -290,30 +298,30 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             var validCountries = [];
-    
+
             // Disable the submit button initially
             $('#country-comparison-form :submit').prop('disabled', true);
-    
+
             // Function to load all valid countries from the server
             function loadValidCountries() {
                 $.ajax({
                     url: "{% url 'get_all_countries' %}",
                     method: "GET",
-                    success: function(data) {
+                    success: function (data) {
                         validCountries = data;
                         checkFormSubmission();
                     }
                 });
             }
-    
+
             // Call the function to load valid countries
             loadValidCountries();
-    
+
             // Function to handle country input suggestions and validation
             function handleCountryInput(inputId, listId) {
-                $(inputId).on('input', function() {
+                $(inputId).on('input', function () {
                     var value = $(this).val();
                     if (validCountries.includes(value.trim())) {
                         $(this).css('background-color', 'lightgreen');
@@ -322,8 +330,8 @@
                     }
                     checkFormSubmission();
                 });
-    
-                $(inputId).keyup(function(e) {
+
+                $(inputId).keyup(function (e) {
                     if (e.keyCode == 13) {
                         e.preventDefault();
                         return false;
@@ -334,10 +342,10 @@
                             url: "{% url 'search_countries' %}",
                             method: "GET",
                             data: { 'q': query },
-                            success: function(data) {
+                            success: function (data) {
                                 var countryList = $(listId);
                                 countryList.empty();
-                                data.forEach(function(country) {
+                                data.forEach(function (country) {
                                     countryList.append('<div class="country-option">' + country + '</div>');
                                 });
                                 countryList.fadeIn();
@@ -345,8 +353,8 @@
                         });
                     }
                 });
-    
-                $(document).on('click', listId + ' .country-option', function() {
+
+                $(document).on('click', listId + ' .country-option', function () {
                     var input = $(inputId);
                     var value = $(this).text();
                     input.val(value);
@@ -354,133 +362,133 @@
                     checkFormSubmission();
                 });
             }
-    
+
             // Initialize country inputs
             handleCountryInput('#country1', '#country1-list');
             handleCountryInput('#country2', '#country2-list');
-    
+
             // Function to check form submission based on country validity
             function checkFormSubmission() {
                 var country1Value = $('#country1').val();
                 var country2Value = $('#country2').val();
-    
+
                 var country1IsValid = validCountries.includes(country1Value.trim());
                 var country2IsValid = validCountries.includes(country2Value.trim());
-    
+
                 if (country1IsValid && country2IsValid) {
                     $('#country-comparison-form :submit').prop('disabled', false);
                 } else {
                     $('#country-comparison-form :submit').prop('disabled', true);
                 }
             }
-    
-            $('#country-comparison-form').on('submit', function(e) {
-            e.preventDefault();
 
-            var country1 = $('#country1').val().trim();
-            var country2 = $('#country2').val().trim();
+            $('#country-comparison-form').on('submit', function (e) {
+                e.preventDefault();
 
-            console.log('Country 1:', country1); // Console log for debugging
-            console.log('Country 2:', country2); // Console log for debugging
+                var country1 = $('#country1').val().trim();
+                var country2 = $('#country2').val().trim();
 
-            if (validCountries.includes(country1) && validCountries.includes(country2)) {
-                $.ajax({
-                    url: "{% url 'post_country_data' %}",
-                    method: 'POST',
-                    contentType: 'application/json',
-                    data: JSON.stringify({ country1: country1, country2: country2 }),
-                    success: function(response) {
-                        console.log('Response:', response); // Console log for debugging
-                        if (response.status === 'success') {
-                                                      // Generate the comparison table
-                             var tableHtml = '<table class="table table-bordered">';
-                            tableHtml += '<tr><th>Criteria</th><th>' + response.country1.country_or_region + '</th><th>' + response.country2.country_or_region + '</th></tr>';
+                console.log('Country 1:', country1); // Console log for debugging
+                console.log('Country 2:', country2); // Console log for debugging
 
-                            // Dynamically add rows for each criteria
-                            tableHtml += addTableRow('Score', response.country1.score, response.country2.score);
-                            tableHtml += addTableRow('GDP per Capita', response.country1.gdp_per_capita, response.country2.gdp_per_capita);
-                            tableHtml += addTableRow('Social Support', response.country1.social_support, response.country2.social_support);
-                            tableHtml += addTableRow('Healthy Life Expectancy', response.country1.healthy_life_expectancy, response.country2.healthy_life_expectancy);
-                            tableHtml += addTableRow('Freedom to Make Life Choices', response.country1.freedom_to_make_life_choices, response.country2.freedom_to_make_life_choices);
-                            tableHtml += addTableRow('Generosity', response.country1.generosity, response.country2.generosity);
-                            tableHtml += addTableRow('Perceptions of Corruption', response.country1.perceptions_of_corruption, response.country2.perceptions_of_corruption);
-                            tableHtml += addTableRow('Cost of Living Index', response.country1.cost_of_living_index, response.country2.cost_of_living_index);
-                            tableHtml += addTableRow('Rent Index', response.country1.rent_index, response.country2.rent_index);
-                            tableHtml += addTableRow('Cost of Living Plus Rent Index', response.country1.cost_of_living_plus_rent_index, response.country2.cost_of_living_plus_rent_index);
-                            tableHtml += addTableRow('Groceries Index', response.country1.groceries_index, response.country2.groceries_index);
-                            tableHtml += addTableRow('Restaurant Price Index', response.country1.restaurant_price_index, response.country2.restaurant_price_index);
-                            tableHtml += addTableRow('Local Purchasing Power Index', response.country1.local_purchasing_power_index, response.country2.local_purchasing_power_index);
+                if (validCountries.includes(country1) && validCountries.includes(country2)) {
+                    $.ajax({
+                        url: "{% url 'post_country_data' %}",
+                        method: 'POST',
+                        contentType: 'application/json',
+                        data: JSON.stringify({ country1: country1, country2: country2 }),
+                        success: function (response) {
+                            console.log('Response:', response); // Console log for debugging
+                            if (response.status === 'success') {
+                                // Generate the comparison table
+                                var tableHtml = '<table class="table table-bordered">';
+                                tableHtml += '<tr><th>Criteria</th><th>' + response.country1.country_or_region + '</th><th>' + response.country2.country_or_region + '</th></tr>';
 
-                            tableHtml += '</table>';
+                                // Dynamically add rows for each criteria
+                                tableHtml += addTableRow('Score', response.country1.score, response.country2.score);
+                                tableHtml += addTableRow('GDP per Capita', response.country1.gdp_per_capita, response.country2.gdp_per_capita);
+                                tableHtml += addTableRow('Social Support', response.country1.social_support, response.country2.social_support);
+                                tableHtml += addTableRow('Healthy Life Expectancy', response.country1.healthy_life_expectancy, response.country2.healthy_life_expectancy);
+                                tableHtml += addTableRow('Freedom to Make Life Choices', response.country1.freedom_to_make_life_choices, response.country2.freedom_to_make_life_choices);
+                                tableHtml += addTableRow('Generosity', response.country1.generosity, response.country2.generosity);
+                                tableHtml += addTableRow('Perceptions of Corruption', response.country1.perceptions_of_corruption, response.country2.perceptions_of_corruption);
+                                tableHtml += addTableRow('Cost of Living Index', response.country1.cost_of_living_index, response.country2.cost_of_living_index);
+                                tableHtml += addTableRow('Rent Index', response.country1.rent_index, response.country2.rent_index);
+                                tableHtml += addTableRow('Cost of Living Plus Rent Index', response.country1.cost_of_living_plus_rent_index, response.country2.cost_of_living_plus_rent_index);
+                                tableHtml += addTableRow('Groceries Index', response.country1.groceries_index, response.country2.groceries_index);
+                                tableHtml += addTableRow('Restaurant Price Index', response.country1.restaurant_price_index, response.country2.restaurant_price_index);
+                                tableHtml += addTableRow('Local Purchasing Power Index', response.country1.local_purchasing_power_index, response.country2.local_purchasing_power_index);
 
-                            // Update the comparison-results div with the new table
-                            $('.comparison-results').html('<h4>Comparison Results</h4>' + tableHtml);
-                        } else {
-                            alert(response.message);
+                                tableHtml += '</table>';
+
+                                // Update the comparison-results div with the new table
+                                $('.comparison-results').html('<h4>Comparison Results</h4>' + tableHtml);
+                            } else {
+                                alert(response.message);
+                            }
+                        },
+                        error: function () {
+                            alert('Error submitting data');
                         }
-                    },
-                    error: function() {
-                        alert('Error submitting data');
-                    }
                     });
                 } else {
                     alert('Invalid countries. Please select valid countries for comparison.');
                 }
             });
             function getColorAndIcon(value1, value2, isHigherGood) {
-    var color = isHigherGood ? (value1 > value2 ? 'green' : 'red') : (value1 < value2 ? 'green' : 'red');
-    var icon = color === 'green' ? '<i class="fa fa-thumbs-up"></i>' : '<i class="fa fa-thumbs-down"></i>';
-    return { color, icon };
-}
+                var color = isHigherGood ? (value1 > value2 ? 'green' : 'red') : (value1 < value2 ? 'green' : 'red');
+                var icon = color === 'green' ? '<i class="fa fa-thumbs-up"></i>' : '<i class="fa fa-thumbs-down"></i>';
+                return { color, icon };
+            }
 
-function addTableRow(criteria, country1Value, country2Value) {
-    return `<tr class="data-row">
+            function addTableRow(criteria, country1Value, country2Value) {
+                return `<tr class="data-row">
               <td>${criteria}</td>
               <td>${country1Value}</td>
               <td>${country2Value}</td>
             </tr>`;
-}
-function addHoverEffects() {
-    const rows = document.querySelectorAll('.data-row');
+            }
+            function addHoverEffects() {
+                const rows = document.querySelectorAll('.data-row');
 
-    rows.forEach(row => {
-        row.addEventListener('mouseover', function() {
-            this.style.backgroundColor = '#f0f0f0'; // Change background color on hover
-            showTooltip(this, 'More Info'); // Show a tooltip (function to be defined)
+                rows.forEach(row => {
+                    row.addEventListener('mouseover', function () {
+                        this.style.backgroundColor = '#f0f0f0'; // Change background color on hover
+                        showTooltip(this, 'More Info'); // Show a tooltip (function to be defined)
+                    });
+
+                    row.addEventListener('mouseout', function () {
+                        this.style.backgroundColor = ''; // Reset background color
+                        hideTooltip(); // Hide the tooltip (function to be defined)
+                    });
+                });
+            }
+
+            function showTooltip(element, text) {
+                // Create and display tooltip
+                const tooltip = document.createElement('div');
+                tooltip.className = 'tooltip';
+                tooltip.textContent = text;
+                document.body.appendChild(tooltip);
+
+                // Position the tooltip
+                const rect = element.getBoundingClientRect();
+                tooltip.style.left = `${rect.left + (rect.width / 2)}px`;
+                tooltip.style.top = `${rect.top - rect.height}px`;
+            }
+
+            function hideTooltip() {
+                // Remove tooltip
+                const tooltip = document.querySelector('.tooltip');
+                if (tooltip) {
+                    tooltip.remove();
+                }
+            }
+
+            // Call this function when the table is loaded or updated
+            addHoverEffects();
+
         });
-
-        row.addEventListener('mouseout', function() {
-            this.style.backgroundColor = ''; // Reset background color
-            hideTooltip(); // Hide the tooltip (function to be defined)
-        });
-    });
-}
-
-function showTooltip(element, text) {
-    // Create and display tooltip
-    const tooltip = document.createElement('div');
-    tooltip.className = 'tooltip';
-    tooltip.textContent = text;
-    document.body.appendChild(tooltip);
-
-    // Position the tooltip
-    const rect = element.getBoundingClientRect();
-    tooltip.style.left = `${rect.left + (rect.width / 2)}px`;
-    tooltip.style.top = `${rect.top - rect.height}px`;
-}
-
-function hideTooltip() {
-    // Remove tooltip
-    const tooltip = document.querySelector('.tooltip');
-    if (tooltip) {
-        tooltip.remove();
-    }
-}
-
-// Call this function when the table is loaded or updated
-addHoverEffects();
-
-    });
     </script>
 </body>
 
