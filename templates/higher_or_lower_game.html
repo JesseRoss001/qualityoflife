@@ -14,65 +14,101 @@
             background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, #ff5733, #c70039, #ee7752);
             background-size: 600% 600%;
             animation: gradient 50s linear infinite;
-            
-        }
-        @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
-}
 
-.pulse {
-    animation: pulse 3s;
-}
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .pulse {
+            animation: pulse 3s;
+        }
 
         @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-}
 
-.bounce {
-    animation: bounce 3s;
-}
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .bounce {
+            animation: bounce 3s;
+        }
+
         @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
+            0% {
+                transform: rotate(0deg);
+            }
 
-.spin {
-    animation: spin 3s;
-}
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .spin {
+            animation: spin 3s;
+        }
+
         @keyframes flip {
-    0% { transform: rotateX(0); }
-    100% { transform: rotateX(360deg); }
-}
+            0% {
+                transform: rotateX(0);
+            }
 
-.flip {
-    animation: flip 3s;
-}
+            100% {
+                transform: rotateX(360deg);
+            }
+        }
+
+        .flip {
+            animation: flip 3s;
+        }
+
         @keyframes swing {
-    0%, 100% { transform: rotateZ(0); }
-    50% { transform: rotateZ(20deg); }
-}
 
-.swing {
-    animation: swing 3s;
-}
+            0%,
+            100% {
+                transform: rotateZ(0);
+            }
+
+            50% {
+                transform: rotateZ(20deg);
+            }
+        }
+
+        .swing {
+            animation: swing 3s;
+        }
 
         #game-over-message {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    font-size: 2em;
-    z-index: 1000;
-}
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            font-size: 2em;
+            z-index: 1000;
+        }
 
         @keyframes gradient {
             0% {
@@ -168,43 +204,45 @@
             border-radius: 15px;
             padding: 20px;
             padding-top: 50px;
-            
+
             margin: 20px auto;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        @keyframes floatDown {
-    0% {
-        opacity: 1;
-        transform: translateY(-100%);
-    }
-    100% {
-        opacity: 0;
-        transform: translateY(100vh);
-    }
-}
 
-.compliment {
-    position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: floatDown 3s ease-in forwards;
-    z-index: 999;
-    color: #FFF;
-    font-size: 1.5em;
-    text-align: center;
-}
+        @keyframes floatDown {
+            0% {
+                opacity: 1;
+                transform: translateY(-100%);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(100vh);
+            }
+        }
+
+        .compliment {
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: floatDown 3s ease-in forwards;
+            z-index: 999;
+            color: #FFF;
+            font-size: 1.5em;
+            text-align: center;
+        }
 
         /* Styling for the question */
         #question {
-            
+
             color: #333333;
             margin-bottom: 20px;
         }
 
         /* Styling for the options buttons */
         .option-button {
-            background-color: #4CAF50;
+            
             color: white;
             border: none;
             border-radius: 8px;
@@ -217,86 +255,117 @@
         }
 
         .option-button:hover {
-            background-color: #45a049;
+            
             transform: scale(1.05);
         }
 
         /* Styling for the score display */
         #score {
-            
+
             color: #ff4500;
             margin-top: 20px;
         }
-        .nav-item {
-    text-align: center;
-}
-.custom-link {
-    color: #333; /* Custom text color */
-    font-size: 20px; /* Custom font size */
-    text-decoration: none; /* Remove underline */
-    transition: color 0.3s ease-in-out; /* Smooth color transition on hover */
-}
 
-.custom-link:hover {
-    color: #ff5733; /* Custom color on hover */
-    text-decoration: none; /* Remove underline on hover */
-}
-.disabled-link {
-    pointer-events: none; /* Disable link interaction */
-    cursor: not-allowed; /* Change cursor to not-allowed */
-    opacity: 0.6; /* Reduce opacity for a disabled look */
-}
-#img-div-1 {padding-left:30px;
-padding-right: 0;}
-#img-div-2 {padding-right:30px; padding-left:0px;}
+        .nav-item {
+            text-align: center;
+        }
+
+        .custom-link {
+            color: #333;
+            /* Custom text color */
+            font-size: 20px;
+            /* Custom font size */
+            text-decoration: none;
+            /* Remove underline */
+            transition: color 0.3s ease-in-out;
+            /* Smooth color transition on hover */
+        }
+
+        .custom-link:hover {
+            color: #ff5733;
+            /* Custom color on hover */
+            text-decoration: none;
+            /* Remove underline on hover */
+        }
+
+        .disabled-link {
+            pointer-events: none;
+            /* Disable link interaction */
+            cursor: not-allowed;
+            /* Change cursor to not-allowed */
+            opacity: 0.6;
+            /* Reduce opacity for a disabled look */
+        }
+
+        #img-div-1 {
+            padding-left: 30px;
+            padding-right: 0;
+        }
+
+        #img-div-2 {
+            padding-right: 0px;
+            padding-left: 0px;
+        }
     </style>
 </head>
 
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-           
-                <div class="row w-100 justify-content-center align-items-center">
-                    <div class=" text-center">
-                        <a class=" nav-link custom-link" href="{% url 'country_comparison' %}">Country Comparison</a>
-                    </div>
-                    <div class=" text-center disabled">
-                        <a class="nav-link custom-link" href="/">Home</a>
-                    </div>
-                    <div class=" text-center">
-                        <a class=" nav-link custom-link active disabled-link" href="{% url 'higher_or_lower_game' %}">Higher or Lower Game</a>
-                    </div>
+
+            <div class="row w-100 justify-content-center align-items-center">
+                <div class=" text-center">
+                    <a class=" nav-link custom-link" href="{% url 'country_comparison' %}">Country Comparison</a>
                 </div>
-           
+                <div class=" text-center disabled">
+                    <a class="nav-link custom-link" href="/">Home</a>
+                </div>
+                <div class=" text-center">
+                    <a class=" nav-link custom-link active disabled-link" href="{% url 'higher_or_lower_game' %}">Higher
+                        or Lower Game</a>
+                </div>
+            </div>
+
         </nav>
     </header>
-    <div class="row justify-content-center align-items-center">
-        <div class="col-10 text-center">
-        <h2 class="text-center mt-4 pt-4">Higher or Lower Game</h2>
-    </div>
-    </div>
-        <div class="row d-flex justify-content-space-around align-items-center">
-            <div class="d-none d-lg-block col-md-2 " id="img-div-1">
-                <img src="{{ image_url_1 }}" class="ps-1 img-fluid">
-            </div>
-            
-            <div class="col-12 col-md-10 col-lg-8">
-                <div class="container mt-5 pt-5">
+
+    <div class="row g-0 d-flex justify-content-center align-items-center p-0 m-0">
+        <div class="d-none d-lg-block col-md-2 p-0 m-0">
+            <img src="{{ image_url_1 }}" class=" img-fluid">
+        </div>
+
+        <div class="col-12 col-md-10 col-lg-7">
+            <div class="container mt-5 pt-5">
+                <h2 class="text-center mt-4 pt-4">Higher or Lower Game</h2>
                 <div id="game" class="shadow-lg p-3 mb-5 bg-white rounded">
                     <div id="question" class="mb-3 h4"></div>
                     <button id="option1" class="option-button btn btn-success h3">Higher</button>
-                    <button id="option2" class="option-button btn btn-success h3">Lower</button>
+                    <button id="option2" class="option-button btn btn-danger h3">Lower</button>
                     <p id="score" class="mt-3 h2">Score: 0</p>
                     <div id="correct-answers" class="mt-3"></div>
                 </div>
             </div>
-            </div>
-            <div class="d-none d-lg-block col-md-2 justify-content-center align-content-center " id="img-div-2">
-                <img src="{{ image_url_2 }}" class="img-fluid ms-1">
-            </div>
+        </div>
+        <div class="d-none d-lg-block col-md-2 justify-content-center align-content-center p-0 m-0 " >
+            <img src="{{ image_url_2 }}" class="img-fluid ">
         </div>
     </div>
-    
+   
+    <footer class="mt-auto bg-dark text-white pt-4 pb-4">
+        <div class="container text-center">
+            <h5 class="mb-1">Quick Links</h5>
+          <ul class="row text-center list-unstyled justify-content-center align-items-center m-1">
+                <li class="col-3 m-2 p-2"><a href="https://personal001portfolio-41c9ef552567.herokuapp.com/" target="_blank" class="text-white">Personal Portfolio</a></li>
+                <li class="col-3 m-2 p-2"><a href="https://docs.google.com/document/d/1CFNyl5yqNrRDaf-oFHH_xdxAmpl8BM7glhtOkLSN86k/edit?usp=sharing" target="_blank" class="text-white">My CV</a></li>
+                <li class="col-3 m-2 p-2"><a href="https://github.com/JesseRoss001" target="_blank" class="text-white">GitHub</a></li>
+              </ul>
+           
+            
+     
+        </div>
+      </footer>
+      
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             let countries = JSON.parse('{{ countries|safe }}');
@@ -342,86 +411,86 @@ padding-right: 0;}
             }
 
             function updateCorrectAnswersDiv() {
-    let correctAnswersDiv = document.getElementById('correct-answers');
-    // Use the reverse method to display the newest answers at the top
-    correctAnswersDiv.innerHTML = correctAnswers.slice().reverse().map(answer => {
-        return `<div>Question: ${answer.question}, Answer: ${answer.answerText}, Values: ${answer.country1Value} vs ${answer.country2Value}</div>`;
-    }).join('');
-}
+                let correctAnswersDiv = document.getElementById('correct-answers');
+                // Use the reverse method to display the newest answers at the top
+                correctAnswersDiv.innerHTML = correctAnswers.slice().reverse().map(answer => {
+                    return `<div>Question: ${answer.question}, Answer: ${answer.answerText}, Values: ${answer.country1Value} vs ${answer.country2Value}</div>`;
+                }).join('');
+            }
             function gameOverAnimation() {
-    let gameContainer = document.getElementById('game');
-    let gameOverMessage = document.createElement('div');
-    gameOverMessage.innerHTML = 'Game Over';
-    gameOverMessage.style.position = 'relative';
-    gameOverMessage.style.width = '100%';
-    gameOverMessage.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
-    gameOverMessage.style.color = 'white';
-    gameOverMessage.style.fontSize = '2em';
-    gameOverMessage.style.textAlign = 'center';
-    gameOverMessage.style.padding = '10px 0';
+                let gameContainer = document.getElementById('game');
+                let gameOverMessage = document.createElement('div');
+                gameOverMessage.innerHTML = 'Game Over';
+                gameOverMessage.style.position = 'relative';
+                gameOverMessage.style.width = '100%';
+                gameOverMessage.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+                gameOverMessage.style.color = 'white';
+                gameOverMessage.style.fontSize = '2em';
+                gameOverMessage.style.textAlign = 'center';
+                gameOverMessage.style.padding = '10px 0';
 
-    // Disable buttons
-    document.getElementById('option1').disabled = true;
-    document.getElementById('option2').disabled = true;
+                // Disable buttons
+                document.getElementById('option1').disabled = true;
+                document.getElementById('option2').disabled = true;
 
-    gameContainer.prepend(gameOverMessage); // Add the message at the top of the container
+                gameContainer.prepend(gameOverMessage); // Add the message at the top of the container
 
-    setTimeout(() => {
-        gameOverMessage.remove();
-        score = 0;
-        updateScore();
-        displayQuestion();
+                setTimeout(() => {
+                    gameOverMessage.remove();
+                    score = 0;
+                    updateScore();
+                    displayQuestion();
 
-        // Enable buttons
-        document.getElementById('option1').disabled = false;
-        document.getElementById('option2').disabled = false;
-    }, 5000); // 3 seconds
-// 15 seconds
-}
-const compliments = [
-    { text: "Great job!", icon: "fa-thumbs-up" },
-    { text: "Awesome!", icon: "fa-star" },
-    { text: "Excellent!", icon: "fa-heart" },
-    { text: "Amazing!", icon: "fa-grin-stars" },
-    { text: "Incredible!", icon: "fa-trophy" },
-    { text: "Superb!", icon: "fa-rocket" },
-    { text: "Fantastic!", icon: "fa-magic" },
-    { text: "Unbelievable!", icon: "fa-bolt" },
-    { text: "Marvelous!", icon: "fa-crown" },
-    { text: "Astounding!", icon: "fa-gem" },
-    { text: "Spectacular!", icon: "fa-fire" },
-    { text: "Mind-Blowing!", icon: "fa-brain" },
-    { text: "Stupendous!", icon: "fa-paw" },
-    { text: "Wondrous!", icon: "fa-feather-alt" },
-    { text: "Phenomenal!", icon: "fa-leaf" },
-    { text: "Extraordinary!", icon: "fa-anchor" },
-    { text: "Sensational!", icon: "fa-bicycle" },
-    { text: "Stellar!", icon: "fa-sun" },
-    { text: "Epic!", icon: "fa-mountain" },
-    { text: "Legendary!", icon: "fa-dragon" },
-    { text: "Out of this World!", icon: "fa-space-shuttle" },
-    { text: "Magnificent!", icon: "fa-ship" },
-    { text: "Prodigious!", icon: "fa-tree" },
-    { text: "Glorious!", icon: "fa-moon" },
-    { text: "Radiant!", icon: "fa-star-of-david" },
-    { text: "Dazzling!", icon: "fa-lightbulb" },
-    { text: "Spellbinding!", icon: "fa-hat-wizard" },
-    { text: "Revolutionary!", icon: "fa-fist-raised" },
-    { text: "Unparalleled!", icon: "fa-infinity" },
-    { text: "Supreme!", icon: "fa-crown" }
-];
-function showCompliment() {
-    let complimentIndex = Math.min(score - 1, compliments.length - 1);
-    let compliment = compliments[complimentIndex];
-    let complimentDiv = document.createElement('div');
-    complimentDiv.classList.add('compliment');
-    complimentDiv.innerHTML = `<i class="fas ${compliment.icon}"></i> ${compliment.text}`;
-    document.body.appendChild(complimentDiv);
+                    // Enable buttons
+                    document.getElementById('option1').disabled = false;
+                    document.getElementById('option2').disabled = false;
+                }, 5000); // 3 seconds
+                // 15 seconds
+            }
+            const compliments = [
+                { text: "Great job!", icon: "fa-thumbs-up" },
+                { text: "Awesome!", icon: "fa-star" },
+                { text: "Excellent!", icon: "fa-heart" },
+                { text: "Amazing!", icon: "fa-grin-stars" },
+                { text: "Incredible!", icon: "fa-trophy" },
+                { text: "Superb!", icon: "fa-rocket" },
+                { text: "Fantastic!", icon: "fa-magic" },
+                { text: "Unbelievable!", icon: "fa-bolt" },
+                { text: "Marvelous!", icon: "fa-crown" },
+                { text: "Astounding!", icon: "fa-gem" },
+                { text: "Spectacular!", icon: "fa-fire" },
+                { text: "Mind-Blowing!", icon: "fa-brain" },
+                { text: "Stupendous!", icon: "fa-paw" },
+                { text: "Wondrous!", icon: "fa-feather-alt" },
+                { text: "Phenomenal!", icon: "fa-leaf" },
+                { text: "Extraordinary!", icon: "fa-anchor" },
+                { text: "Sensational!", icon: "fa-bicycle" },
+                { text: "Stellar!", icon: "fa-sun" },
+                { text: "Epic!", icon: "fa-mountain" },
+                { text: "Legendary!", icon: "fa-dragon" },
+                { text: "Out of this World!", icon: "fa-space-shuttle" },
+                { text: "Magnificent!", icon: "fa-ship" },
+                { text: "Prodigious!", icon: "fa-tree" },
+                { text: "Glorious!", icon: "fa-moon" },
+                { text: "Radiant!", icon: "fa-star-of-david" },
+                { text: "Dazzling!", icon: "fa-lightbulb" },
+                { text: "Spellbinding!", icon: "fa-hat-wizard" },
+                { text: "Revolutionary!", icon: "fa-fist-raised" },
+                { text: "Unparalleled!", icon: "fa-infinity" },
+                { text: "Supreme!", icon: "fa-crown" }
+            ];
+            function showCompliment() {
+                let complimentIndex = Math.min(score - 1, compliments.length - 1);
+                let compliment = compliments[complimentIndex];
+                let complimentDiv = document.createElement('div');
+                complimentDiv.classList.add('compliment');
+                complimentDiv.innerHTML = `<i class="fas ${compliment.icon}"></i> ${compliment.text}`;
+                document.body.appendChild(complimentDiv);
 
-    setTimeout(() => {
-        complimentDiv.remove();
-    }, 3000); // Compliment will disappear after 3 seconds
-}
+                setTimeout(() => {
+                    complimentDiv.remove();
+                }, 3000); // Compliment will disappear after 3 seconds
+            }
             function checkAnswer(isFirstOptionSelected) {
                 let correctAnswer = isFirstOptionSelected ?
                     currentCountryPair[0][currentField] > currentCountryPair[1][currentField] :
@@ -431,33 +500,34 @@ function showCompliment() {
 
                 if (correctAnswer) {
                     score++;
-        console.log('Answer correct');
-        showCompliment();
-                }    else { gameOverAnimation();
-        console.log('Answer incorrect');
-                 }
-                
+                    console.log('Answer correct');
+                    showCompliment();
+                } else {
+                    gameOverAnimation();
+                    console.log('Answer incorrect');
+                }
+
                 updateScore();
                 getRandomCountries(); // Get a new pair for the next round
                 displayQuestion();
             }
 
             let animationClasses = ['pulse', 'bounce', 'spin', 'flip', 'swing'];
-let currentAnimationIndex = 0;
+            let currentAnimationIndex = 0;
 
-function updateScore() {
-    let scoreElement = document.getElementById('score');
-    scoreElement.innerHTML = 'Score: ' + score;
+            function updateScore() {
+                let scoreElement = document.getElementById('score');
+                scoreElement.innerHTML = 'Score: ' + score;
 
-    // Remove the previous animation class
-    scoreElement.classList.remove(animationClasses[currentAnimationIndex]);
+                // Remove the previous animation class
+                scoreElement.classList.remove(animationClasses[currentAnimationIndex]);
 
-    // Update the index for the next animation
-    currentAnimationIndex = (currentAnimationIndex + 1) % animationClasses.length;
+                // Update the index for the next animation
+                currentAnimationIndex = (currentAnimationIndex + 1) % animationClasses.length;
 
-    // Add the new animation class
-    scoreElement.classList.add(animationClasses[currentAnimationIndex]);
-}
+                // Add the new animation class
+                scoreElement.classList.add(animationClasses[currentAnimationIndex]);
+            }
             document.getElementById('option1').addEventListener('click', function () {
                 checkAnswer(true);
             });
